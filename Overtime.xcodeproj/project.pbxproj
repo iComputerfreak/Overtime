@@ -7,15 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB08BA1C24FD6FE5003B6E3E /* OvertimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BA1B24FD6FE5003B6E3E /* OvertimeView.swift */; };
+		AB08BA1E24FD6FEB003B6E3E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BA1D24FD6FEB003B6E3E /* SettingsView.swift */; };
+		AB08BA2024FD7388003B6E3E /* AddOvertimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BA1F24FD7388003B6E3E /* AddOvertimeView.swift */; };
+		AB08BA2224FD759B003B6E3E /* DurationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BA2124FD759B003B6E3E /* DurationPicker.swift */; };
 		AB11A97F24FD48F5002560D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11A97E24FD48F5002560D9 /* AppDelegate.swift */; };
 		AB11A98124FD48F5002560D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11A98024FD48F5002560D9 /* SceneDelegate.swift */; };
 		AB11A98324FD48F5002560D9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11A98224FD48F5002560D9 /* ContentView.swift */; };
 		AB11A98524FD48F6002560D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB11A98424FD48F6002560D9 /* Assets.xcassets */; };
 		AB11A98824FD48F6002560D9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB11A98724FD48F6002560D9 /* Preview Assets.xcassets */; };
 		AB11A98B24FD48F7002560D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB11A98924FD48F7002560D9 /* LaunchScreen.storyboard */; };
+		AB11A99324FD4977002560D9 /* OvertimeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11A99224FD4977002560D9 /* OvertimeRow.swift */; };
+		AB11A99524FD49A1002560D9 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11A99424FD49A1002560D9 /* Duration.swift */; };
+		AB11A99724FD4B02002560D9 /* Overtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11A99624FD4B02002560D9 /* Overtime.swift */; };
+		AB11A99924FD4C44002560D9 /* JFUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11A99824FD4C44002560D9 /* JFUtils.swift */; };
+		ABF0998724FE82BE00F030EF /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0998624FE82BE00F030EF /* AlertHandler.swift */; };
+		ABF0998924FE92C100F030EF /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0998824FE92C100F030EF /* UserData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB08BA1B24FD6FE5003B6E3E /* OvertimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeView.swift; sourceTree = "<group>"; };
+		AB08BA1D24FD6FEB003B6E3E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AB08BA1F24FD7388003B6E3E /* AddOvertimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOvertimeView.swift; sourceTree = "<group>"; };
+		AB08BA2124FD759B003B6E3E /* DurationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationPicker.swift; sourceTree = "<group>"; };
 		AB11A97B24FD48F5002560D9 /* Overtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Overtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB11A97E24FD48F5002560D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB11A98024FD48F5002560D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +38,12 @@
 		AB11A98724FD48F6002560D9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB11A98A24FD48F7002560D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB11A98C24FD48F7002560D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB11A99224FD4977002560D9 /* OvertimeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeRow.swift; sourceTree = "<group>"; };
+		AB11A99424FD49A1002560D9 /* Duration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
+		AB11A99624FD4B02002560D9 /* Overtime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overtime.swift; sourceTree = "<group>"; };
+		AB11A99824FD4C44002560D9 /* JFUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFUtils.swift; sourceTree = "<group>"; };
+		ABF0998624FE82BE00F030EF /* AlertHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
+		ABF0998824FE92C100F030EF /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +78,17 @@
 			children = (
 				AB11A97E24FD48F5002560D9 /* AppDelegate.swift */,
 				AB11A98024FD48F5002560D9 /* SceneDelegate.swift */,
+				AB11A99824FD4C44002560D9 /* JFUtils.swift */,
 				AB11A98224FD48F5002560D9 /* ContentView.swift */,
+				AB08BA1B24FD6FE5003B6E3E /* OvertimeView.swift */,
+				AB08BA1F24FD7388003B6E3E /* AddOvertimeView.swift */,
+				AB08BA1D24FD6FEB003B6E3E /* SettingsView.swift */,
+				AB11A99624FD4B02002560D9 /* Overtime.swift */,
+				AB11A99224FD4977002560D9 /* OvertimeRow.swift */,
+				AB11A99424FD49A1002560D9 /* Duration.swift */,
+				AB08BA2124FD759B003B6E3E /* DurationPicker.swift */,
+				ABF0998624FE82BE00F030EF /* AlertHandler.swift */,
+				ABF0998824FE92C100F030EF /* UserData.swift */,
 				AB11A98424FD48F6002560D9 /* Assets.xcassets */,
 				AB11A98924FD48F7002560D9 /* LaunchScreen.storyboard */,
 				AB11A98C24FD48F7002560D9 /* Info.plist */,
@@ -102,7 +132,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Jonas Frey";
 				TargetAttributes = {
 					AB11A97A24FD48F5002560D9 = {
@@ -146,9 +176,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF0998924FE92C100F030EF /* UserData.swift in Sources */,
+				AB11A99524FD49A1002560D9 /* Duration.swift in Sources */,
+				AB08BA2224FD759B003B6E3E /* DurationPicker.swift in Sources */,
 				AB11A97F24FD48F5002560D9 /* AppDelegate.swift in Sources */,
+				ABF0998724FE82BE00F030EF /* AlertHandler.swift in Sources */,
+				AB11A99724FD4B02002560D9 /* Overtime.swift in Sources */,
+				AB08BA1E24FD6FEB003B6E3E /* SettingsView.swift in Sources */,
+				AB08BA1C24FD6FE5003B6E3E /* OvertimeView.swift in Sources */,
+				AB08BA2024FD7388003B6E3E /* AddOvertimeView.swift in Sources */,
+				AB11A99924FD4C44002560D9 /* JFUtils.swift in Sources */,
 				AB11A98124FD48F5002560D9 /* SceneDelegate.swift in Sources */,
 				AB11A98324FD48F5002560D9 /* ContentView.swift in Sources */,
+				AB11A99324FD4977002560D9 /* OvertimeRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +232,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -216,7 +257,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -252,6 +293,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -270,7 +312,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -289,6 +331,7 @@
 				DEVELOPMENT_TEAM = 46C9Y785NA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Overtime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +339,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.JonasFrey.Overtime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -309,6 +352,7 @@
 				DEVELOPMENT_TEAM = 46C9Y785NA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Overtime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,7 +360,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.JonasFrey.Overtime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
