@@ -11,6 +11,8 @@ import Foundation
 struct JFUtils {
     static let overtimesKey = "overtimes"
     
+    static var overtimesInvalidated = false
+    
     static func timeString(_ duration: Duration) -> String {
         // 1h
         if duration.minutes % 60 == 0 {

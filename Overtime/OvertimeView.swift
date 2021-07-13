@@ -13,10 +13,37 @@ struct OvertimeView: View {
     @State private var values: [Int: [Int: [Overtime]]] = load()
     
     @EnvironmentObject private var userData: UserData
+    
+    var totalDuration: Duration {
+        // Map all overtime entries to their duration
+        let durations = values.flatMap { (year, week: [Int : [Overtime]]) in
+            week.flatMap { (weekOfYear, overtimes: [Overtime]) in
+                overtimes.map { (overtime: Overtime) in
+                    overtime.duration
+                }
+            }
+        }
+        // Sum up all durations in the array
+        return durations.reduce(.zero, +)
+    }
+    
+    fileprivate init(values: [Int: [Int: [Overtime]]]) {
+        self.values = values
+    }
+    
+    init() {}
         
     var body: some View {
         NavigationView {
             List {
+                // Sum
+                HStack {
+                    Text("Gesamt:")
+                        .bold()
+                    Spacer()
+                    Text(JFUtils.timeString(totalDuration))
+                        .bold()
+                }
                 // Years (sorted, newest to oldest)
                 ForEach(Array(self.values.keys.sorted().reversed()), id: \.self) { (year: Int) in
                         // Weeks of Year (sorted, newest to oldest)
@@ -45,6 +72,7 @@ struct OvertimeView: View {
                                             self.values[year]!.removeValue(forKey: weekOfYear)
                                         }
                                     }
+                                    self.save()
                                 })
                                 // Last element is the sum
                                 weekFooter(weekOfYear: weekOfYear, year: year)
@@ -57,9 +85,15 @@ struct OvertimeView: View {
             // We need a small last row, so we have to reduce the min row height
             .environment(\.defaultMinListRowHeight, 0)
             .onAppear {
-                // Only change is when adding a new overtime
-                // After adding a new overtime, the view changes from AddOvertimeView to this view, so didAppear will get called each time
-                save()
+                // If the overtimes values were invalidated (e.g., by deleting them in the settings), load them from disk
+                if JFUtils.overtimesInvalidated {
+                    self.values = Self.load()
+                    JFUtils.overtimesInvalidated = false
+                } else {
+                    // Only change is when adding a new overtime
+                    // After adding a new overtime, the view changes from AddOvertimeView to this view, so didAppear will get called each time
+                    save()
+                }
             }
             .navigationBarItems(trailing: NavigationLink(destination: AddOvertimeView(overtimes: $values), label: {
                 Image(systemName: "plus")
@@ -93,11 +127,17 @@ struct OvertimeView: View {
         }
     }
     
+    func weekTotal(weekOfYear: Int, year: Int) -> Duration {
+        let week = self.values[year]![weekOfYear]!
+        return week.map(\.duration).reduce(.zero, +)
+    }
+    
     func weekHeader(weekOfYear: Int, year: Int) -> some View {
         HStack {
-            Text("KW \(weekOfYear.description)")
+            Text("KW \(weekOfYear.description), \(year.description)")
             Spacer()
-            Text("\(year.description)")
+            Text("\(JFUtils.timeString(weekTotal(weekOfYear: weekOfYear, year: year)))")
+                .italic()
         }
     }
     
@@ -115,6 +155,10 @@ struct OvertimeView: View {
 
 struct OvertimeView_Previews: PreviewProvider {
     static var previews: some View {
-        OvertimeView()
+        OvertimeView(values: [
+            2021: [
+                10: [Overtime(date: Date(), duration: Duration(hours: 1))]
+            ]
+        ])
     }
 }

@@ -46,6 +46,16 @@ struct SettingsView: View {
                                 .tag(format)
                         }
                     }
+                    Button("Zurücksetzen") {
+                        let alert = UIAlertController(title: "Überstunden löschen?", message: "Mit dieser Aktion werden alle Überstunden unwiderruflich gelöscht. Wollen sie fortfahren?", preferredStyle: .alert)
+                        alert.addAction(.init(title: "Löschen", style: .destructive, handler: { (_) in
+                            // Delete entries
+                            UserDefaults.standard.set(nil, forKey: JFUtils.overtimesKey)
+                            JFUtils.overtimesInvalidated = true
+                        }))
+                        alert.addAction(.init(title: "Abbrechen", style: .cancel))
+                        AlertHandler.presentAlert(alert: alert)
+                    }
                 }
                 HStack(spacing: 0) {
                     Spacer()
