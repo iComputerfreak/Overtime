@@ -56,32 +56,15 @@ struct OvertimeView: View {
                                         .frame(height: 22)
                                         .deleteDisabled(false)
                                 }
-                                .onDelete(perform: { indexSet in
-                                    for row in indexSet {
-                                        // Get the item that should be deleted
-                                        let item = self.values[year]![weekOfYear]!.sorted()[row]
-                                        // Get the index in the un-sorted list
-                                        guard let index = self.values[year]![weekOfYear]!.firstIndex(of: item) else {
-                                            return
-                                        }
-                                        // Delete the item
-                                        self.values[year]![weekOfYear]!.remove(at: index)
-                                        
-                                        // If the calendar week is now empty, delete it
-                                        if self.values[year]![weekOfYear]!.isEmpty {
-                                            self.values[year]!.removeValue(forKey: weekOfYear)
-                                        }
-                                    }
-                                    self.save()
-                                })
+                                .onDelete(perform: { indexSet in self.deleteOvertime(indexSet, year: year, weekOfYear: weekOfYear) })
                                 // Last element is the sum
                                 weekFooter(weekOfYear: weekOfYear, year: year)
                                     .frame(height: 10)
                             }
                         }
                 }
-                .listStyle(GroupedListStyle())
             }
+            .listStyle(SidebarListStyle())
             // We need a small last row, so we have to reduce the min row height
             .environment(\.defaultMinListRowHeight, 0)
             .onAppear {
@@ -100,6 +83,25 @@ struct OvertimeView: View {
             }))
                 .navigationBarTitle("Überstunden")
         }
+    }
+    
+    func deleteOvertime(_ indexSet: IndexSet, year: Int, weekOfYear: Int) {
+        for row in indexSet {
+            // Get the item that should be deleted
+            let item = self.values[year]![weekOfYear]!.sorted()[row]
+            // Get the index in the un-sorted list
+            guard let index = self.values[year]![weekOfYear]!.firstIndex(of: item) else {
+                return
+            }
+            // Delete the item
+            self.values[year]![weekOfYear]!.remove(at: index)
+            
+            // If the calendar week is now empty, delete it
+            if self.values[year]![weekOfYear]!.isEmpty {
+                self.values[year]!.removeValue(forKey: weekOfYear)
+            }
+        }
+        self.save()
     }
     
     static func load() -> [Int: [Int: [Overtime]]] {

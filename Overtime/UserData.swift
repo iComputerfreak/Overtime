@@ -24,6 +24,7 @@ class UserData: ObservableObject, Codable {
     
     var dateFormatter: DateFormatter {
         let f = DateFormatter()
+        f.locale = .current
         f.dateFormat = dateFormat
         return f
     }
