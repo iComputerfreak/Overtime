@@ -11,11 +11,43 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    let migrationV1Key = "migrationV1"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Migrate the old data structure to the new structure
+        let migrated = UserDefaults.standard.bool(forKey: migrationV1Key)
+        if !migrated {
+            let overtimes: [Int: [Int: [Overtime]]] = loadV1()
+            let migratedOvertimes: [Overtime] = overtimes.values.flatMap({ $0.values.joined() })
+            saveV1(migratedOvertimes)
+        }
         return true
+    }
+    
+    private func loadV1() -> [Int: [Int: [Overtime]]] {
+        guard let plist = UserDefaults.standard.value(forKey: JFUtils.overtimesKey) as? Data else {
+            return [:]
+        }
+        do {
+            let values = try PropertyListDecoder().decode([Int: [Int: [Overtime]]].self, from: plist)
+            return values
+        } catch let e {
+            print(e)
+            return [:]
+        }
+    }
+    
+    private func saveV1(_ overtimes: [Overtime]) {
+        print("Migrating...")
+        do {
+            let plist = try PropertyListEncoder().encode(overtimes)
+            UserDefaults.standard.set(plist, forKey: JFUtils.overtimesKey)
+            UserDefaults.standard.set(true, forKey: migrationV1Key)
+        } catch let e {
+            print(e)
+        }
     }
 
     // MARK: UISceneSession Lifecycle

@@ -10,25 +10,28 @@ import SwiftUI
 
 struct OvertimeView: View {
     
-    @State private var values: [Int: [Int: [Overtime]]] = load()
+    @State private var values: [Overtime] = load()
     
     @EnvironmentObject private var userData: UserData
     
     var totalDuration: Duration {
-        // Map all overtime entries to their duration
-        let durations = values.flatMap { (year, week: [Int : [Overtime]]) in
-            week.flatMap { (weekOfYear, overtimes: [Overtime]) in
-                overtimes.map { (overtime: Overtime) in
-                    overtime.duration
-                }
-            }
-        }
-        // Sum up all durations in the array
-        return durations.reduce(.zero, +)
+        values.map(\.duration).reduce(.zero, +)
     }
     
-    fileprivate init(values: [Int: [Int: [Overtime]]]) {
+    fileprivate init(values: [Overtime]) {
         self.values = values
+    }
+    
+    private var years: [Int] {
+        Array(Set(self.values.map({ $0.date[.year] })))
+    }
+    
+    private func months(year: Int) -> [Int] {
+        Array(Set(self.values.filter({ $0.date[.year] == year }).map({ $0.date[.month] })))
+    }
+    
+    private func overtimes(year: Int, month: Int) -> [Overtime] {
+        self.values.filter({ $0.date[.year] == year && $0.date[.month] == month })
     }
     
     init() {}
@@ -45,20 +48,20 @@ struct OvertimeView: View {
                         .bold()
                 }
                 // Years (sorted, newest to oldest)
-                ForEach(Array(self.values.keys.sorted().reversed()), id: \.self) { (year: Int) in
-                        // Weeks of Year (sorted, newest to oldest)
-                        ForEach(Array(self.values[year]!.keys.sorted().reversed()), id: \.self) { (weekOfYear: Int) in
-                            Section(header: weekHeader(weekOfYear: weekOfYear, year: year)) {
+                ForEach(Array(years.sorted().reversed()), id: \.self) { (year: Int) in
+                        // Month of Year (sorted, newest to oldest)
+                    ForEach(Array(months(year: year).sorted().reversed()), id: \.self) { (month: Int) in
+                            Section(header: monthHeader(month: month, year: year)) {
                                 // Days (sorted, oldest to newest)
-                                ForEach(self.values[year]![weekOfYear]!.sorted(), id: \.date) { (overtime: Overtime) in
+                                ForEach(overtimes(year: year, month: month).sorted(), id: \.date) { (overtime: Overtime) in
                                     OvertimeRow(overtime: overtime)
                                         // Default row height
                                         .frame(height: 22)
                                         .deleteDisabled(false)
                                 }
-                                .onDelete(perform: { indexSet in self.deleteOvertime(indexSet, year: year, weekOfYear: weekOfYear) })
+                                .onDelete(perform: { indexSet in self.deleteOvertime(indexSet, year: year, month: month) })
                                 // Last element is the sum
-                                weekFooter(weekOfYear: weekOfYear, year: year)
+                                monthFooter(month: month, year: year)
                                     .frame(height: 10)
                             }
                         }
@@ -85,35 +88,30 @@ struct OvertimeView: View {
         }
     }
     
-    func deleteOvertime(_ indexSet: IndexSet, year: Int, weekOfYear: Int) {
+    func deleteOvertime(_ indexSet: IndexSet, year: Int, month: Int) {
         for row in indexSet {
             // Get the item that should be deleted
-            let item = self.values[year]![weekOfYear]!.sorted()[row]
+            let item = overtimes(year: year, month: month).sorted()[row]
             // Get the index in the un-sorted list
-            guard let index = self.values[year]![weekOfYear]!.firstIndex(of: item) else {
+            guard let index = self.values.firstIndex(of: item) else {
                 return
             }
             // Delete the item
-            self.values[year]![weekOfYear]!.remove(at: index)
-            
-            // If the calendar week is now empty, delete it
-            if self.values[year]![weekOfYear]!.isEmpty {
-                self.values[year]!.removeValue(forKey: weekOfYear)
-            }
+            self.values.remove(at: index)
         }
         self.save()
     }
     
-    static func load() -> [Int: [Int: [Overtime]]] {
+    static func load() -> [Overtime] {
         guard let plist = UserDefaults.standard.value(forKey: JFUtils.overtimesKey) as? Data else {
-            return [:]
+            return []
         }
         do {
-            let values = try PropertyListDecoder().decode([Int: [Int: [Overtime]]].self, from: plist)
+            let values = try PropertyListDecoder().decode([Overtime].self, from: plist)
             return values
         } catch let e {
             print(e)
-            return [:]
+            return []
         }
     }
     
@@ -129,22 +127,24 @@ struct OvertimeView: View {
         }
     }
     
-    func weekTotal(weekOfYear: Int, year: Int) -> Duration {
-        let week = self.values[year]![weekOfYear]!
-        return week.map(\.duration).reduce(.zero, +)
+    func monthTotal(month: Int, year: Int) -> Duration {
+        self.values
+            .filter({ $0.date[.year] == year && $0.date[.month] == month })
+            .map(\.duration)
+            .reduce(.zero, +)
     }
     
-    func weekHeader(weekOfYear: Int, year: Int) -> some View {
+    func monthHeader(month: Int, year: Int) -> some View {
         HStack {
-            Text("KW \(weekOfYear.description), \(year.description)")
+            Text("\(Calendar.current.monthSymbols[month - 1]) \(year.description)")
             Spacer()
-            Text("\(JFUtils.timeString(weekTotal(weekOfYear: weekOfYear, year: year)))")
+            Text("\(JFUtils.timeString(monthTotal(month: month, year: year)))")
                 .italic()
         }
     }
     
-    func weekFooter(weekOfYear: Int, year: Int) -> some View {
-        let durations = values[year]![weekOfYear]!.map(\.duration)
+    func monthFooter(month: Int, year: Int) -> some View {
+        let durations = values.map(\.duration)
         let sum = durations.reduce(.zero, +)
         
         return HStack {
@@ -158,9 +158,7 @@ struct OvertimeView: View {
 struct OvertimeView_Previews: PreviewProvider {
     static var previews: some View {
         OvertimeView(values: [
-            2021: [
-                10: [Overtime(date: Date(), duration: Duration(hours: 1))]
-            ]
+            Overtime(date: Date(), duration: Duration(hours: 1))
         ])
     }
 }

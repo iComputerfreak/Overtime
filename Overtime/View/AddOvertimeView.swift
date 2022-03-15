@@ -11,7 +11,7 @@ import SwiftUI
 struct AddOvertimeView: View {
     
     @Environment(\.presentationMode) private var presentationMode
-    @Binding var overtimes: [Int: [Int: [Overtime]]]
+    @Binding var overtimes: [Overtime]
     
     @State private var date: Date = Date()
     @State private var hours: Int = 0
@@ -30,26 +30,14 @@ struct AddOvertimeView: View {
         }
         
         .navigationBarItems(trailing: Button(action: {
-            let cal = Calendar.current
-            let year = cal.component(.year, from: date)
-            let weekOfYear = cal.component(.weekOfYear, from: date)
-            
-            guard !(overtimes[year]?[weekOfYear]?.contains(where: { $0.date == date }) ?? false) else {
+            guard !overtimes.contains(where: { $0.date == date }) else {
                 // We cannot add a overtime for a date, that already has a value!
                 AlertHandler.showSimpleAlert(title: "Fehler", message: "Für dieses Datum sind bereits Überstunden eingetragen.")
                 return
             }
-            
-            // Initialize the array, if it is nil
-            if overtimes[year] == nil {
-                overtimes[year] = [:]
-            }
-            if overtimes[year]![weekOfYear] == nil {
-                overtimes[year]![weekOfYear] = []
-            }
-            
+                        
             // Add the new overtime to the dictionary
-            overtimes[year]![weekOfYear]!.append(Overtime(date: date, duration: Duration(hours: hours, minutes: minutes)))
+            overtimes.append(Overtime(date: date, duration: Duration(hours: hours, minutes: minutes)))
             
             self.presentationMode.wrappedValue.dismiss()
         }, label: {
@@ -60,6 +48,6 @@ struct AddOvertimeView: View {
 
 struct AddOvertimeView_Previews: PreviewProvider {
     static var previews: some View {
-        AddOvertimeView(overtimes: .constant([:]))
+        AddOvertimeView(overtimes: .constant([]))
     }
 }

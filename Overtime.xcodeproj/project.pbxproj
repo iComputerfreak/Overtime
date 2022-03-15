@@ -21,6 +21,7 @@
 		AB11A99524FD49A1002560D9 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11A99424FD49A1002560D9 /* Duration.swift */; };
 		AB11A99724FD4B02002560D9 /* Overtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11A99624FD4B02002560D9 /* Overtime.swift */; };
 		AB11A99924FD4C44002560D9 /* JFUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11A99824FD4C44002560D9 /* JFUtils.swift */; };
+		AB43D50827E0DA1B00D9DE56 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB43D50727E0DA1B00D9DE56 /* Extensions.swift */; };
 		ABAD70352766391600F49854 /* ExperimentalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAD70342766391500F49854 /* ExperimentalView.swift */; };
 		ABAD70372766476F00F49854 /* CalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAD70362766476F00F49854 /* CalendarDayView.swift */; };
 		ABF0998724FE82BE00F030EF /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0998624FE82BE00F030EF /* AlertHandler.swift */; };
@@ -44,6 +45,7 @@
 		AB11A99424FD49A1002560D9 /* Duration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
 		AB11A99624FD4B02002560D9 /* Overtime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overtime.swift; sourceTree = "<group>"; };
 		AB11A99824FD4C44002560D9 /* JFUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFUtils.swift; sourceTree = "<group>"; };
+		AB43D50727E0DA1B00D9DE56 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ABAD70342766391500F49854 /* ExperimentalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentalView.swift; sourceTree = "<group>"; };
 		ABAD70362766476F00F49854 /* CalendarDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayView.swift; sourceTree = "<group>"; };
 		ABF0998624FE82BE00F030EF /* AlertHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				AB11A98924FD48F7002560D9 /* LaunchScreen.storyboard */,
 				AB11A98C24FD48F7002560D9 /* Info.plist */,
 				AB11A98624FD48F6002560D9 /* Preview Content */,
+				AB43D50727E0DA1B00D9DE56 /* Extensions.swift */,
 			);
 			path = Overtime;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				AB08BA1C24FD6FE5003B6E3E /* OvertimeView.swift in Sources */,
 				ABAD70372766476F00F49854 /* CalendarDayView.swift in Sources */,
 				AB08BA2024FD7388003B6E3E /* AddOvertimeView.swift in Sources */,
+				AB43D50827E0DA1B00D9DE56 /* Extensions.swift in Sources */,
 				AB11A99924FD4C44002560D9 /* JFUtils.swift in Sources */,
 				AB11A98124FD48F5002560D9 /* SceneDelegate.swift in Sources */,
 				AB11A98324FD48F5002560D9 /* ContentView.swift in Sources */,
