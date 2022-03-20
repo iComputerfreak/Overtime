@@ -10,7 +10,10 @@ import Foundation
 
 struct Duration: AdditiveArithmetic, Codable {
     
+    let negative: Bool
     let seconds: Int
+    
+    var signedSeconds: Int { negative ? -seconds : seconds }
     
     var minutes: Int {
         return seconds / 60
@@ -21,30 +24,35 @@ struct Duration: AdditiveArithmetic, Codable {
     }
     
     init(seconds: Int) {
-        self.seconds = seconds
+        self.negative = seconds < 0
+        self.seconds = abs(seconds)
     }
     
-    init(minutes: Int) {
-        self.init(seconds: minutes * 60)
+    init(seconds: Int, negative: Bool) {
+        self.init(seconds: negative ? -seconds : seconds)
     }
     
-    init(hours: Int) {
-        self.init(seconds: hours * 3600)
+    init(minutes: Int, negative: Bool = false) {
+        self.init(seconds: minutes * 60, negative: negative)
     }
     
-    init(hours: Int, minutes: Int) {
-        self.init(seconds: hours * 3600 + minutes * 60)
+    init(hours: Int, negative: Bool = false) {
+        self.init(seconds: hours * 3600, negative: negative)
+    }
+    
+    init(hours: Int, minutes: Int, negative: Bool = false) {
+        self.init(seconds: hours * 3600 + minutes * 60, negative: negative)
     }
     
     
     static let zero = Duration(seconds: 0)
     
     static func + (lhs: Duration, rhs: Duration) -> Duration {
-        return Duration(seconds: lhs.seconds + rhs.seconds)
+        return Duration(seconds: lhs.signedSeconds + rhs.signedSeconds)
     }
     
     static func - (lhs: Duration, rhs: Duration) -> Duration {
-        return Duration(seconds: lhs.seconds - rhs.seconds)
+        return Duration(seconds: lhs.signedSeconds - rhs.signedSeconds)
     }
     
 }

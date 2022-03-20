@@ -14,15 +14,16 @@ struct JFUtils {
     static var overtimesInvalidated = false
     
     static func timeString(_ duration: Duration) -> String {
+        let sign = "\(duration.negative ? "-" : "")"
         // 1h
         if duration.minutes % 60 == 0 {
-            return "\(duration.hours)h"
+            return "\(sign)\(duration.hours)h"
         }
         // 10m
         if duration.hours == 0 {
-            return "\(duration.minutes)m"
+            return "\(sign)\(duration.minutes)m"
         }
         // 1h 10m
-        return "\(duration.hours)h \(duration.minutes % 60)m"
+        return "\(sign)\(duration.hours)h \(duration.minutes % 60)m"
     }
 }
