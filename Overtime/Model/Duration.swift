@@ -23,6 +23,13 @@ struct Duration: AdditiveArithmetic, Codable {
         return minutes / 60
     }
     
+    var components: (hours: Int, minutes: Int, seconds: Int, isNegative: Bool) {
+        let hours = seconds / 3600
+        let minutes = seconds / 60 % 60
+        let seconds = minutes % 60
+        return (hours, minutes, seconds, negative)
+    }
+    
     init(seconds: Int) {
         self.negative = seconds < 0
         self.seconds = abs(seconds)
