@@ -8,13 +8,25 @@
 
 import SwiftUI
 
+extension Array where Element == (Int, Int) {
+    func contains(_ element: (Int, Int)) -> Bool {
+        self.contains { (v1, v2) in
+            v1 == element.0 && v2 == element.1
+        }
+    }
+}
+
 struct OvertimeView: View {
     
-    @State private var values: [Overtime] = load()
-    
-    @EnvironmentObject private var userData: UserData
+    @State private var values: [Overtime] = loadOvertimes()
     @State private var editingItem: Overtime?
     @State private var showingEditingView: Bool = false
+    @State private var monthCollapseStates: [String] = loadMonthCollapseStates()
+    @State private var weekCollapseStates: [String] = loadWeekCollapseStates()
+    
+    @EnvironmentObject private var userData: UserData
+    @Environment(\.scenePhase) var scenePhase
+    
     
     var totalDuration: Duration {
         values.map(\.duration).reduce(.zero, +)
@@ -46,6 +58,40 @@ struct OvertimeView: View {
     
     init() {}
     
+    func formIndex(year: Int, weekOfYear: Int) -> String {
+        formIndex(year: year, month: weekOfYear)
+    }
+    
+    func formIndex(year: Int, month: Int) -> String {
+        return "\(year)_\(month)"
+    }
+    
+    func monthCollapseStateBinding(year: Int, month: Int) -> Binding<Bool> {
+        let index = formIndex(year: year, month: month)
+        return Binding {
+            return monthCollapseStates.contains(index)
+        } set: { newValue in
+            if newValue && !monthCollapseStates.contains(index) {
+                monthCollapseStates.append(index)
+            } else if !newValue {
+                monthCollapseStates.removeAll(where: { $0 == index })
+            }
+        }
+    }
+    
+    func weekCollapseStateBinding(year: Int, weekOfYear: Int) -> Binding<Bool> {
+        let index = formIndex(year: year, weekOfYear: weekOfYear)
+        return Binding {
+            return weekCollapseStates.contains(index)
+        } set: { newValue in
+            if newValue && !weekCollapseStates.contains(index) {
+                weekCollapseStates.append(index)
+            } else if !newValue {
+                weekCollapseStates.removeAll { $0 == index }
+            }
+        }
+    }
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -54,10 +100,11 @@ struct OvertimeView: View {
                 ForEach(Array(years.sorted().reversed()), id: \.self) { (year: Int) in
                     // Month of Year (sorted, newest to oldest)
                     ForEach(Array(months(year: year).sorted().reversed()), id: \.self) { (month: Int) in
-                        Section(header: monthHeader(month: month, year: year)) {
+                        DisclosureGroup(isExpanded: monthCollapseStateBinding(year: year, month: month), content: {
                             // Weeks (sorted, oldest to newest)
                             ForEach(weeks(year: year, month: month).sorted().reversed(), id: \.self) { (week: Int) in
-                                Section(header: weekHeader(week: week, month: month, year: year)) {
+                                //Section(header: weekHeader(week: week, month: month, year: year)) {
+                                DisclosureGroup(isExpanded: weekCollapseStateBinding(year: year, weekOfYear: week), content: {
                                     // Days (sorted, oldest to newest)
                                     ForEach(overtimes(year: year, month: month, week: week).sorted(), id: \.date) { (overtime: Overtime) in
                                         OvertimeRow(overtime: overtime)
@@ -73,12 +120,13 @@ struct OvertimeView: View {
                                             }
                                     }
                                     .onDelete(perform: { indexSet in self.deleteOvertime(indexSet, year: year, month: month, week: week) })
-                                    // Last element is the sum
-//                                    monthFooter(month: month, year: year)
-//                                        .frame(height: 10)
-                                }
+                                }, label: {
+                                    weekHeader(week: week, month: month, year: year)
+                                })
                             }
-                        }
+                        }, label: {
+                            monthHeader(month: month, year: year)
+                        })
                     }
                 }
                 // Sum
@@ -90,17 +138,24 @@ struct OvertimeView: View {
                         .bold()
                 }
             }
-            .listStyle(SidebarListStyle())
             // We need a small last row, so we have to reduce the min row height
             .environment(\.defaultMinListRowHeight, 0)
             .onAppear {
                 // If the overtimes values were invalidated (e.g., by deleting them in the settings), load them from disk
                 if JFUtils.overtimesInvalidated {
-                    self.values = Self.load()
+                    self.values = Self.loadOvertimes()
+                    self.monthCollapseStates = Self.loadMonthCollapseStates()
+                    self.weekCollapseStates = Self.loadWeekCollapseStates()
                     JFUtils.overtimesInvalidated = false
                 } else {
                     // Only change is when adding a new overtime
-                    // After adding a new overtime, the view changes from AddOvertimeView to this view, so didAppear will get called each time
+                    // After adding a new overtime, the view changes from AddOvertimeView to this view,
+                    // so didAppear will get called each time
+                    //save()
+                }
+            }
+            .onChange(of: scenePhase) { newPhase in
+                if newPhase == .background || newPhase == .inactive {
                     save()
                 }
             }
@@ -128,28 +183,40 @@ struct OvertimeView: View {
             // Delete the item
             self.values.remove(at: index)
         }
-        self.save()
     }
     
-    static func load() -> [Overtime] {
+    static func loadOvertimes() -> [Overtime] {
         guard let plist = UserDefaults.standard.value(forKey: JFUtils.overtimesKey) as? Data else {
             return []
         }
         do {
-            let values = try PropertyListDecoder().decode([Overtime].self, from: plist)
-            return values
+            // Load overtimes
+            return try PropertyListDecoder().decode([Overtime].self, from: plist)
         } catch let e {
             print(e)
             return []
         }
     }
     
+    static func loadMonthCollapseStates() -> [String] {
+        return UserDefaults.standard.array(forKey: JFUtils.monthCollapseStatesKey) as? [String] ?? []
+    }
+    
+    static func loadWeekCollapseStates() -> [String] {
+        return UserDefaults.standard.array(forKey: JFUtils.weekCollapseStatesKey) as? [String] ?? []
+    }
+    
     func save() {
         DispatchQueue.global().async {
             print("Saving...")
             do {
+                // Save overtimes
                 let plist = try PropertyListEncoder().encode(values)
                 UserDefaults.standard.set(plist, forKey: JFUtils.overtimesKey)
+                
+                // Save collapse states
+                UserDefaults.standard.set(monthCollapseStates, forKey: JFUtils.monthCollapseStatesKey)
+                UserDefaults.standard.set(weekCollapseStates, forKey: JFUtils.weekCollapseStatesKey)
             } catch let e {
                 print(e)
             }

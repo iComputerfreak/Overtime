@@ -10,6 +10,8 @@ import Foundation
 
 struct JFUtils {
     static let overtimesKey = "overtimes"
+    static let monthCollapseStatesKey = "monthCollapseStates"
+    static let weekCollapseStatesKey = "weekCollapseStates"
     
     static var overtimesInvalidated = false
     

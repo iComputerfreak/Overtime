@@ -1,33 +1,22 @@
 //
-//  AppDelegate.swift
+//  MigrationManager.swift
 //  Overtime
 //
-//  Created by Jonas Frey on 31.08.20.
-//  Copyright © 2020 Jonas Frey. All rights reserved.
+//  Created by Jonas Frey on 27.03.22.
+//  Copyright © 2022 Jonas Frey. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-struct OldOvertime: Decodable {
-    let date: Date
-    let duration: OldDuration
-}
-
-struct OldDuration: Decodable {
-    let seconds: Int
-}
-
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+struct MigrationManager {
     
-    let migrationV1Key = "migrationV1"
-    let migrationV2Key = "migrationV2"
+    private let migrationV1Key = "migrationV1"
+    private let migrationV2Key = "migrationV2"
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
+    func migrate() {
         // MARK: Migration
         if !UserDefaults.standard.bool(forKey: migrationV2Key) {
+            print("Migrating...")
             do {
                 let overtimes: [Int: [Int: [OldOvertime]]] = try load()
                 var migrated: [Overtime] = []
@@ -52,8 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError()
             }
         }
-        
-        return true
     }
     
     private func load() throws -> [Int: [Int: [OldOvertime]]] {
@@ -70,21 +57,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaults.standard.set(plist, forKey: JFUtils.overtimesKey)
     }
     
-    
-    // MARK: UISceneSession Lifecycle
-    
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-    
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-    
-    
 }
 
+struct OldOvertime: Decodable {
+    let date: Date
+    let duration: OldDuration
+}
+
+struct OldDuration: Decodable {
+    let seconds: Int
+}
