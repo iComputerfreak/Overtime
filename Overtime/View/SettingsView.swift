@@ -64,7 +64,7 @@ struct SettingsView: View {
                         .padding()
                     Spacer()
                 }
-                .background(Color(UIColor.systemGray6.cgColor))
+                .background(Color(UIColor.systemGroupedBackground))
             }
             .navigationTitle("Einstellungen")
         }

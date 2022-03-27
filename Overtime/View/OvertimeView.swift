@@ -53,7 +53,7 @@ struct OvertimeView: View {
                     ForEach(Array(months(year: year).sorted().reversed()), id: \.self) { (month: Int) in
                         Section(header: monthHeader(month: month, year: year)) {
                             // Weeks (sorted, oldest to newest)
-                            ForEach(weeks(year: year, month: month).sorted(), id: \.self) { (week: Int) in
+                            ForEach(weeks(year: year, month: month).sorted().reversed(), id: \.self) { (week: Int) in
                                 Section(header: weekHeader(week: week, month: month, year: year)) {
                                     // Days (sorted, oldest to newest)
                                     ForEach(overtimes(year: year, month: month, week: week).sorted(), id: \.date) { (overtime: Overtime) in

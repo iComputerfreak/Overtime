@@ -32,18 +32,31 @@ struct Duration: AdditiveArithmetic, Codable {
         self.init(seconds: negative ? -seconds : seconds)
     }
     
-    init(minutes: Int, negative: Bool = false) {
+    init(minutes: Int, negative: Bool) {
         self.init(seconds: minutes * 60, negative: negative)
     }
     
-    init(hours: Int, negative: Bool = false) {
+    init(minutes: Int) {
+        self.init(seconds: abs(minutes * 60), negative: minutes < 0)
+    }
+    
+    init(hours: Int, negative: Bool) {
         self.init(seconds: hours * 3600, negative: negative)
     }
     
-    init(hours: Int, minutes: Int, negative: Bool = false) {
+    init(hours: Int) {
+        self.init(seconds: abs(hours * 3600), negative: hours < 0)
+    }
+    
+    init(hours: Int, minutes: Int, negative: Bool) {
         self.init(seconds: hours * 3600 + minutes * 60, negative: negative)
     }
     
+    init(hours: Int, minutes: Int) {
+        self.init(seconds: abs(hours) * 3600 + abs(minutes) * 60,
+                  // != with booleans is XOR: hours OR minutes should be negative, not both
+                  negative: (hours < 0) != (minutes < 0))
+    }
     
     static let zero = Duration(seconds: 0)
     

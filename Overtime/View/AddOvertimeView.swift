@@ -14,29 +14,25 @@ struct AddOvertimeView: View {
     @Binding var overtimes: [Overtime]
     
     @State private var date: Date = Date()
-    @State private var negative: Bool = false
-    @State private var hours: Int = 0
-    @State private var minutes: Int = 0
+    @State private var hours: Double = 0.0
+    
+    var hoursFormatter: NumberFormatter {
+        let f = NumberFormatter()
+        f.maximumFractionDigits = 2
+        f.minimumFractionDigits = 2
+        return f
+    }
     
     var body: some View {
         Form {
             Section(header: Text("Überstunden")) {
-                Toggle("Negativ", isOn: $negative)
-                Stepper(value: $hours, in: 0...24, label: {
+                Stepper(value: $hours, in: -24...24, step: 0.25, label: {
                     HStack {
                         Text("Stunden")
                         Spacer()
-                        Text("\(hours)")
+                        Text("\(hoursFormatter.string(from: NSNumber(value: hours))!)")
                     }
                 })
-                Stepper(value: $minutes, in: 0...45, step: 15, label: {
-                    HStack {
-                        Text("Minuten")
-                        Spacer()
-                        Text("\(minutes)")
-                    }
-                })
-                //DurationPicker(hours: $hours, minutes: $minutes)
             }
             Section(header: Text("Tag")) {
                 DatePicker("", selection: $date, displayedComponents: .date)
@@ -46,14 +42,21 @@ struct AddOvertimeView: View {
         }
         
         .navigationBarItems(trailing: Button(action: {
-            guard !overtimes.contains(where: { $0.date == date }) else {
+            guard !overtimes.contains(where: {
+                $0.date[.day] == date[.day] && $0.date[.month] == date[.month] && $0.date[.year] == date[.year]
+            }) else {
                 // We cannot add a overtime for a date, that already has a value!
-                AlertHandler.showSimpleAlert(title: "Fehler", message: "Für dieses Datum sind bereits Überstunden eingetragen.")
+                AlertHandler.showSimpleAlert(title: "Fehler",
+                                             message: "Für dieses Datum sind bereits Überstunden eingetragen.")
                 return
             }
                         
             // Add the new overtime to the dictionary
-            overtimes.append(Overtime(date: date, duration: Duration(hours: hours, minutes: minutes, negative: negative)))
+            let hours = Int(self.hours)
+            // We first cut off all full hours, so we only get the remaining minutes
+            // Then we multiply that value with 60 and round to full integer digits to get the minutes
+            let minutes = Int((self.hours.truncatingRemainder(dividingBy: 1) * 60).rounded())
+            overtimes.append(Overtime(date: date, duration: Duration(hours: hours, minutes: minutes)))
             
             self.presentationMode.wrappedValue.dismiss()
         }, label: {
