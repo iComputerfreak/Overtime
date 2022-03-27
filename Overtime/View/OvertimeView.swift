@@ -13,6 +13,8 @@ struct OvertimeView: View {
     @State private var values: [Overtime] = load()
     
     @EnvironmentObject private var userData: UserData
+    @State private var editingItem: Overtime?
+    @State private var showingEditingView: Bool = false
     
     var totalDuration: Duration {
         values.map(\.duration).reduce(.zero, +)
@@ -46,6 +48,7 @@ struct OvertimeView: View {
     
     var body: some View {
         NavigationView {
+            VStack {
             List {
                 // Years (sorted, newest to oldest)
                 ForEach(Array(years.sorted().reversed()), id: \.self) { (year: Int) in
@@ -61,6 +64,13 @@ struct OvertimeView: View {
                                         // Default row height
                                             .frame(height: 22)
                                             .deleteDisabled(false)
+                                            .contextMenu {
+                                                Button("Bearbeiten") {
+                                                    let index = values.firstIndex(of: overtime)!
+                                                    self.editingItem = self.values[index]
+                                                    self.showingEditingView = true
+                                                }
+                                            }
                                     }
                                     .onDelete(perform: { indexSet in self.deleteOvertime(indexSet, year: year, month: month, week: week) })
                                     // Last element is the sum
@@ -98,6 +108,12 @@ struct OvertimeView: View {
                 Image(systemName: "plus")
             }))
             .navigationBarTitle("Überstunden")
+            // Handles showing the editing view when the user edits an item via the context menu
+            NavigationLink(
+                destination: AddOvertimeView(overtimes: $values, overtime: self.editingItem),
+                isActive: $showingEditingView,
+                label: { EmptyView() })
+            }
         }
     }
     

@@ -26,8 +26,10 @@ struct AddOvertimeView: View {
     }
     
     // Using editing mode
-    init(overtimes: Binding<[Overtime]>, overtime: Overtime) {
-        self.init(overtimes: overtimes, date: overtime.date, hours: Double(overtime.duration.minutes) / 60.0, editingItem: overtime)
+    init(overtimes: Binding<[Overtime]>, overtime: Overtime?) {
+        let date = overtime?.date ?? Date()
+        let hours = Double(overtime?.duration.minutes ?? 0) / 60.0
+        self.init(overtimes: overtimes, date: date, hours: hours, editingItem: overtime)
     }
     
     init(overtimes: Binding<[Overtime]>) {
