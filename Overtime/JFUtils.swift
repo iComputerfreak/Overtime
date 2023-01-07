@@ -10,10 +10,6 @@ import Foundation
 
 struct JFUtils {
     static let overtimesKey = "overtimes"
-    static let monthCollapseStatesKey = "monthCollapseStates"
-    static let weekCollapseStatesKey = "weekCollapseStates"
-    
-    static var overtimesInvalidated = false
     
     static func timeString(_ duration: Duration) -> String {
         let sign = "\(duration.negative ? "-" : "")"

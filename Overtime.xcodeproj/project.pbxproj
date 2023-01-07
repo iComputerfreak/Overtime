@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,9 +22,10 @@
 		AB1BC65227F11352005960A3 /* OvertimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1BC65127F11352005960A3 /* OvertimeApp.swift */; };
 		AB1BC65427F113DD005960A3 /* MigrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1BC65327F113DD005960A3 /* MigrationManager.swift */; };
 		AB43D50827E0DA1B00D9DE56 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB43D50727E0DA1B00D9DE56 /* Extensions.swift */; };
+		AB624D1F29690B6E00A0CF27 /* JFUtils in Frameworks */ = {isa = PBXBuildFile; productRef = AB624D1E29690B6E00A0CF27 /* JFUtils */; };
+		AB624D2129691AAF00A0CF27 /* OvertimeViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624D2029691AAF00A0CF27 /* OvertimeViewHelper.swift */; };
 		ABAD70352766391600F49854 /* ExperimentalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAD70342766391500F49854 /* ExperimentalView.swift */; };
 		ABAD70372766476F00F49854 /* CalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAD70362766476F00F49854 /* CalendarDayView.swift */; };
-		ABF0998724FE82BE00F030EF /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0998624FE82BE00F030EF /* AlertHandler.swift */; };
 		ABF0998924FE92C100F030EF /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0998824FE92C100F030EF /* UserData.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,9 +47,9 @@
 		AB1BC65127F11352005960A3 /* OvertimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeApp.swift; sourceTree = "<group>"; };
 		AB1BC65327F113DD005960A3 /* MigrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationManager.swift; sourceTree = "<group>"; };
 		AB43D50727E0DA1B00D9DE56 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		AB624D2029691AAF00A0CF27 /* OvertimeViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeViewHelper.swift; sourceTree = "<group>"; };
 		ABAD70342766391500F49854 /* ExperimentalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentalView.swift; sourceTree = "<group>"; };
 		ABAD70362766476F00F49854 /* CalendarDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayView.swift; sourceTree = "<group>"; };
-		ABF0998624FE82BE00F030EF /* AlertHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
 		ABF0998824FE92C100F030EF /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB624D1F29690B6E00A0CF27 /* JFUtils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +89,6 @@
 				AB79D07A275A515300C81DFA /* Model */,
 				AB79D07B275A517000C81DFA /* View */,
 				AB11A99824FD4C44002560D9 /* JFUtils.swift */,
-				ABF0998624FE82BE00F030EF /* AlertHandler.swift */,
 				AB11A98424FD48F6002560D9 /* Assets.xcassets */,
 				AB11A98924FD48F7002560D9 /* LaunchScreen.storyboard */,
 				AB11A98C24FD48F7002560D9 /* Info.plist */,
@@ -120,6 +121,7 @@
 			children = (
 				AB11A98224FD48F5002560D9 /* ContentView.swift */,
 				AB08BA1B24FD6FE5003B6E3E /* OvertimeView.swift */,
+				AB624D2029691AAF00A0CF27 /* OvertimeViewHelper.swift */,
 				ABAD70342766391500F49854 /* ExperimentalView.swift */,
 				ABAD70362766476F00F49854 /* CalendarDayView.swift */,
 				AB08BA1F24FD7388003B6E3E /* AddOvertimeView.swift */,
@@ -154,6 +156,9 @@
 			dependencies = (
 			);
 			name = Overtime;
+			packageProductDependencies = (
+				AB624D1E29690B6E00A0CF27 /* JFUtils */,
+			);
 			productName = Overtime;
 			productReference = AB11A97B24FD48F5002560D9 /* Overtime.app */;
 			productType = "com.apple.product-type.application";
@@ -182,6 +187,9 @@
 				Base,
 			);
 			mainGroup = AB11A97224FD48F5002560D9;
+			packageReferences = (
+				AB624D1D29690B6E00A0CF27 /* XCRemoteSwiftPackageReference "JFUtils" */,
+			);
 			productRefGroup = AB11A97C24FD48F5002560D9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -213,13 +221,13 @@
 				ABF0998924FE92C100F030EF /* UserData.swift in Sources */,
 				AB11A99524FD49A1002560D9 /* Duration.swift in Sources */,
 				AB08BA2224FD759B003B6E3E /* DurationPicker.swift in Sources */,
-				ABF0998724FE82BE00F030EF /* AlertHandler.swift in Sources */,
 				AB11A99724FD4B02002560D9 /* Overtime.swift in Sources */,
 				AB08BA1E24FD6FEB003B6E3E /* SettingsView.swift in Sources */,
 				AB08BA1C24FD6FE5003B6E3E /* OvertimeView.swift in Sources */,
 				ABAD70372766476F00F49854 /* CalendarDayView.swift in Sources */,
 				AB08BA2024FD7388003B6E3E /* AddOvertimeView.swift in Sources */,
 				AB43D50827E0DA1B00D9DE56 /* Extensions.swift in Sources */,
+				AB624D2129691AAF00A0CF27 /* OvertimeViewHelper.swift in Sources */,
 				AB11A99924FD4C44002560D9 /* JFUtils.swift in Sources */,
 				AB11A98324FD48F5002560D9 /* ContentView.swift in Sources */,
 				AB1BC65227F11352005960A3 /* OvertimeApp.swift in Sources */,
@@ -293,7 +301,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -348,7 +356,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -369,7 +377,7 @@
 				INFOPLIST_FILE = Overtime/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Overtime;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -394,7 +402,7 @@
 				INFOPLIST_FILE = Overtime/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Overtime;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -430,6 +438,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AB624D1D29690B6E00A0CF27 /* XCRemoteSwiftPackageReference "JFUtils" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/iComputerfreak/JFUtils";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AB624D1E29690B6E00A0CF27 /* JFUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB624D1D29690B6E00A0CF27 /* XCRemoteSwiftPackageReference "JFUtils" */;
+			productName = JFUtils;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AB11A97324FD48F5002560D9 /* Project object */;
 }

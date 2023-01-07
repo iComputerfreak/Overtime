@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import JFUtils
 
 struct AddOvertimeView: View {
     
@@ -68,8 +69,10 @@ struct AddOvertimeView: View {
                     $0.date[.day] == date[.day] && $0.date[.month] == date[.month] && $0.date[.year] == date[.year]
                 }) else {
                     // We cannot add a overtime for a date, that already has a value!
-                    AlertHandler.showSimpleAlert(title: "Fehler",
-                                                 message: "Für dieses Datum sind bereits Überstunden eingetragen.")
+                    AlertHandler.showSimpleAlert(
+                        title: "Fehler",
+                        message: "Für dieses Datum sind bereits Überstunden eingetragen."
+                    )
                     return
                 }
             }

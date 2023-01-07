@@ -7,10 +7,11 @@
 //
 
 import SwiftUI
+import JFUtils
 
 struct SettingsView: View {
     
-    // Reference date is the fifth of january
+    // Reference date is the fifth of january in the current year and time zone
     static let referenceDate: Date = {
         let cal = Calendar.current
         var components = cal.dateComponents(in: TimeZone.current, from: Date())
@@ -19,6 +20,7 @@ struct SettingsView: View {
         return components.date ?? Date()
     }()
     
+    // Available date formats
     let dateFormats: [String] = [
         "EEEE, d. MMMM yyyy", // Sunday, 5. January 2020
         "E, d. MMM yyyy", // Sun, 5. Jan 2020
@@ -33,7 +35,7 @@ struct SettingsView: View {
         "d.M", // 5.1.
         "yyyy-MM-dd", // 2020-01-05
     ]
-        
+    
     @EnvironmentObject private var userData: UserData
     
     var body: some View {
@@ -54,15 +56,16 @@ struct SettingsView: View {
                             let alert = UIAlertController(title: "Überstunden löschen?", message: "Mit dieser Aktion werden alle Überstunden unwiderruflich gelöscht. Wollen sie fortfahren?", preferredStyle: .alert)
                             alert.addAction(.init(title: "Löschen", style: .destructive, handler: { (_) in
                                 // Delete entries
-                                UserDefaults.standard.set(nil, forKey: JFUtils.overtimesKey)
-                                JFUtils.overtimesInvalidated = true
+                                userData.overtimes = []
+                                // TODO: Delete collapse states, etc.
                             }))
                             alert.addAction(.init(title: "Abbrechen", style: .cancel))
                             AlertHandler.presentAlert(alert: alert)
                         }
                     }
                 }
-                HStack(spacing: 0) {
+                // MARK: Legal Footer
+                HStack {
                     Spacer()
                     Text("App icon: Flaticon.com")
                         .font(.footnote)

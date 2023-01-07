@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import JFUtils
 
 struct MigrationManager {
     
