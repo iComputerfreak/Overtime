@@ -49,16 +49,23 @@ struct OvertimeView: View {
                                         // Default row height
                                             .frame(height: 22)
                                             .deleteDisabled(false)
-                                            .contextMenu {
-                                                Button("Bearbeiten") {
+                                            .swipeActions(allowsFullSwipe: true) {
+                                                Button {
+                                                    userData.overtimes.removeAll { $0 == overtime }
+                                                } label: {
+                                                    Label("Löschen", systemImage: "trash")
+                                                }
+                                                .tint(.red)
+                                                Button {
                                                     if let index = userData.overtimes.firstIndex(of: overtime) {
                                                         self.editingItem = userData.overtimes[index]
                                                         self.showingEditingView = true
                                                     }
+                                                } label: {
+                                                    Label("Bearbeiten", systemImage: "pencil")
                                                 }
                                             }
                                     }
-                                    .onDelete(perform: { indexSet in self.deleteOvertime(indexSet, year: year, month: month, week: week) })
                                 }, label: {
                                     weekHeader(week: week, month: month, year: year)
                                 })
@@ -79,29 +86,20 @@ struct OvertimeView: View {
             }
             // We need a small last row, so we have to reduce the min row height
             .environment(\.defaultMinListRowHeight, 0)
-            .navigationBarItems(trailing: NavigationLink(destination: AddOvertimeView(overtimes: $userData.overtimes), label: {
-                Image(systemName: "plus")
-            }))
-            .navigationBarTitle("Überstunden")
+            .toolbar {
+                NavigationLink {
+                    AddOvertimeView(overtimes: $userData.overtimes)
+                } label: {
+                    Image(systemName: "plus")
+                }
+            }
+            .navigationTitle("Überstunden")
             // Handles showing the editing view when the user edits an item via the context menu
             NavigationLink(
                 destination: AddOvertimeView(overtimes: $userData.overtimes, overtime: self.editingItem),
                 isActive: $showingEditingView,
                 label: { EmptyView() })
             }
-        }
-    }
-    
-    func deleteOvertime(_ indexSet: IndexSet, year: Int, month: Int, week: Int) {
-        for row in indexSet {
-            // Get the item that should be deleted
-            let item = userData.overtimes(for: year, month: month, week: week).sorted()[row]
-            // Get the index in the un-sorted list
-            guard let index = userData.overtimes.firstIndex(of: item) else {
-                return
-            }
-            // Delete the item
-            userData.overtimes.remove(at: index)
         }
     }
 }
