@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "jfutils",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/iComputerfreak/JFUtils",
+      "state" : {
+        "revision" : "0d7d840ad7444ca9383aae2fb2cac728d82018d1",
+        "version" : "1.8.1"
+      }
+    }
+  ],
+  "version" : 2
+}
