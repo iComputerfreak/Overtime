@@ -101,6 +101,7 @@
 				AB11A98924FD48F7002560D9 /* LaunchScreen.storyboard */,
 				AB11A98C24FD48F7002560D9 /* Info.plist */,
 				AB11A98624FD48F6002560D9 /* Preview Content */,
+				AB624D28296CA7E500A0CF27 /* UserData+Preview.swift */,
 				AB43D50727E0DA1B00D9DE56 /* Extensions.swift */,
 			);
 			path = Overtime;
@@ -110,7 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				AB11A98724FD48F6002560D9 /* Preview Assets.xcassets */,
-				AB624D28296CA7E500A0CF27 /* UserData+Preview.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
