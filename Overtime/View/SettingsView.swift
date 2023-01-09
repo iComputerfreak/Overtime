@@ -90,12 +90,12 @@ struct SettingsView: View {
             } catch {
                 print("Error decoding file.")
                 print(error)
-                // TODO: Show alert
+                AlertHandler.showError(title: "Error Importing Backup", error: error)
             }
         case .failure(let error):
             print("Error importing backup:")
             print(error)
-            // TODO: Show alert
+            AlertHandler.showError(title: "Error Importing Backup", error: error)
         }
     }
     
@@ -106,7 +106,7 @@ struct SettingsView: View {
         case .failure(let error):
             print("Error exporting backup:")
             print(error)
-            // TODO: Show alert
+            AlertHandler.showError(title: "Error Exporting Backup", error: error)
         }
     }
     
