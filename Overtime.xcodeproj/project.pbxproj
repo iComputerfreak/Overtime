@@ -24,6 +24,10 @@
 		AB43D50827E0DA1B00D9DE56 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB43D50727E0DA1B00D9DE56 /* Extensions.swift */; };
 		AB624D1F29690B6E00A0CF27 /* JFUtils in Frameworks */ = {isa = PBXBuildFile; productRef = AB624D1E29690B6E00A0CF27 /* JFUtils */; };
 		AB624D2129691AAF00A0CF27 /* OvertimeViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624D2029691AAF00A0CF27 /* OvertimeViewHelper.swift */; };
+		AB624D232969CAF100A0CF27 /* BackupFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624D222969CAF100A0CF27 /* BackupFile.swift */; };
+		AB624D25296CA6CE00A0CF27 /* LegalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624D24296CA6CE00A0CF27 /* LegalFooter.swift */; };
+		AB624D27296CA78900A0CF27 /* DateFormatRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624D26296CA78900A0CF27 /* DateFormatRow.swift */; };
+		AB624D29296CA7E500A0CF27 /* UserData+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624D28296CA7E500A0CF27 /* UserData+Preview.swift */; };
 		ABAD70352766391600F49854 /* ExperimentalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAD70342766391500F49854 /* ExperimentalView.swift */; };
 		ABAD70372766476F00F49854 /* CalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAD70362766476F00F49854 /* CalendarDayView.swift */; };
 		ABF0998924FE92C100F030EF /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0998824FE92C100F030EF /* UserData.swift */; };
@@ -48,6 +52,10 @@
 		AB1BC65327F113DD005960A3 /* MigrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationManager.swift; sourceTree = "<group>"; };
 		AB43D50727E0DA1B00D9DE56 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AB624D2029691AAF00A0CF27 /* OvertimeViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeViewHelper.swift; sourceTree = "<group>"; };
+		AB624D222969CAF100A0CF27 /* BackupFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupFile.swift; sourceTree = "<group>"; };
+		AB624D24296CA6CE00A0CF27 /* LegalFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalFooter.swift; sourceTree = "<group>"; };
+		AB624D26296CA78900A0CF27 /* DateFormatRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatRow.swift; sourceTree = "<group>"; };
+		AB624D28296CA7E500A0CF27 /* UserData+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+Preview.swift"; sourceTree = "<group>"; };
 		ABAD70342766391500F49854 /* ExperimentalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentalView.swift; sourceTree = "<group>"; };
 		ABAD70362766476F00F49854 /* CalendarDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayView.swift; sourceTree = "<group>"; };
 		ABF0998824FE92C100F030EF /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -102,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				AB11A98724FD48F6002560D9 /* Preview Assets.xcassets */,
+				AB624D28296CA7E500A0CF27 /* UserData+Preview.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -112,6 +121,7 @@
 				AB11A99424FD49A1002560D9 /* Duration.swift */,
 				AB11A99624FD4B02002560D9 /* Overtime.swift */,
 				ABF0998824FE92C100F030EF /* UserData.swift */,
+				AB624D222969CAF100A0CF27 /* BackupFile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -136,6 +146,8 @@
 			children = (
 				AB08BA2124FD759B003B6E3E /* DurationPicker.swift */,
 				AB11A99224FD4977002560D9 /* OvertimeRow.swift */,
+				AB624D24296CA6CE00A0CF27 /* LegalFooter.swift */,
+				AB624D26296CA78900A0CF27 /* DateFormatRow.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -218,7 +230,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABAD70352766391600F49854 /* ExperimentalView.swift in Sources */,
+				AB624D27296CA78900A0CF27 /* DateFormatRow.swift in Sources */,
 				ABF0998924FE92C100F030EF /* UserData.swift in Sources */,
+				AB624D29296CA7E500A0CF27 /* UserData+Preview.swift in Sources */,
 				AB11A99524FD49A1002560D9 /* Duration.swift in Sources */,
 				AB08BA2224FD759B003B6E3E /* DurationPicker.swift in Sources */,
 				AB11A99724FD4B02002560D9 /* Overtime.swift in Sources */,
@@ -227,7 +241,9 @@
 				ABAD70372766476F00F49854 /* CalendarDayView.swift in Sources */,
 				AB08BA2024FD7388003B6E3E /* AddOvertimeView.swift in Sources */,
 				AB43D50827E0DA1B00D9DE56 /* Extensions.swift in Sources */,
+				AB624D232969CAF100A0CF27 /* BackupFile.swift in Sources */,
 				AB624D2129691AAF00A0CF27 /* OvertimeViewHelper.swift in Sources */,
+				AB624D25296CA6CE00A0CF27 /* LegalFooter.swift in Sources */,
 				AB11A99924FD4C44002560D9 /* JFUtils.swift in Sources */,
 				AB11A98324FD48F5002560D9 /* ContentView.swift in Sources */,
 				AB1BC65227F11352005960A3 /* OvertimeApp.swift in Sources */,

@@ -8,17 +8,12 @@
 
 import SwiftUI
 import JFUtils
+import UniformTypeIdentifiers
 
 struct SettingsView: View {
     
-    // Reference date is the fifth of january in the current year and time zone
-    static let referenceDate: Date = {
-        let cal = Calendar.current
-        var components = cal.dateComponents(in: TimeZone.current, from: Date())
-        components.day = 5
-        components.month = 1
-        return components.date ?? Date()
-    }()
+    // ISO8601 formatter for the export file name
+    static let isoFormatter = ISO8601DateFormatter()
     
     // Available date formats
     let dateFormats: [String] = [
@@ -37,71 +32,102 @@ struct SettingsView: View {
     ]
     
     @EnvironmentObject private var userData: UserData
+    @State private var isExportingFile = false
+    @State private var isImportingFile = false
+    @State private var exportingFile: BackupFile?
     
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
                 Form {
+                    // MARK: Date Format
                     Picker("Datumsformat", selection: $userData.dateFormat) {
                         ForEach(self.dateFormats, id: \.self) { (format: String) in
                             DateFormatRow(format: format)
                                 .tag(format)
                         }
                     }
-                    Button("Export") {
-                        self.exportOvertimes()
+                    
+                    // MARK: Import
+                    Button("Importieren") {
+                        self.isImportingFile = true
                     }
+                    .fileImporter(isPresented: $isImportingFile, allowedContentTypes: [.json], onCompletion: importFile(result:))
+                    
+                    // MARK: Export
+                    Button("Exportieren") {
+                        self.exportingFile = BackupFile(overtimes: userData.overtimes)
+                        self.isExportingFile = true
+                    }
+                    .fileExporter(
+                        isPresented: $isExportingFile,
+                        document: exportingFile,
+                        contentType: .json,
+                        defaultFilename: "OvertimeBackup_\(Self.isoFormatter.string(from: Date())).json",
+                        onCompletion: exportFile(result:)
+                    )
+                    
+                    // MARK: Reset
                     Section {
-                        Button("Zurücksetzen") {
-                            let alert = UIAlertController(title: "Überstunden löschen?", message: "Mit dieser Aktion werden alle Überstunden unwiderruflich gelöscht. Wollen sie fortfahren?", preferredStyle: .alert)
-                            alert.addAction(.init(title: "Löschen", style: .destructive, handler: { (_) in
-                                // Delete entries
-                                userData.overtimes = []
-                                // TODO: Delete collapse states, etc.
-                            }))
-                            alert.addAction(.init(title: "Abbrechen", style: .cancel))
-                            AlertHandler.presentAlert(alert: alert)
-                        }
+                        Button("Zurücksetzen", action: resetData)
                     }
                 }
+                
                 // MARK: Legal Footer
-                HStack {
-                    Spacer()
-                    Text("App icon: Flaticon.com")
-                        .font(.footnote)
-                        .padding()
-                    Spacer()
-                }
-                .background(Color(UIColor.systemGroupedBackground))
+                LegalFooter()
             }
             .navigationTitle("Einstellungen")
         }
     }
     
-    func exportOvertimes() {
-        
+    func importFile(result: Result<URL, Error>) {
+        switch result {
+        case .success(let url):
+            do {
+                let data = try Data(contentsOf: url)
+                let file = try BackupFile(data: data)
+                userData.overtimes.append(contentsOf: file.overtimes)
+            } catch {
+                print("Error decoding file.")
+                print(error)
+                // TODO: Show alert
+            }
+        case .failure(let error):
+            print("Error importing backup:")
+            print(error)
+            // TODO: Show alert
+        }
     }
-}
-
-struct DateFormatRow: View {
     
-    let format: String
-    var formatter: DateFormatter {
-        let f = DateFormatter()
-        f.dateFormat = format
-        return f
-    }
-    var example: String {
-        formatter.string(from: SettingsView.referenceDate)
+    func exportFile(result: Result<URL, Error>) {
+        switch result {
+        case .success(let url):
+            print("Exported backup to \(url)")
+        case .failure(let error):
+            print("Error exporting backup:")
+            print(error)
+            // TODO: Show alert
+        }
     }
     
-    var body: some View {
-        Text(example)
+    func resetData() {
+        let alert = UIAlertController(
+            title: "Überstunden löschen?",
+            message: "Mit dieser Aktion werden alle Überstunden unwiderruflich gelöscht. Wollen sie fortfahren?",
+            preferredStyle: .alert
+        )
+        alert.addAction(.init(title: "Löschen", style: .destructive, handler: { (_) in
+            // Delete entries
+            userData.reset()
+        }))
+        alert.addAction(.init(title: "Abbrechen", style: .cancel))
+        AlertHandler.presentAlert(alert: alert)
     }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
+            .environmentObject(UserData.preview)
     }
 }

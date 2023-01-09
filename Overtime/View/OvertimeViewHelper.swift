@@ -88,6 +88,7 @@ extension OvertimeView {
     func monthHeader(month: Int, year: Int) -> some View {
         HStack {
             Text("\(Calendar.current.monthSymbols[month - 1]) \(year.description)")
+                .bold()
             Spacer()
             Text("\(JFUtils.timeString(monthTotal(month: month, year: year)))")
         }

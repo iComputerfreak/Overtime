@@ -14,7 +14,7 @@ class UserData: ObservableObject, Codable {
     private static let dateFormatKey = "dateFormat"
     private static let monthCollapseStatesKey = "monthCollapseStates"
     private static let weekCollapseStatesKey = "weekCollapseStates"
-        
+    
     @Published var dateFormat: String {
         didSet {
             // After changing the date format, save it immediately and update the date formatter
@@ -115,6 +115,13 @@ class UserData: ObservableObject, Codable {
             print("Error encoding overtimes.")
             print(error)
         }
+    }
+    
+    /// Resets the user data stored in this object (except the date format)
+    func reset() {
+        self.overtimes = []
+        self.monthCollapseStates = []
+        self.weekCollapseStates = []
     }
     
     // MARK: - Codable Conformance
