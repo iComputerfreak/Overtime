@@ -46,22 +46,23 @@ struct AddOvertimeView: View {
     
     var body: some View {
         Form {
-            Section(header: Text("Überstunden")) {
+            Section(header: Text("newOvertime.sectionHeader.overtime")) {
                 Stepper(value: $hours, in: -24...24, step: 0.25, label: {
                     HStack {
-                        Text("Stunden")
+                        Text("newOvertime.stepperLabel.hours")
                         Spacer()
                         Text("\(hoursFormatter.string(from: NSNumber(value: hours))!)")
                     }
                 })
             }
-            Section(header: Text("Tag")) {
+            Section(header: Text("newOvertime.sectionHeader.date")) {
                 DatePicker("", selection: $date, displayedComponents: .date)
                     .datePickerStyle(GraphicalDatePickerStyle())
                     .labelsHidden()
             }
         }
         
+        .navigationTitle("newOvertime.navigationTitle")
         .navigationBarItems(trailing: Button(action: {
             // If we are adding a new item, we need to ensure that there is no item for that day yet
             if editingItem == nil {
@@ -70,8 +71,8 @@ struct AddOvertimeView: View {
                 }) else {
                     // We cannot add a overtime for a date, that already has a value!
                     AlertHandler.showSimpleAlert(
-                        title: "Fehler",
-                        message: "Für dieses Datum sind bereits Überstunden eingetragen."
+                        title: "alerts.overtimeAlreadyAdded.title",
+                        message: "alerts.overtimeAlreadyAdded.message"
                     )
                     return
                 }
@@ -96,13 +97,15 @@ struct AddOvertimeView: View {
             
             self.presentationMode.wrappedValue.dismiss()
         }, label: {
-            Text("Hinzufügen")
+            Text("newOvertime.actionLabel.add")
         }))
     }
 }
 
 struct AddOvertimeView_Previews: PreviewProvider {
     static var previews: some View {
-        AddOvertimeView(overtimes: .constant([]))
+        NavigationView {
+            AddOvertimeView(overtimes: .constant([]))
+        }
     }
 }

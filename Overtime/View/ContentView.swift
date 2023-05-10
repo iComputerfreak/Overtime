@@ -15,12 +15,12 @@ struct ContentView: View {
             OvertimeView()
                 .tabItem {
                     Image(systemName: "clock")
-                    Text("Überstunden")
+                    Text("tabView.overtimes.label")
                 }
             SettingsView()
                 .tabItem {
                     Image(systemName: "gear")
-                    Text("Einstellungen")
+                    Text("tabView.settings.label")
                 }
         }
     }
@@ -29,5 +29,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(UserData.preview)
     }
 }

@@ -43,7 +43,7 @@ struct OvertimeView: View {
                                                             userData.overtimes.remove(at: index)
                                                         }
                                                     } label: {
-                                                        Label("Löschen", systemImage: "trash")
+                                                        Label("actionLabel.delete", systemImage: "trash")
                                                     }
                                                     .tint(.red)
                                                     Button {
@@ -52,7 +52,7 @@ struct OvertimeView: View {
                                                             self.showingEditingView = true
                                                         }
                                                     } label: {
-                                                        Label("Bearbeiten", systemImage: "pencil")
+                                                        Label("actionLabel.edit", systemImage: "pencil")
                                                     }
                                                 }
                                         }
@@ -77,14 +77,14 @@ struct OvertimeView: View {
                 }
                 // Sum
                 HStack {
-                    Text("Gesamt:")
+                    Text("overtimes.totalPrefix")
                         .bold()
                     Spacer()
                     Text(JFUtils.timeString(userData.totalOvertimeDuration))
                         .bold()
                 }
                 .padding(.horizontal)
-                .navigationTitle("Überstunden")
+                .navigationTitle("overtimes.title")
                 // Handles showing the editing view when the user edits an item via the context menu
                 NavigationLink(
                     destination: AddOvertimeView(overtimes: $userData.overtimes, overtime: self.editingItem),

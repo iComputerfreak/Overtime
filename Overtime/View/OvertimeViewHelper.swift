@@ -69,7 +69,7 @@ extension OvertimeView {
     
     func weekHeader(week: Int, month: Int, year: Int) -> some View {
         HStack {
-            Text("KW \(week)")
+            Text("overtimes.calendarWeekPrefix \(week)")
             Spacer()
             Text("\(JFUtils.timeString(weekTotal(week: week, month: month, year: year)))")
                 .italic()
@@ -99,7 +99,7 @@ extension OvertimeView {
         let sum = durations.reduce(.zero, +)
         
         return HStack {
-            Text("Summe").bold()
+            Text("overtimes.monthFooter.sumPrefix").bold()
             Spacer()
             Text("\(JFUtils.timeString(sum))").italic()
         }.font(.footnote)

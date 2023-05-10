@@ -41,7 +41,7 @@ struct SettingsView: View {
             VStack(spacing: 0) {
                 Form {
                     // MARK: Date Format
-                    Picker("Datumsformat", selection: $userData.dateFormat) {
+                    Picker("settings.pickerLabel.dateFormat", selection: $userData.dateFormat) {
                         ForEach(self.dateFormats, id: \.self) { (format: String) in
                             DateFormatRow(format: format)
                                 .tag(format)
@@ -49,13 +49,13 @@ struct SettingsView: View {
                     }
                     
                     // MARK: Import
-                    Button("Importieren") {
+                    Button("settings.buttonLabel.import") {
                         self.isImportingFile = true
                     }
                     .fileImporter(isPresented: $isImportingFile, allowedContentTypes: [.json], onCompletion: importFile(result:))
                     
                     // MARK: Export
-                    Button("Exportieren") {
+                    Button("settings.buttonLabel.export") {
                         self.exportingFile = BackupFile(overtimes: userData.overtimes)
                         self.isExportingFile = true
                     }
@@ -69,14 +69,14 @@ struct SettingsView: View {
                     
                     // MARK: Reset
                     Section {
-                        Button("Zurücksetzen", action: resetData)
+                        Button("settings.buttonLabel.reset", action: resetData)
                     }
                 }
                 
                 // MARK: Legal Footer
                 LegalFooter()
             }
-            .navigationTitle("Einstellungen")
+            .navigationTitle("settings.navigationTitle")
         }
     }
     
@@ -90,12 +90,12 @@ struct SettingsView: View {
             } catch {
                 print("Error decoding file.")
                 print(error)
-                AlertHandler.showError(title: "Error Importing Backup", error: error)
+                AlertHandler.showError(title: "alerts.errorImporting.title", error: error)
             }
         case .failure(let error):
             print("Error importing backup:")
             print(error)
-            AlertHandler.showError(title: "Error Importing Backup", error: error)
+            AlertHandler.showError(title: "alerts.errorImporting.title", error: error)
         }
     }
     
@@ -106,21 +106,21 @@ struct SettingsView: View {
         case .failure(let error):
             print("Error exporting backup:")
             print(error)
-            AlertHandler.showError(title: "Error Exporting Backup", error: error)
+            AlertHandler.showError(title: "alerts.errorExporting.title", error: error)
         }
     }
     
     func resetData() {
         let alert = UIAlertController(
-            title: "Überstunden löschen?",
-            message: "Mit dieser Aktion werden alle Überstunden unwiderruflich gelöscht. Wollen sie fortfahren?",
+            title: "alerts.reset.title",
+            message: "alerts.reset.message",
             preferredStyle: .alert
         )
-        alert.addAction(.init(title: "Löschen", style: .destructive, handler: { (_) in
+        alert.addAction(.init(title: "alerts.actions.delete", style: .destructive, handler: { (_) in
             // Delete entries
             userData.reset()
         }))
-        alert.addAction(.init(title: "Abbrechen", style: .cancel))
+        alert.addAction(.init(title: "alerts.actions.cancel", style: .cancel))
         AlertHandler.presentAlert(alert: alert)
     }
 }

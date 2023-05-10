@@ -30,6 +30,7 @@
 		AB624D29296CA7E500A0CF27 /* UserData+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624D28296CA7E500A0CF27 /* UserData+Preview.swift */; };
 		ABAD70352766391600F49854 /* ExperimentalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAD70342766391500F49854 /* ExperimentalView.swift */; };
 		ABAD70372766476F00F49854 /* CalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAD70362766476F00F49854 /* CalendarDayView.swift */; };
+		ABBFCFD72A0BD5A800903CDC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABBFCFD92A0BD5A800903CDC /* Localizable.strings */; };
 		ABF0998924FE92C100F030EF /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0998824FE92C100F030EF /* UserData.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,9 @@
 		AB624D28296CA7E500A0CF27 /* UserData+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+Preview.swift"; sourceTree = "<group>"; };
 		ABAD70342766391500F49854 /* ExperimentalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentalView.swift; sourceTree = "<group>"; };
 		ABAD70362766476F00F49854 /* CalendarDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayView.swift; sourceTree = "<group>"; };
+		ABBFCFD42A0BD52F00903CDC /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		ABBFCFD82A0BD5A800903CDC /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ABBFCFDA2A0BD5AF00903CDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ABF0998824FE92C100F030EF /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,12 +101,13 @@
 				AB79D07A275A515300C81DFA /* Model */,
 				AB79D07B275A517000C81DFA /* View */,
 				AB11A99824FD4C44002560D9 /* JFUtils.swift */,
+				AB624D28296CA7E500A0CF27 /* UserData+Preview.swift */,
+				AB43D50727E0DA1B00D9DE56 /* Extensions.swift */,
 				AB11A98424FD48F6002560D9 /* Assets.xcassets */,
 				AB11A98924FD48F7002560D9 /* LaunchScreen.storyboard */,
 				AB11A98C24FD48F7002560D9 /* Info.plist */,
 				AB11A98624FD48F6002560D9 /* Preview Content */,
-				AB624D28296CA7E500A0CF27 /* UserData+Preview.swift */,
-				AB43D50727E0DA1B00D9DE56 /* Extensions.swift */,
+				ABBFCFD92A0BD5A800903CDC /* Localizable.strings */,
 			);
 			path = Overtime;
 			sourceTree = "<group>";
@@ -192,11 +197,12 @@
 			};
 			buildConfigurationList = AB11A97624FD48F5002560D9 /* Build configuration list for PBXProject "Overtime" */;
 			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = en;
+			developmentRegion = de;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = AB11A97224FD48F5002560D9;
 			packageReferences = (
@@ -217,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB11A98B24FD48F7002560D9 /* LaunchScreen.storyboard in Resources */,
+				ABBFCFD72A0BD5A800903CDC /* Localizable.strings in Resources */,
 				AB11A98824FD48F6002560D9 /* Preview Assets.xcassets in Resources */,
 				AB11A98524FD48F6002560D9 /* Assets.xcassets in Resources */,
 			);
@@ -259,8 +266,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				AB11A98A24FD48F7002560D9 /* Base */,
+				ABBFCFD42A0BD52F00903CDC /* de */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		ABBFCFD92A0BD5A800903CDC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABBFCFD82A0BD5A800903CDC /* de */,
+				ABBFCFDA2A0BD5AF00903CDC /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -270,6 +287,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -331,6 +349,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -387,6 +406,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Overtime/Preview Content\"";
 				DEVELOPMENT_TEAM = 46C9Y785NA;
 				ENABLE_PREVIEWS = YES;
@@ -412,6 +432,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Overtime/Preview Content\"";
 				DEVELOPMENT_TEAM = 46C9Y785NA;
 				ENABLE_PREVIEWS = YES;
