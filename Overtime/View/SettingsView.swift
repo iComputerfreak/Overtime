@@ -6,8 +6,9 @@
 //  Copyright © 2020 Jonas Frey. All rights reserved.
 //
 
-import SwiftUI
 import JFUtils
+import SwiftData
+import SwiftUI
 import UniformTypeIdentifiers
 
 struct SettingsView: View {
@@ -32,10 +33,15 @@ struct SettingsView: View {
     ]
     
     @EnvironmentObject private var userData: UserData
+    @Environment(\.modelContext) private var context
+    
     @State private var isExportingFile = false
     @State private var isImportingFile = false
     @State private var exportingFile: BackupFile?
     @State private var showingResetAlert = false
+    
+    @Query
+    private var overtimes: [Overtime]
     
     var body: some View {
         NavigationView {
@@ -57,7 +63,7 @@ struct SettingsView: View {
                     
                     // MARK: Export
                     Button("settings.buttonLabel.export") {
-                        self.exportingFile = BackupFile(overtimes: userData.overtimes)
+                        self.exportingFile = BackupFile(overtimes: overtimes)
                         self.isExportingFile = true
                     }
                     .fileExporter(
@@ -101,7 +107,11 @@ struct SettingsView: View {
             do {
                 let data = try Data(contentsOf: url)
                 let file = try BackupFile(data: data)
-                userData.overtimes.append(contentsOf: file.overtimes)
+                // Map the OvertimeReps to real Overtimes
+                file.overtimes.forEach { rep in
+                    let overtime = Overtime(date: rep.date, duration: rep.duration)
+                    context.insert(overtime)
+                }
             } catch {
                 print("Error decoding file.")
                 print(error)
