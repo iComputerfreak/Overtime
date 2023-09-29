@@ -35,6 +35,7 @@ struct SettingsView: View {
     @State private var isExportingFile = false
     @State private var isImportingFile = false
     @State private var exportingFile: BackupFile?
+    @State private var showingResetAlert = false
     
     var body: some View {
         NavigationView {
@@ -69,7 +70,21 @@ struct SettingsView: View {
                     
                     // MARK: Reset
                     Section {
-                        Button("settings.buttonLabel.reset", action: resetData)
+                        Button("settings.buttonLabel.reset") {
+                            self.showingResetAlert = true
+                        }
+                        .alert(
+                            "alerts.reset.title",
+                            isPresented: $showingResetAlert) {
+                                Button("alerts.actions.delete", role: .destructive) {
+                                    // Delete entries
+                                    userData.reset()
+                                }
+                                Button("alerts.actions.cancel", role: .cancel) {}
+                            } message: {
+                                Text("alerts.reset.message")
+                            }
+                        
                     }
                 }
                 
@@ -108,20 +123,6 @@ struct SettingsView: View {
             print(error)
             AlertHandler.showError(title: "alerts.errorExporting.title", error: error)
         }
-    }
-    
-    func resetData() {
-        let alert = UIAlertController(
-            title: "alerts.reset.title",
-            message: "alerts.reset.message",
-            preferredStyle: .alert
-        )
-        alert.addAction(.init(title: "alerts.actions.delete", style: .destructive, handler: { (_) in
-            // Delete entries
-            userData.reset()
-        }))
-        alert.addAction(.init(title: "alerts.actions.cancel", style: .cancel))
-        AlertHandler.presentAlert(alert: alert)
     }
 }
 
