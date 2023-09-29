@@ -51,10 +51,7 @@ struct OvertimeMonthSection: View {
                         }
                         .tint(.red)
                         Button {
-                            //                                                    if let index = userData.overtimes.firstIndex(of: overtime) {
-                            //                                                        self.editingItem = userData.overtimes[index]
-                            //                                                        self.showingEditingView = true
-                            //                                                    }
+                            config.presentEditingSheet(overtime)
                         } label: {
                             Label("actionLabel.edit", systemImage: "pencil")
                         }
