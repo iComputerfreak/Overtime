@@ -60,10 +60,10 @@ struct OvertimeMonthSection: View {
         } label: {
             // Month header
             HStack {
-                Text("\(Calendar.current.monthSymbols[month - 1]) \(year.description)")
+                Text(verbatim: "\(Calendar.current.monthSymbols[month - 1]) \(year.description)")
                     .bold()
                 Spacer()
-                Text("\(JFUtils.timeString(totalDuration))")
+                Text(verbatim: "\(JFUtils.timeString(totalDuration))")
             }
         }
     }

@@ -24,9 +24,9 @@ struct DurationPicker: View {
     var body: some View {
         GeometryReader { proxy in
             HStack(spacing: 0) {
-                Picker(selection: self.$hours, label: Text("")) {
+                Picker(selection: self.$hours, label: Text(verbatim: "")) {
                     ForEach(0..<24) { i in
-                        Text("\(i)")
+                        Text(verbatim: "\(i)")
                     }
                 }
                 .pickerStyle(WheelPickerStyle())
@@ -41,7 +41,7 @@ struct DurationPicker: View {
                 
                 Picker(selection: self.$minutes, label: Text("min")) {
                     ForEach(0..<60) { i in
-                        Text("\(i)")
+                        Text(verbatim: "\(i)")
                     }
                 }
                 .pickerStyle(WheelPickerStyle())

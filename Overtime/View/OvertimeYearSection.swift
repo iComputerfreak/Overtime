@@ -20,6 +20,7 @@ struct OvertimeYearSection: View {
         overtimes
             .map { $0.date[.month] }
             .removingDuplicates()
+            .sorted(by: >)
     }
     
     init(year: Int, config: Binding<OvertimeViewConfig>) {
@@ -33,7 +34,7 @@ struct OvertimeYearSection: View {
     }
     
     var body: some View {
-        Section("\(year.description)") {
+        Section(header: Text(verbatim: "\(year.description)")) {
             ForEach(months, id: \.self) { (month: Int) in
                 OvertimeMonthSection(year: year, month: month, config: $config)
             }

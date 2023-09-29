@@ -1,5 +1,5 @@
 //
-//  AddOvertimeView.swift
+//  EditOvertimeView.swift
 //  Overtime
 //
 //  Created by Jonas Frey on 31.08.20.
@@ -10,7 +10,7 @@ import JFUtils
 import SwiftData
 import SwiftUI
 
-struct AddOvertimeView: View {
+struct EditOvertimeView: View {
     // Used to format the duration stepper label
     static let hoursFormatter = {
         let f = NumberFormatter()
@@ -58,18 +58,23 @@ struct AddOvertimeView: View {
                     HStack {
                         Text("newOvertime.stepperLabel.hours")
                         Spacer()
-                        Text("\(Self.hoursFormatter.string(from: NSNumber(value: hours))!)")
+                        Text(verbatim: "\(Self.hoursFormatter.string(from: NSNumber(value: hours))!)")
                     }
                 })
             }
-            Section(header: Text("newOvertime.sectionHeader.date")) {
-                DatePicker("", selection: $date, displayedComponents: .date)
+            Section(
+                header: Text("newOvertime.sectionHeader.date"),
+                footer: HStack {
+                    Image(systemName: "exclamationmark.triangle.fill")
+                    Text("newOvertime.sectionFooter.alreadyExistsMessage")
+                        .opacity(dateAlreadyExists ? 1 : 0)
+                }
+            ) {
+                DatePicker(selection: $date, displayedComponents: .date) {
+                    Text(verbatim: "")
+                }
                     .datePickerStyle(GraphicalDatePickerStyle())
                     .labelsHidden()
-                if dateAlreadyExists {
-                    // TODO: Localize and make nicer
-                    Text("Date already exists.")
-                }
             }
         }
         
@@ -84,6 +89,13 @@ struct AddOvertimeView: View {
                 }
                 .disabled(!formValid)
             }
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    self.dismiss()
+                } label: {
+                    Text("newOvertime.actionLabel.cancel")
+                }
+            }
         }
     }
     
@@ -93,10 +105,13 @@ struct AddOvertimeView: View {
     }
 }
 
-struct AddOvertimeView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            AddOvertimeView(editingItem: .constant(.init(date: .now, duration: 2.5 * .hour)))
-        }
+#Preview {
+    ModelPreview { overtime in
+        Text(verbatim: "")
+            .sheet(isPresented: .constant(true)) {
+                NavigationStack {
+                    EditOvertimeView(editingItem: .constant(overtime))
+                }
+            }
     }
 }

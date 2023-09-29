@@ -50,14 +50,9 @@ class UserData: ObservableObject {
     }
     
     func save() {
-        do {
-            // Save the collapse states
-            UserDefaults.standard.set(monthCollapseStates, forKey: Self.monthCollapseStatesKey)
-            UserDefaults.standard.set(weekCollapseStates, forKey: Self.weekCollapseStatesKey)
-        } catch {
-            print("Error encoding overtimes.")
-            print(error)
-        }
+        // Save the collapse states
+        UserDefaults.standard.set(monthCollapseStates, forKey: Self.monthCollapseStatesKey)
+        UserDefaults.standard.set(weekCollapseStates, forKey: Self.weekCollapseStatesKey)
     }
     
     /// Resets the user data stored in this object (except the date format)

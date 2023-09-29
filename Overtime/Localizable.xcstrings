@@ -1,61 +1,6 @@
 {
   "sourceLanguage" : "de",
   "strings" : {
-    "" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "%@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "%@ %@" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ %2$@"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "%lf" : {
-
-    },
-    "%lld" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        }
-      }
-    },
     "actionLabel.delete" : {
       "localizations" : {
         "de" : {
@@ -236,11 +181,22 @@
         }
       }
     },
-    "Date already exists." : {
-
-    },
-    "Error" : {
-
+    "Could not load model for previews" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not load model for previews"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "h" : {
       "localizations" : {
@@ -254,23 +210,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "h"
-          }
-        }
-      }
-    },
-    "KW %@, %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "KW %1$@, %2$@"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "KW %1$@, %2$@"
           }
         }
       }
@@ -312,13 +251,45 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hinzufügen"
+            "value" : "Speichern"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Add"
+            "value" : "Save"
+          }
+        }
+      }
+    },
+    "newOvertime.actionLabel.cancel" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abbrechen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
+    "newOvertime.errorEditing" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fehler beim Bearbeiten. Bitte versuchen Sie es erneut."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error editing the entry. Please try again."
           }
         }
       }
@@ -328,13 +299,29 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Neue Überstunden"
+            "value" : "Überstunden Bearbeiten"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "New Overtime"
+            "value" : "Edit Overtime"
+          }
+        }
+      }
+    },
+    "newOvertime.sectionFooter.alreadyExistsMessage" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Es existiert bereits ein Eintrag für dieses Datum."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There already exists an entry for this date."
           }
         }
       }
@@ -383,40 +370,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hours"
-          }
-        }
-      }
-    },
-    "overtimes.calendarWeekPrefix %lld" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "KW %lld"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Week %lld"
-          }
-        }
-      }
-    },
-    "overtimes.monthFooter.sumPrefix" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Summe"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sum"
           }
         }
       }
@@ -529,23 +482,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Date Format"
-          }
-        }
-      }
-    },
-    "Summe" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Summe"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sum"
           }
         }
       }

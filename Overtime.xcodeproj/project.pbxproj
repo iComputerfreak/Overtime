@@ -9,14 +9,13 @@
 /* Begin PBXBuildFile section */
 		AB08BA1C24FD6FE5003B6E3E /* OvertimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BA1B24FD6FE5003B6E3E /* OvertimeView.swift */; };
 		AB08BA1E24FD6FEB003B6E3E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BA1D24FD6FEB003B6E3E /* SettingsView.swift */; };
-		AB08BA2024FD7388003B6E3E /* AddOvertimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BA1F24FD7388003B6E3E /* AddOvertimeView.swift */; };
+		AB08BA2024FD7388003B6E3E /* EditOvertimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BA1F24FD7388003B6E3E /* EditOvertimeView.swift */; };
 		AB08BA2224FD759B003B6E3E /* DurationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BA2124FD759B003B6E3E /* DurationPicker.swift */; };
 		AB11A98324FD48F5002560D9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11A98224FD48F5002560D9 /* ContentView.swift */; };
 		AB11A98524FD48F6002560D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB11A98424FD48F6002560D9 /* Assets.xcassets */; };
 		AB11A98824FD48F6002560D9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB11A98724FD48F6002560D9 /* Preview Assets.xcassets */; };
 		AB11A98B24FD48F7002560D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB11A98924FD48F7002560D9 /* LaunchScreen.storyboard */; };
 		AB11A99324FD4977002560D9 /* OvertimeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11A99224FD4977002560D9 /* OvertimeRow.swift */; };
-		AB11A99524FD49A1002560D9 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11A99424FD49A1002560D9 /* Duration.swift */; };
 		AB11A99724FD4B02002560D9 /* Overtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11A99624FD4B02002560D9 /* Overtime.swift */; };
 		AB11A99924FD4C44002560D9 /* JFUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11A99824FD4C44002560D9 /* JFUtils.swift */; };
 		AB1BC65227F11352005960A3 /* OvertimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1BC65127F11352005960A3 /* OvertimeApp.swift */; };
@@ -27,18 +26,18 @@
 		AB624D232969CAF100A0CF27 /* BackupFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624D222969CAF100A0CF27 /* BackupFile.swift */; };
 		AB624D25296CA6CE00A0CF27 /* LegalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624D24296CA6CE00A0CF27 /* LegalFooter.swift */; };
 		AB624D27296CA78900A0CF27 /* DateFormatRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624D26296CA78900A0CF27 /* DateFormatRow.swift */; };
-		AB624D29296CA7E500A0CF27 /* UserData+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624D28296CA7E500A0CF27 /* UserData+Preview.swift */; };
 		AB6F334B2AC705E6007817CE /* SumFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334A2AC705E6007817CE /* SumFooter.swift */; };
 		AB6F334D2AC706CE007817CE /* OvertimeYearSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */; };
 		AB6F334F2AC70729007817CE /* OvertimeMonthSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */; };
-		ABAD70372766476F00F49854 /* CalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAD70362766476F00F49854 /* CalendarDayView.swift */; };
+		AB6F33532AC728A9007817CE /* PreviewSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F33522AC728A9007817CE /* PreviewSampleData.swift */; };
+		AB6F33562AC72C3D007817CE /* ModelPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F33552AC72C3D007817CE /* ModelPreview.swift */; };
 		ABF0998924FE92C100F030EF /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0998824FE92C100F030EF /* UserData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AB08BA1B24FD6FE5003B6E3E /* OvertimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeView.swift; sourceTree = "<group>"; };
 		AB08BA1D24FD6FEB003B6E3E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		AB08BA1F24FD7388003B6E3E /* AddOvertimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOvertimeView.swift; sourceTree = "<group>"; };
+		AB08BA1F24FD7388003B6E3E /* EditOvertimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditOvertimeView.swift; sourceTree = "<group>"; };
 		AB08BA2124FD759B003B6E3E /* DurationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationPicker.swift; sourceTree = "<group>"; };
 		AB11A97B24FD48F5002560D9 /* Overtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Overtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB11A98224FD48F5002560D9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,7 +46,6 @@
 		AB11A98A24FD48F7002560D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB11A98C24FD48F7002560D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB11A99224FD4977002560D9 /* OvertimeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeRow.swift; sourceTree = "<group>"; };
-		AB11A99424FD49A1002560D9 /* Duration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
 		AB11A99624FD4B02002560D9 /* Overtime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overtime.swift; sourceTree = "<group>"; };
 		AB11A99824FD4C44002560D9 /* JFUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFUtils.swift; sourceTree = "<group>"; };
 		AB1BC65127F11352005960A3 /* OvertimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeApp.swift; sourceTree = "<group>"; };
@@ -58,11 +56,11 @@
 		AB624D222969CAF100A0CF27 /* BackupFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupFile.swift; sourceTree = "<group>"; };
 		AB624D24296CA6CE00A0CF27 /* LegalFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalFooter.swift; sourceTree = "<group>"; };
 		AB624D26296CA78900A0CF27 /* DateFormatRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatRow.swift; sourceTree = "<group>"; };
-		AB624D28296CA7E500A0CF27 /* UserData+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+Preview.swift"; sourceTree = "<group>"; };
 		AB6F334A2AC705E6007817CE /* SumFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumFooter.swift; sourceTree = "<group>"; };
 		AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeYearSection.swift; sourceTree = "<group>"; };
 		AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeMonthSection.swift; sourceTree = "<group>"; };
-		ABAD70362766476F00F49854 /* CalendarDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayView.swift; sourceTree = "<group>"; };
+		AB6F33522AC728A9007817CE /* PreviewSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewSampleData.swift; sourceTree = "<group>"; };
+		AB6F33552AC72C3D007817CE /* ModelPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPreview.swift; sourceTree = "<group>"; };
 		ABF0998824FE92C100F030EF /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,8 +100,8 @@
 				AB79D07A275A515300C81DFA /* Model */,
 				AB79D07B275A517000C81DFA /* View */,
 				AB11A99824FD4C44002560D9 /* JFUtils.swift */,
-				AB624D28296CA7E500A0CF27 /* UserData+Preview.swift */,
 				AB43D50727E0DA1B00D9DE56 /* Extensions.swift */,
+				AB6F33542AC72C30007817CE /* Preview Helpers */,
 				AB11A98424FD48F6002560D9 /* Assets.xcassets */,
 				AB11A98924FD48F7002560D9 /* LaunchScreen.storyboard */,
 				AB11A98C24FD48F7002560D9 /* Info.plist */,
@@ -121,10 +119,18 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		AB6F33542AC72C30007817CE /* Preview Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AB6F33522AC728A9007817CE /* PreviewSampleData.swift */,
+				AB6F33552AC72C3D007817CE /* ModelPreview.swift */,
+			);
+			path = "Preview Helpers";
+			sourceTree = "<group>";
+		};
 		AB79D07A275A515300C81DFA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AB11A99424FD49A1002560D9 /* Duration.swift */,
 				AB11A99624FD4B02002560D9 /* Overtime.swift */,
 				ABF0998824FE92C100F030EF /* UserData.swift */,
 				AB624D222969CAF100A0CF27 /* BackupFile.swift */,
@@ -139,8 +145,7 @@
 				AB08BA1B24FD6FE5003B6E3E /* OvertimeView.swift */,
 				AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */,
 				AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */,
-				ABAD70362766476F00F49854 /* CalendarDayView.swift */,
-				AB08BA1F24FD7388003B6E3E /* AddOvertimeView.swift */,
+				AB08BA1F24FD7388003B6E3E /* EditOvertimeView.swift */,
 				AB08BA1D24FD6FEB003B6E3E /* SettingsView.swift */,
 				AB79D07C275A518E00C81DFA /* Components */,
 			);
@@ -240,8 +245,6 @@
 			files = (
 				AB624D27296CA78900A0CF27 /* DateFormatRow.swift in Sources */,
 				ABF0998924FE92C100F030EF /* UserData.swift in Sources */,
-				AB624D29296CA7E500A0CF27 /* UserData+Preview.swift in Sources */,
-				AB11A99524FD49A1002560D9 /* Duration.swift in Sources */,
 				AB08BA2224FD759B003B6E3E /* DurationPicker.swift in Sources */,
 				AB11A99724FD4B02002560D9 /* Overtime.swift in Sources */,
 				AB6F334D2AC706CE007817CE /* OvertimeYearSection.swift in Sources */,
@@ -249,9 +252,10 @@
 				AB6F334B2AC705E6007817CE /* SumFooter.swift in Sources */,
 				AB08BA1E24FD6FEB003B6E3E /* SettingsView.swift in Sources */,
 				AB08BA1C24FD6FE5003B6E3E /* OvertimeView.swift in Sources */,
-				ABAD70372766476F00F49854 /* CalendarDayView.swift in Sources */,
-				AB08BA2024FD7388003B6E3E /* AddOvertimeView.swift in Sources */,
+				AB6F33532AC728A9007817CE /* PreviewSampleData.swift in Sources */,
+				AB08BA2024FD7388003B6E3E /* EditOvertimeView.swift in Sources */,
 				AB43D50827E0DA1B00D9DE56 /* Extensions.swift in Sources */,
+				AB6F33562AC72C3D007817CE /* ModelPreview.swift in Sources */,
 				AB624D232969CAF100A0CF27 /* BackupFile.swift in Sources */,
 				AB624D25296CA6CE00A0CF27 /* LegalFooter.swift in Sources */,
 				AB11A99924FD4C44002560D9 /* JFUtils.swift in Sources */,
