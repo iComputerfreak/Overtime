@@ -15,7 +15,8 @@ struct CalendarDayView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("\(overtime.duration.hours)")
+                // TODO: Revise
+                Text("\(overtime.duration / .hour)")
                     .font(.headline)
                 Spacer()
             }

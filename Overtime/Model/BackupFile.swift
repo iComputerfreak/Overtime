@@ -24,7 +24,8 @@ struct BackupFile: FileDocument {
     }
     
     init(data: Data) throws {
-        self.overtimes = try JSONDecoder().decode([Overtime].self, from: data)
+//        self.overtimes = try JSONDecoder().decode([Overtime].self, from: data)
+        self.overtimes = []
     }
     
     init(configuration: ReadConfiguration) throws {
@@ -37,7 +38,7 @@ struct BackupFile: FileDocument {
     }
     
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
-        let data = try JSONEncoder().encode(overtimes)
+        let data = Data()// try JSONEncoder().encode(overtimes)
         return FileWrapper(regularFileWithContents: data)
     }
 }

@@ -6,6 +6,7 @@
 //  Copyright © 2022 Jonas Frey. All rights reserved.
 //
 
+import SwiftData
 import SwiftUI
 
 @main
@@ -18,6 +19,7 @@ struct OvertimeApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .modelContainer(for: [Overtime.self])
                 .environmentObject(UserData())
         }
     }

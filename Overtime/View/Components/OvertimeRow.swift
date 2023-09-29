@@ -27,6 +27,6 @@ struct OvertimeRow: View {
 
 struct OvertimeRow_Previews: PreviewProvider {
     static var previews: some View {
-        OvertimeRow(overtime: Overtime(date: Date(), duration: Duration(hours: 2, minutes: 30)))
+        OvertimeRow(overtime: Overtime(date: Date(), duration: 2 * .hour + 30 * .minute))
     }
 }

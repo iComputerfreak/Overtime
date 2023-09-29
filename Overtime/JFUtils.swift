@@ -24,4 +24,9 @@ struct JFUtils {
         // 1h 10m
         return "\(sign)\(duration.hours)h \(duration.minutes % 60)m"
     }
+    
+    static func timeString(_ duration: TimeInterval) -> String {
+        // TODO: Implement
+        return ""
+    }
 }

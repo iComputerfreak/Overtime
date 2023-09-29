@@ -6,42 +6,49 @@
 //  Copyright © 2020 Jonas Frey. All rights reserved.
 //
 
-import SwiftUI
 import JFUtils
+import SwiftData
+import SwiftUI
 
 struct AddOvertimeView: View {
-    
-    @Environment(\.presentationMode) private var presentationMode
-    @Binding var overtimes: [Overtime]
-    
-    let editingItem: Overtime?
-    
-    @State private var date: Date = Date()
-    @State private var hours: Double = 0.0
-    
-    var hoursFormatter: NumberFormatter {
+    // Used to format the duration stepper label
+    static let hoursFormatter = {
         let f = NumberFormatter()
         f.maximumFractionDigits = 2
         f.minimumFractionDigits = 2
         return f
+    }()
+    
+    @Environment(\.dismiss) private var dismiss
+    
+    @Binding private var editingItem: Overtime
+    @State private var date: Date
+    @State private var hours: Double
+    
+    // To check against already existing dates
+    @Query
+    private var overtimes: [Overtime]
+    
+    var dateAlreadyExists: Bool {
+        overtimes.contains { overtime in
+            let date = overtime.date
+            return date[.day] == self.date[.day] &&
+            date[.month] == self.date[.month] &&
+            date[.year] == self.date[.year] &&
+            overtime.id != editingItem.id
+        }
     }
     
-    // Using editing mode
-    init(overtimes: Binding<[Overtime]>, overtime: Overtime?) {
-        let date = overtime?.date ?? Date()
-        let hours = Double(overtime?.duration.minutes ?? 0) / 60.0
-        self.init(overtimes: overtimes, date: date, hours: hours, editingItem: overtime)
+    /// Returns whether the current form is valid
+    var formValid: Bool {
+        // The form is valid, if the selected date does not already exist in the list of overtimes
+        !dateAlreadyExists
     }
     
-    init(overtimes: Binding<[Overtime]>) {
-        self.init(overtimes: overtimes, date: Date(), hours: 0.0, editingItem: nil)
-    }
-    
-    init(overtimes: Binding<[Overtime]>, date: Date, hours: Double, editingItem: Overtime?) {
-        self._date = State(wrappedValue: date)
-        self._hours = State(wrappedValue: hours)
-        self.editingItem = editingItem
-        self._overtimes = overtimes
+    init(editingItem: Binding<Overtime>) {
+        self._editingItem = editingItem
+        self._date = State(wrappedValue: editingItem.wrappedValue.date)
+        self._hours = State(wrappedValue: editingItem.wrappedValue.duration / .hour)
     }
     
     var body: some View {
@@ -51,7 +58,7 @@ struct AddOvertimeView: View {
                     HStack {
                         Text("newOvertime.stepperLabel.hours")
                         Spacer()
-                        Text("\(hoursFormatter.string(from: NSNumber(value: hours))!)")
+                        Text("\(Self.hoursFormatter.string(from: NSNumber(value: hours))!)")
                     }
                 })
             }
@@ -59,53 +66,37 @@ struct AddOvertimeView: View {
                 DatePicker("", selection: $date, displayedComponents: .date)
                     .datePickerStyle(GraphicalDatePickerStyle())
                     .labelsHidden()
+                if dateAlreadyExists {
+                    // TODO: Localize and make nicer
+                    Text("Date already exists.")
+                }
             }
         }
         
         .navigationTitle("newOvertime.navigationTitle")
-        .navigationBarItems(trailing: Button(action: {
-            // If we are adding a new item, we need to ensure that there is no item for that day yet
-            if editingItem == nil {
-                guard !overtimes.contains(where: {
-                    $0.date[.day] == date[.day] && $0.date[.month] == date[.month] && $0.date[.year] == date[.year]
-                }) else {
-                    // We cannot add a overtime for a date, that already has a value!
-                    AlertHandler.showSimpleAlert(
-                        title: "alerts.overtimeAlreadyAdded.title",
-                        message: "alerts.overtimeAlreadyAdded.message"
-                    )
-                    return
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    self.commitChanges()
+                    self.dismiss()
+                } label: {
+                    Text("newOvertime.actionLabel.add")
                 }
+                .disabled(!formValid)
             }
-                        
-            // Add the new overtime to the dictionary
-            let hours = Int(self.hours)
-            // We first cut off all full hours, so we only get the remaining minutes
-            // Then we multiply that value with 60 and round to full integer digits to get the minutes
-            let minutes = Int((self.hours.truncatingRemainder(dividingBy: 1) * 60).rounded())
-            let duration = Duration(hours: hours, minutes: minutes)
-            let newOvertime = Overtime(date: date, duration: duration)
-            
-            if let editingItem = editingItem {
-                // Editing
-                let index = overtimes.firstIndex(of: editingItem)!
-                overtimes[index] = newOvertime
-            } else {
-                // Adding
-                overtimes.append(newOvertime)
-            }
-            
-            self.presentationMode.wrappedValue.dismiss()
-        }, label: {
-            Text("newOvertime.actionLabel.add")
-        }))
+        }
+    }
+    
+    private func commitChanges() {
+        editingItem.date = date
+        editingItem.duration = hours * .hour
     }
 }
 
 struct AddOvertimeView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            AddOvertimeView(overtimes: .constant([]))
+            AddOvertimeView(editingItem: .constant(.init(date: .now, duration: 2.5 * .hour)))
         }
     }
 }

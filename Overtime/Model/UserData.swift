@@ -51,7 +51,7 @@ class UserData: ObservableObject, Codable {
     
     // MARK: Convenience properties
     
-    var totalOvertimeDuration: Duration {
+    var totalOvertimeDuration: TimeInterval {
         overtimes.map(\.duration).reduce(.zero, +)
     }
     
@@ -90,7 +90,8 @@ class UserData: ObservableObject, Codable {
         }
         do {
             // Deocde the list of overtimes from the plist data
-            return try PropertyListDecoder().decode([Overtime].self, from: plist)
+//            return try PropertyListDecoder().decode([Overtime].self, from: plist)
+            return []
         } catch let e {
             // Error decoding the overtimes. Maybe the app updated?
             print("Error loading overtimes.")
@@ -106,8 +107,8 @@ class UserData: ObservableObject, Codable {
     func save() {
         do {
             // Encode the overtimes and save them to UserDefaults
-            let plist = try PropertyListEncoder().encode(self.overtimes)
-            UserDefaults.standard.set(plist, forKey: JFUtils.overtimesKey)
+//            let plist = try PropertyListEncoder().encode([Overtime]())
+//            UserDefaults.standard.set(plist, forKey: JFUtils.overtimesKey)
             // Save the collapse states
             UserDefaults.standard.set(monthCollapseStates, forKey: Self.monthCollapseStatesKey)
             UserDefaults.standard.set(weekCollapseStates, forKey: Self.weekCollapseStatesKey)
@@ -126,10 +127,13 @@ class UserData: ObservableObject, Codable {
     
     // MARK: - Codable Conformance
     
+    // TODO: Revise
+    
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.dateFormat = try container.decode(String.self, forKey: .dateFormat)
-        self.overtimes = try container.decode([Overtime].self, forKey: .overtimes)
+//        self.overtimes = try container.decode([Overtime].self, forKey: .overtimes)
+        self.overtimes = []
         self.monthCollapseStates = try container.decode([String].self, forKey: .monthCollapseStates)
         self.weekCollapseStates = try container.decode([String].self, forKey: .weekCollapseStates)
     }
@@ -137,7 +141,7 @@ class UserData: ObservableObject, Codable {
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(dateFormat, forKey: .dateFormat)
-        try container.encode(overtimes, forKey: .overtimes)
+//        try container.encode(overtimes, forKey: .overtimes)
         try container.encode(monthCollapseStates, forKey: .monthCollapseStates)
         try container.encode(weekCollapseStates, forKey: .weekCollapseStates)
     }

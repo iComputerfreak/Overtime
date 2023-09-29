@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Duration: AdditiveArithmetic, Codable {
+struct Duration: AdditiveArithmetic, Codable, Hashable {
     
     let negative: Bool
     let seconds: Int

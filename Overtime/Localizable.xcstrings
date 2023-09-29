@@ -43,6 +43,9 @@
         }
       }
     },
+    "%lf" : {
+
+    },
     "%lld" : {
       "localizations" : {
         "en" : {
@@ -233,6 +236,12 @@
         }
       }
     },
+    "Date already exists." : {
+
+    },
+    "Error" : {
+
+    },
     "h" : {
       "localizations" : {
         "de" : {
@@ -250,6 +259,7 @@
       }
     },
     "KW %@, %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -378,6 +388,7 @@
       }
     },
     "overtimes.calendarWeekPrefix %lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -394,6 +405,7 @@
       }
     },
     "overtimes.monthFooter.sumPrefix" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -522,6 +534,7 @@
       }
     },
     "Summe" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

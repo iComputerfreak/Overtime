@@ -24,12 +24,13 @@
 		AB43D50827E0DA1B00D9DE56 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB43D50727E0DA1B00D9DE56 /* Extensions.swift */; };
 		AB4920212AC6EAE800FDDC13 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AB4920202AC6EAE800FDDC13 /* Localizable.xcstrings */; };
 		AB624D1F29690B6E00A0CF27 /* JFUtils in Frameworks */ = {isa = PBXBuildFile; productRef = AB624D1E29690B6E00A0CF27 /* JFUtils */; };
-		AB624D2129691AAF00A0CF27 /* OvertimeViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624D2029691AAF00A0CF27 /* OvertimeViewHelper.swift */; };
 		AB624D232969CAF100A0CF27 /* BackupFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624D222969CAF100A0CF27 /* BackupFile.swift */; };
 		AB624D25296CA6CE00A0CF27 /* LegalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624D24296CA6CE00A0CF27 /* LegalFooter.swift */; };
 		AB624D27296CA78900A0CF27 /* DateFormatRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624D26296CA78900A0CF27 /* DateFormatRow.swift */; };
 		AB624D29296CA7E500A0CF27 /* UserData+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624D28296CA7E500A0CF27 /* UserData+Preview.swift */; };
-		ABAD70352766391600F49854 /* ExperimentalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAD70342766391500F49854 /* ExperimentalView.swift */; };
+		AB6F334B2AC705E6007817CE /* SumFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334A2AC705E6007817CE /* SumFooter.swift */; };
+		AB6F334D2AC706CE007817CE /* OvertimeYearSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */; };
+		AB6F334F2AC70729007817CE /* OvertimeMonthSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */; };
 		ABAD70372766476F00F49854 /* CalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAD70362766476F00F49854 /* CalendarDayView.swift */; };
 		ABF0998924FE92C100F030EF /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0998824FE92C100F030EF /* UserData.swift */; };
 /* End PBXBuildFile section */
@@ -54,12 +55,13 @@
 		AB43D50727E0DA1B00D9DE56 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AB49201F2AC6EAE800FDDC13 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/LaunchScreen.xcstrings; sourceTree = "<group>"; };
 		AB4920202AC6EAE800FDDC13 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		AB624D2029691AAF00A0CF27 /* OvertimeViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeViewHelper.swift; sourceTree = "<group>"; };
 		AB624D222969CAF100A0CF27 /* BackupFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupFile.swift; sourceTree = "<group>"; };
 		AB624D24296CA6CE00A0CF27 /* LegalFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalFooter.swift; sourceTree = "<group>"; };
 		AB624D26296CA78900A0CF27 /* DateFormatRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatRow.swift; sourceTree = "<group>"; };
 		AB624D28296CA7E500A0CF27 /* UserData+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+Preview.swift"; sourceTree = "<group>"; };
-		ABAD70342766391500F49854 /* ExperimentalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentalView.swift; sourceTree = "<group>"; };
+		AB6F334A2AC705E6007817CE /* SumFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumFooter.swift; sourceTree = "<group>"; };
+		AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeYearSection.swift; sourceTree = "<group>"; };
+		AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeMonthSection.swift; sourceTree = "<group>"; };
 		ABAD70362766476F00F49854 /* CalendarDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayView.swift; sourceTree = "<group>"; };
 		ABF0998824FE92C100F030EF /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,8 +137,8 @@
 			children = (
 				AB11A98224FD48F5002560D9 /* ContentView.swift */,
 				AB08BA1B24FD6FE5003B6E3E /* OvertimeView.swift */,
-				AB624D2029691AAF00A0CF27 /* OvertimeViewHelper.swift */,
-				ABAD70342766391500F49854 /* ExperimentalView.swift */,
+				AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */,
+				AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */,
 				ABAD70362766476F00F49854 /* CalendarDayView.swift */,
 				AB08BA1F24FD7388003B6E3E /* AddOvertimeView.swift */,
 				AB08BA1D24FD6FEB003B6E3E /* SettingsView.swift */,
@@ -152,6 +154,7 @@
 				AB11A99224FD4977002560D9 /* OvertimeRow.swift */,
 				AB624D24296CA6CE00A0CF27 /* LegalFooter.swift */,
 				AB624D26296CA78900A0CF27 /* DateFormatRow.swift */,
+				AB6F334A2AC705E6007817CE /* SumFooter.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -235,20 +238,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABAD70352766391600F49854 /* ExperimentalView.swift in Sources */,
 				AB624D27296CA78900A0CF27 /* DateFormatRow.swift in Sources */,
 				ABF0998924FE92C100F030EF /* UserData.swift in Sources */,
 				AB624D29296CA7E500A0CF27 /* UserData+Preview.swift in Sources */,
 				AB11A99524FD49A1002560D9 /* Duration.swift in Sources */,
 				AB08BA2224FD759B003B6E3E /* DurationPicker.swift in Sources */,
 				AB11A99724FD4B02002560D9 /* Overtime.swift in Sources */,
+				AB6F334D2AC706CE007817CE /* OvertimeYearSection.swift in Sources */,
+				AB6F334F2AC70729007817CE /* OvertimeMonthSection.swift in Sources */,
+				AB6F334B2AC705E6007817CE /* SumFooter.swift in Sources */,
 				AB08BA1E24FD6FEB003B6E3E /* SettingsView.swift in Sources */,
 				AB08BA1C24FD6FE5003B6E3E /* OvertimeView.swift in Sources */,
 				ABAD70372766476F00F49854 /* CalendarDayView.swift in Sources */,
 				AB08BA2024FD7388003B6E3E /* AddOvertimeView.swift in Sources */,
 				AB43D50827E0DA1B00D9DE56 /* Extensions.swift in Sources */,
 				AB624D232969CAF100A0CF27 /* BackupFile.swift in Sources */,
-				AB624D2129691AAF00A0CF27 /* OvertimeViewHelper.swift in Sources */,
 				AB624D25296CA6CE00A0CF27 /* LegalFooter.swift in Sources */,
 				AB11A99924FD4C44002560D9 /* JFUtils.swift in Sources */,
 				AB11A98324FD48F5002560D9 /* ContentView.swift in Sources */,
@@ -325,7 +329,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -383,7 +387,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -407,7 +411,7 @@
 				INFOPLIST_FILE = Overtime/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Overtime;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -434,7 +438,7 @@
 				INFOPLIST_FILE = Overtime/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Overtime;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
