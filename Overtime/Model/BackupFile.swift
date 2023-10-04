@@ -12,7 +12,6 @@ import SwiftUI
 
 /// Represents a backup file that contains Overtime data
 struct BackupFile: FileDocument {
-    
     static var readableContentTypes: [UTType] {
         [.json]
     }

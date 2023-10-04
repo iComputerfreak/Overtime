@@ -23,7 +23,8 @@ struct JFUtils {
         return f
     }()
     
-    static let overtimesKey = "overtimes"
+    static let legacyOvertimesKey = "overtimes"
+    static let legacyMigrationKey = "legacyMigrationComplete"
     
     static func timeString(_ duration: TimeInterval) -> String {
         let durationStart = Date(timeIntervalSince1970: 0)

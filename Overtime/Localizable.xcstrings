@@ -33,6 +33,22 @@
         }
       }
     },
+    "alert.okButton" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
+          }
+        }
+      }
+    },
     "alerts.actions.cancel" : {
       "localizations" : {
         "de" : {
@@ -209,6 +225,54 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "m"
+          }
+        }
+      }
+    },
+    "migration.alert.errorMessage %@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Es gab einen Fehler beim Migrieren der alten Daten: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error occurred while migrating the old data: %@"
+          }
+        }
+      }
+    },
+    "migration.alert.errorTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fehler"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        }
+      }
+    },
+    "migration.progressText" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lade alte Daten..."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading old data..."
           }
         }
       }
@@ -513,7 +577,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Month Style"
           }
         }

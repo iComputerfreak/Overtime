@@ -51,7 +51,8 @@ class UserData: ObservableObject {
     
     init() {
         // Load data from UserDefaults (default: 'Sun, 5. Jan')
-        self.dateFormat = UserDefaults.standard.string(forKey: Self.dateFormatKey) ?? "E, d. MMM"
+        let dateFormat = UserDefaults.standard.string(forKey: Self.dateFormatKey) ?? "E, d. MMM"
+        self.dateFormat = dateFormat
         self.monthSectionStyle = (UserDefaults.standard.string(forKey: Self.monthSectionStyleKey)
             .map(MonthSectionStyle.init(rawValue:)) ?? nil) ?? .defaultValue
         self.monthCollapseStates = UserDefaults.standard.array(forKey: Self.monthCollapseStatesKey) as? [String] ?? []
@@ -60,11 +61,13 @@ class UserData: ObservableObject {
     
     func save() {
         // Save the collapse states
+        UserDefaults.standard.set(dateFormat, forKey: Self.dateFormatKey)
+        UserDefaults.standard.set(monthSectionStyle, forKey: Self.monthSectionStyleKey)
         UserDefaults.standard.set(monthCollapseStates, forKey: Self.monthCollapseStatesKey)
         UserDefaults.standard.set(weekCollapseStates, forKey: Self.weekCollapseStatesKey)
     }
     
-    /// Resets the user data stored in this object (except the date format)
+    /// Resets the content stored in this object
     func reset() {
         self.monthCollapseStates = []
         self.weekCollapseStates = []

@@ -19,7 +19,6 @@
 		AB11A99724FD4B02002560D9 /* Overtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11A99624FD4B02002560D9 /* Overtime.swift */; };
 		AB11A99924FD4C44002560D9 /* JFUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11A99824FD4C44002560D9 /* JFUtils.swift */; };
 		AB1BC65227F11352005960A3 /* OvertimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1BC65127F11352005960A3 /* OvertimeApp.swift */; };
-		AB1BC65427F113DD005960A3 /* MigrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1BC65327F113DD005960A3 /* MigrationManager.swift */; };
 		AB43D50827E0DA1B00D9DE56 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB43D50727E0DA1B00D9DE56 /* Extensions.swift */; };
 		AB4920212AC6EAE800FDDC13 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AB4920202AC6EAE800FDDC13 /* Localizable.xcstrings */; };
 		AB624D1F29690B6E00A0CF27 /* JFUtils in Frameworks */ = {isa = PBXBuildFile; productRef = AB624D1E29690B6E00A0CF27 /* JFUtils */; };
@@ -28,6 +27,7 @@
 		AB624D27296CA78900A0CF27 /* DateFormatRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624D26296CA78900A0CF27 /* DateFormatRow.swift */; };
 		AB6A3E092ACCD42B00431635 /* MonthSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A3E082ACCD42B00431635 /* MonthSection.swift */; };
 		AB6A3E0B2ACDA8F800431635 /* MonthSectionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A3E0A2ACDA8F800431635 /* MonthSectionStyle.swift */; };
+		AB6A3E0D2ACDBC1E00431635 /* MigrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A3E0C2ACDBC1E00431635 /* MigrationView.swift */; };
 		AB6F334B2AC705E6007817CE /* SumFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334A2AC705E6007817CE /* SumFooter.swift */; };
 		AB6F334D2AC706CE007817CE /* OvertimeYearSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */; };
 		AB6F334F2AC70729007817CE /* OvertimeMonthSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */; };
@@ -51,7 +51,6 @@
 		AB11A99624FD4B02002560D9 /* Overtime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overtime.swift; sourceTree = "<group>"; };
 		AB11A99824FD4C44002560D9 /* JFUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFUtils.swift; sourceTree = "<group>"; };
 		AB1BC65127F11352005960A3 /* OvertimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeApp.swift; sourceTree = "<group>"; };
-		AB1BC65327F113DD005960A3 /* MigrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationManager.swift; sourceTree = "<group>"; };
 		AB43D50727E0DA1B00D9DE56 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AB49201F2AC6EAE800FDDC13 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/LaunchScreen.xcstrings; sourceTree = "<group>"; };
 		AB4920202AC6EAE800FDDC13 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -60,6 +59,7 @@
 		AB624D26296CA78900A0CF27 /* DateFormatRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatRow.swift; sourceTree = "<group>"; };
 		AB6A3E082ACCD42B00431635 /* MonthSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSection.swift; sourceTree = "<group>"; };
 		AB6A3E0A2ACDA8F800431635 /* MonthSectionStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSectionStyle.swift; sourceTree = "<group>"; };
+		AB6A3E0C2ACDBC1E00431635 /* MigrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationView.swift; sourceTree = "<group>"; };
 		AB6F334A2AC705E6007817CE /* SumFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumFooter.swift; sourceTree = "<group>"; };
 		AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeYearSection.swift; sourceTree = "<group>"; };
 		AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeMonthSection.swift; sourceTree = "<group>"; };
@@ -100,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				AB1BC65127F11352005960A3 /* OvertimeApp.swift */,
-				AB1BC65327F113DD005960A3 /* MigrationManager.swift */,
 				AB79D07A275A515300C81DFA /* Model */,
 				AB79D07B275A517000C81DFA /* View */,
 				AB11A99824FD4C44002560D9 /* JFUtils.swift */,
@@ -146,6 +145,7 @@
 		AB79D07B275A517000C81DFA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AB6A3E0C2ACDBC1E00431635 /* MigrationView.swift */,
 				AB11A98224FD48F5002560D9 /* ContentView.swift */,
 				AB08BA1B24FD6FE5003B6E3E /* OvertimeView.swift */,
 				AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */,
@@ -252,6 +252,7 @@
 			files = (
 				AB624D27296CA78900A0CF27 /* DateFormatRow.swift in Sources */,
 				ABF0998924FE92C100F030EF /* UserData.swift in Sources */,
+				AB6A3E0D2ACDBC1E00431635 /* MigrationView.swift in Sources */,
 				AB08BA2224FD759B003B6E3E /* DurationPicker.swift in Sources */,
 				AB11A99724FD4B02002560D9 /* Overtime.swift in Sources */,
 				AB6F334D2AC706CE007817CE /* OvertimeYearSection.swift in Sources */,
@@ -270,7 +271,6 @@
 				AB6A3E0B2ACDA8F800431635 /* MonthSectionStyle.swift in Sources */,
 				AB11A98324FD48F5002560D9 /* ContentView.swift in Sources */,
 				AB1BC65227F11352005960A3 /* OvertimeApp.swift in Sources */,
-				AB1BC65427F113DD005960A3 /* MigrationManager.swift in Sources */,
 				AB11A99324FD4977002560D9 /* OvertimeRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

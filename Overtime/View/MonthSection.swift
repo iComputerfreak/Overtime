@@ -14,6 +14,7 @@ import SwiftUI
 /// The style/type of the section depends on the ``UserData/monthSectionStyle`` value.
 struct MonthSection<Content: View>: View {
     @Environment(\.monthSectionStyle) private var monthSectionStyle
+    @EnvironmentObject private var userData: UserData
     
     let year: Int
     let month: Int

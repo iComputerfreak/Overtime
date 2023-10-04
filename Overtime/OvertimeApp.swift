@@ -12,13 +12,20 @@ import SwiftUI
 @main
 struct OvertimeApp: App {
     
-    init() {
-        MigrationManager().migrate()
+    @AppStorage(JFUtils.legacyMigrationKey) private var legacyMigrationComplete: Bool = false
+    
+    var needsLegacyMigration: Bool {
+        // If there is no migration key set and the data is non-empty, we need to migrate
+        return !legacyMigrationComplete && !(UserDefaults.standard.data(forKey: JFUtils.legacyOvertimesKey)?.isEmpty ?? true)
     }
     
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .sheet(isPresented: .constant(needsLegacyMigration)) {
+                    MigrationView()
+                        .interactiveDismissDisabled()
+                }
                 .modelContainer(for: [Overtime.self])
                 .environmentObject(UserData())
         }
