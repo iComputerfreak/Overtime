@@ -11,6 +11,7 @@ import SwiftUI
 
 struct OvertimeMonthSection: View {
     @Environment(\.modelContext) private var context
+    @EnvironmentObject private var userData: UserData
     
     let year: Int
     let month: Int
@@ -32,25 +33,42 @@ struct OvertimeMonthSection: View {
     
     var body: some View {
         MonthSection(year: year, month: month) {
-            ForEach(overtimes) { (overtime: Overtime) in
-                OvertimeRow(overtime: overtime)
-                // Default row height
-                    .frame(height: 22)
-                    .deleteDisabled(false)
-                    .swipeActions(allowsFullSwipe: true) {
-                        Button {
-                            context.delete(overtime)
-                        } label: {
-                            Label("actionLabel.delete", systemImage: "trash")
-                        }
-                        .tint(.red)
-                        Button {
-                            config.presentEditingSheet(overtime)
-                        } label: {
-                            Label("actionLabel.edit", systemImage: "pencil")
-                        }
+            ForEach(overtimes) { overtime in
+                // TODO: For some reason extracting this in a view does not work. Even when using @ObservedObject
+//                OvertimeRow(overtime: overtime)
+                HStack {
+                    // Date
+                    Text(userData.dateFormatter.string(from: overtime.date))
+                    Spacer()
+                    // Time
+                    Text(JFUtils.timeString(overtime.duration))
+                        .foregroundStyle(color(for: overtime.duration))
+                }
+                .deleteDisabled(false)
+                .swipeActions(allowsFullSwipe: true) {
+                    Button {
+                        context.delete(overtime)
+                    } label: {
+                        Label("actionLabel.delete", systemImage: "trash")
                     }
+                    .tint(.red)
+                    Button {
+                        config.presentEditingSheet(overtime)
+                    } label: {
+                        Label("actionLabel.edit", systemImage: "pencil")
+                    }
+                }
             }
+        }
+    }
+    
+    func color(for duration: TimeInterval) -> Color {
+        if duration < 0 {
+            return .red
+        } else if duration > 0 {
+            return .green
+        } else {
+            return .primary
         }
     }
 }

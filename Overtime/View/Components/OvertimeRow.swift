@@ -10,7 +10,7 @@ import SwiftUI
 
 struct OvertimeRow: View {
         
-    let overtime: Overtime
+    @ObservedObject var overtime: Overtime
     
     @EnvironmentObject private var userData: UserData
     
@@ -21,6 +21,17 @@ struct OvertimeRow: View {
             Spacer()
             // Time
             Text(JFUtils.timeString(overtime.duration))
+                .foregroundStyle(color(for: overtime.duration))
+        }
+    }
+    
+    func color(for duration: TimeInterval) -> Color {
+        if duration < 0 {
+            return .red
+        } else if duration > 0 {
+            return .green
+        } else {
+            return .primary
         }
     }
 }

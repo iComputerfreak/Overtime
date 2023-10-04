@@ -44,7 +44,7 @@ struct OvertimeView: View {
         // Otherwise we will run into a nil editingItem inside the sheet modifier
         _ = config.editingItem
         return NavigationView {
-            VStack {
+            VStack(spacing: 0) {
                 List {
                     // MARK: Years
                     ForEach(years, id: \.self) { (year: Int) in
@@ -60,9 +60,9 @@ struct OvertimeView: View {
                         Image(systemName: "plus")
                     }
                 }
-                // Sum
-                SumFooter()
                 Divider()
+                SumFooter()
+                    .padding(.vertical, 8)
                 .navigationTitle("overtimes.title")
                 .sheet(isPresented: $config.showingEditingView) {
                     NavigationStack {
@@ -80,7 +80,9 @@ struct OvertimeView: View {
 
 struct OvertimeView_Previews: PreviewProvider {
     static var previews: some View {
-        OvertimeView()
-            .environmentObject(UserData())
+        TabView {
+            OvertimeView()
+                .environmentObject(UserData())
+        }
     }
 }

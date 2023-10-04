@@ -15,7 +15,6 @@
 		AB11A98524FD48F6002560D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB11A98424FD48F6002560D9 /* Assets.xcassets */; };
 		AB11A98824FD48F6002560D9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB11A98724FD48F6002560D9 /* Preview Assets.xcassets */; };
 		AB11A98B24FD48F7002560D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB11A98924FD48F7002560D9 /* LaunchScreen.storyboard */; };
-		AB11A99324FD4977002560D9 /* OvertimeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11A99224FD4977002560D9 /* OvertimeRow.swift */; };
 		AB11A99724FD4B02002560D9 /* Overtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11A99624FD4B02002560D9 /* Overtime.swift */; };
 		AB11A99924FD4C44002560D9 /* JFUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11A99824FD4C44002560D9 /* JFUtils.swift */; };
 		AB1BC65227F11352005960A3 /* OvertimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1BC65127F11352005960A3 /* OvertimeApp.swift */; };
@@ -28,6 +27,7 @@
 		AB6A3E092ACCD42B00431635 /* MonthSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A3E082ACCD42B00431635 /* MonthSection.swift */; };
 		AB6A3E0B2ACDA8F800431635 /* MonthSectionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A3E0A2ACDA8F800431635 /* MonthSectionStyle.swift */; };
 		AB6A3E0D2ACDBC1E00431635 /* MigrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A3E0C2ACDBC1E00431635 /* MigrationView.swift */; };
+		AB6A3E102ACE16A300431635 /* OvertimeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A3E0F2ACE16A300431635 /* OvertimeRow.swift */; };
 		AB6F334B2AC705E6007817CE /* SumFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334A2AC705E6007817CE /* SumFooter.swift */; };
 		AB6F334D2AC706CE007817CE /* OvertimeYearSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */; };
 		AB6F334F2AC70729007817CE /* OvertimeMonthSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */; };
@@ -47,7 +47,6 @@
 		AB11A98724FD48F6002560D9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB11A98A24FD48F7002560D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB11A98C24FD48F7002560D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB11A99224FD4977002560D9 /* OvertimeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeRow.swift; sourceTree = "<group>"; };
 		AB11A99624FD4B02002560D9 /* Overtime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overtime.swift; sourceTree = "<group>"; };
 		AB11A99824FD4C44002560D9 /* JFUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFUtils.swift; sourceTree = "<group>"; };
 		AB1BC65127F11352005960A3 /* OvertimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeApp.swift; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		AB6A3E0A2ACDA8F800431635 /* MonthSectionStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSectionStyle.swift; sourceTree = "<group>"; };
 		AB6A3E0C2ACDBC1E00431635 /* MigrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationView.swift; sourceTree = "<group>"; };
 		AB6A3E0E2ACDC54700431635 /* Overtime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Overtime.entitlements; sourceTree = "<group>"; };
+		AB6A3E0F2ACE16A300431635 /* OvertimeRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OvertimeRow.swift; sourceTree = "<group>"; };
 		AB6F334A2AC705E6007817CE /* SumFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumFooter.swift; sourceTree = "<group>"; };
 		AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeYearSection.swift; sourceTree = "<group>"; };
 		AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeMonthSection.swift; sourceTree = "<group>"; };
@@ -163,8 +163,8 @@
 		AB79D07C275A518E00C81DFA /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				AB6A3E0F2ACE16A300431635 /* OvertimeRow.swift */,
 				AB08BA2124FD759B003B6E3E /* DurationPicker.swift */,
-				AB11A99224FD4977002560D9 /* OvertimeRow.swift */,
 				AB624D24296CA6CE00A0CF27 /* LegalFooter.swift */,
 				AB624D26296CA78900A0CF27 /* DateFormatRow.swift */,
 				AB6F334A2AC705E6007817CE /* SumFooter.swift */,
@@ -265,6 +265,7 @@
 				AB6F33532AC728A9007817CE /* PreviewSampleData.swift in Sources */,
 				AB08BA2024FD7388003B6E3E /* EditOvertimeView.swift in Sources */,
 				AB43D50827E0DA1B00D9DE56 /* Extensions.swift in Sources */,
+				AB6A3E102ACE16A300431635 /* OvertimeRow.swift in Sources */,
 				AB6F33562AC72C3D007817CE /* ModelPreview.swift in Sources */,
 				AB624D232969CAF100A0CF27 /* BackupFile.swift in Sources */,
 				AB624D25296CA6CE00A0CF27 /* LegalFooter.swift in Sources */,
@@ -273,7 +274,6 @@
 				AB6A3E0B2ACDA8F800431635 /* MonthSectionStyle.swift in Sources */,
 				AB11A98324FD48F5002560D9 /* ContentView.swift in Sources */,
 				AB1BC65227F11352005960A3 /* OvertimeApp.swift in Sources */,
-				AB11A99324FD4977002560D9 /* OvertimeRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

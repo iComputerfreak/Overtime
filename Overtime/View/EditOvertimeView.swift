@@ -42,7 +42,8 @@ struct EditOvertimeView: View {
     /// Returns whether the current form is valid
     var formValid: Bool {
         // The form is valid, if the selected date does not already exist in the list of overtimes
-        !dateAlreadyExists
+        // and the duration is not zero.
+        !dateAlreadyExists && hours != 0
     }
     
     init(editingItem: Binding<Overtime>) {
@@ -53,7 +54,8 @@ struct EditOvertimeView: View {
     
     var body: some View {
         Form {
-            Section(header: Text("newOvertime.sectionHeader.overtime")) {
+            // MARK: Hours
+            Section {
                 Stepper(value: $hours, in: -24...24, step: 0.25, label: {
                     HStack {
                         Text("newOvertime.stepperLabel.hours")
@@ -61,20 +63,25 @@ struct EditOvertimeView: View {
                         Text(verbatim: "\(Self.hoursFormatter.string(from: NSNumber(value: hours))!)")
                     }
                 })
+            } header: {
+                Text("newOvertime.sectionHeader.overtime")
             }
-            Section(
-                header: Text("newOvertime.sectionHeader.date"),
-                footer: HStack {
-                    Image(systemName: "exclamationmark.triangle.fill")
-                    Text("newOvertime.sectionFooter.alreadyExistsMessage")
-                        .opacity(dateAlreadyExists ? 1 : 0)
-                }
-            ) {
+            
+            // MARK: Date
+            Section {
                 DatePicker(selection: $date, displayedComponents: .date) {
                     Text(verbatim: "")
                 }
                     .datePickerStyle(GraphicalDatePickerStyle())
                     .labelsHidden()
+            } header: {
+                Text("newOvertime.sectionHeader.date")
+            } footer: {
+                HStack {
+                    Image(systemName: "exclamationmark.triangle.fill")
+                    Text("newOvertime.sectionFooter.alreadyExistsMessage")
+                }
+                .opacity(dateAlreadyExists ? 1 : 0)
             }
         }
         
