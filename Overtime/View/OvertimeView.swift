@@ -62,13 +62,13 @@ struct OvertimeView: View {
                 }
                 // Sum
                 SumFooter()
+                Divider()
                 .navigationTitle("overtimes.title")
                 .sheet(isPresented: $config.showingEditingView) {
                     NavigationStack {
                         if let editingItemBinding = Binding($config.editingItem) {
                             EditOvertimeView(editingItem: editingItemBinding)
                         } else {
-                            // TODO: Localize
                             Text("newOvertime.errorEditing")
                         }
                     }

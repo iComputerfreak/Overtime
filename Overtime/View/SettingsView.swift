@@ -44,7 +44,7 @@ struct SettingsView: View {
     private var overtimes: [Overtime]
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(spacing: 0) {
                 Form {
                     // MARK: Date Format
@@ -55,27 +55,35 @@ struct SettingsView: View {
                         }
                     }
                     
-                    // MARK: Import
-                    Button("settings.buttonLabel.import") {
-                        self.isImportingFile = true
+                    // MARK: Month Section Style
+                    Picker("settings.pickerLabel.monthSectionStyle", selection: $userData.monthSectionStyle) {
+                        ForEach(MonthSectionStyle.allCases, id: \.rawValue) { style in
+                            Text(style.localized)
+                                .tag(style)
+                        }
                     }
-                    .fileImporter(isPresented: $isImportingFile, allowedContentTypes: [.json], onCompletion: importFile(result:))
                     
-                    // MARK: Export
-                    Button("settings.buttonLabel.export") {
-                        self.exportingFile = BackupFile(overtimes: overtimes)
-                        self.isExportingFile = true
-                    }
-                    .fileExporter(
-                        isPresented: $isExportingFile,
-                        document: exportingFile,
-                        contentType: .json,
-                        defaultFilename: "OvertimeBackup_\(Self.isoFormatter.string(from: Date())).json",
-                        onCompletion: exportFile(result:)
-                    )
-                    
-                    // MARK: Reset
                     Section {
+                        // MARK: Import
+                        Button("settings.buttonLabel.import") {
+                            self.isImportingFile = true
+                        }
+                        .fileImporter(isPresented: $isImportingFile, allowedContentTypes: [.json], onCompletion: importFile(result:))
+                        
+                        // MARK: Export
+                        Button("settings.buttonLabel.export") {
+                            self.exportingFile = BackupFile(overtimes: overtimes)
+                            self.isExportingFile = true
+                        }
+                        .fileExporter(
+                            isPresented: $isExportingFile,
+                            document: exportingFile,
+                            contentType: .json,
+                            defaultFilename: "OvertimeBackup_\(Self.isoFormatter.string(from: Date())).json",
+                            onCompletion: exportFile(result:)
+                        )
+                        
+                        // MARK: Reset
                         Button("settings.buttonLabel.reset") {
                             self.showingResetAlert = true
                         }

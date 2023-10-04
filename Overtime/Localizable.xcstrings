@@ -181,23 +181,6 @@
         }
       }
     },
-    "Could not load model for previews" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Could not load model for previews"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        }
-      }
-    },
     "h" : {
       "localizations" : {
         "de" : {
@@ -242,6 +225,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "min"
+          }
+        }
+      }
+    },
+    "monthSectionStyle.monthDisclosureGroups" : {
+      "comment" : "A style that displays the individual months as disclosure groups in a list.",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aufklappen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collapsed"
+          }
+        }
+      }
+    },
+    "monthSectionStyle.monthSections" : {
+      "comment" : "A style that displays the individual months as separate sections in a list.",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Getrennt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Separated"
           }
         }
       }
@@ -482,6 +499,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Date Format"
+          }
+        }
+      }
+    },
+    "settings.pickerLabel.monthSectionStyle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monats-Stil"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Month Style"
           }
         }
       }

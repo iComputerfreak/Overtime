@@ -10,6 +10,8 @@ import SwiftData
 import SwiftUI
 
 struct OvertimeYearSection: View {
+    @Environment(\.monthSectionStyle) private var monthSectionStyle
+    
     let year: Int
     @Binding var config: OvertimeViewConfig
     
@@ -34,10 +36,19 @@ struct OvertimeYearSection: View {
     }
     
     var body: some View {
-        Section(header: Text(verbatim: "\(year.description)")) {
-            ForEach(months, id: \.self) { (month: Int) in
-                OvertimeMonthSection(year: year, month: month, config: $config)
+        switch monthSectionStyle {
+        case .monthSections:
+            self.content
+        case .monthDisclosureGroups:
+            Section(header: Text(verbatim: "\(year.description)")) {
+                self.content
             }
+        }
+    }
+    
+    var content: some View {
+        ForEach(months, id: \.self) { (month: Int) in
+            OvertimeMonthSection(year: year, month: month, config: $config)
         }
     }
 }

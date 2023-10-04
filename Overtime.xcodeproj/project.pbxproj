@@ -26,6 +26,8 @@
 		AB624D232969CAF100A0CF27 /* BackupFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624D222969CAF100A0CF27 /* BackupFile.swift */; };
 		AB624D25296CA6CE00A0CF27 /* LegalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624D24296CA6CE00A0CF27 /* LegalFooter.swift */; };
 		AB624D27296CA78900A0CF27 /* DateFormatRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624D26296CA78900A0CF27 /* DateFormatRow.swift */; };
+		AB6A3E092ACCD42B00431635 /* MonthSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A3E082ACCD42B00431635 /* MonthSection.swift */; };
+		AB6A3E0B2ACDA8F800431635 /* MonthSectionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A3E0A2ACDA8F800431635 /* MonthSectionStyle.swift */; };
 		AB6F334B2AC705E6007817CE /* SumFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334A2AC705E6007817CE /* SumFooter.swift */; };
 		AB6F334D2AC706CE007817CE /* OvertimeYearSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */; };
 		AB6F334F2AC70729007817CE /* OvertimeMonthSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */; };
@@ -56,6 +58,8 @@
 		AB624D222969CAF100A0CF27 /* BackupFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupFile.swift; sourceTree = "<group>"; };
 		AB624D24296CA6CE00A0CF27 /* LegalFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalFooter.swift; sourceTree = "<group>"; };
 		AB624D26296CA78900A0CF27 /* DateFormatRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatRow.swift; sourceTree = "<group>"; };
+		AB6A3E082ACCD42B00431635 /* MonthSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSection.swift; sourceTree = "<group>"; };
+		AB6A3E0A2ACDA8F800431635 /* MonthSectionStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSectionStyle.swift; sourceTree = "<group>"; };
 		AB6F334A2AC705E6007817CE /* SumFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumFooter.swift; sourceTree = "<group>"; };
 		AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeYearSection.swift; sourceTree = "<group>"; };
 		AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeMonthSection.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 				AB79D07B275A517000C81DFA /* View */,
 				AB11A99824FD4C44002560D9 /* JFUtils.swift */,
 				AB43D50727E0DA1B00D9DE56 /* Extensions.swift */,
+				AB6A3E0A2ACDA8F800431635 /* MonthSectionStyle.swift */,
 				AB6F33542AC72C30007817CE /* Preview Helpers */,
 				AB11A98424FD48F6002560D9 /* Assets.xcassets */,
 				AB11A98924FD48F7002560D9 /* LaunchScreen.storyboard */,
@@ -144,6 +149,7 @@
 				AB11A98224FD48F5002560D9 /* ContentView.swift */,
 				AB08BA1B24FD6FE5003B6E3E /* OvertimeView.swift */,
 				AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */,
+				AB6A3E082ACCD42B00431635 /* MonthSection.swift */,
 				AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */,
 				AB08BA1F24FD7388003B6E3E /* EditOvertimeView.swift */,
 				AB08BA1D24FD6FEB003B6E3E /* SettingsView.swift */,
@@ -193,8 +199,9 @@
 		AB11A97324FD48F5002560D9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1500;
 				ORGANIZATIONNAME = "Jonas Frey";
 				TargetAttributes = {
 					AB11A97A24FD48F5002560D9 = {
@@ -259,6 +266,8 @@
 				AB624D232969CAF100A0CF27 /* BackupFile.swift in Sources */,
 				AB624D25296CA6CE00A0CF27 /* LegalFooter.swift in Sources */,
 				AB11A99924FD4C44002560D9 /* JFUtils.swift in Sources */,
+				AB6A3E092ACCD42B00431635 /* MonthSection.swift in Sources */,
+				AB6A3E0B2ACDA8F800431635 /* MonthSectionStyle.swift in Sources */,
 				AB11A98324FD48F5002560D9 /* ContentView.swift in Sources */,
 				AB1BC65227F11352005960A3 /* OvertimeApp.swift in Sources */,
 				AB1BC65427F113DD005960A3 /* MigrationManager.swift in Sources */,
@@ -285,6 +294,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -349,6 +359,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -407,6 +418,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Overtime/Preview Content\"";
@@ -433,6 +445,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
