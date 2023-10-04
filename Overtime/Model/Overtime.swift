@@ -11,9 +11,10 @@ import SwiftData
 
 @Model
 class Overtime: Identifiable {
-    @Attribute(.unique) let id: UUID
-    var date: Date
-    var duration: TimeInterval
+    // We need default values for CloudKit support
+    let id: UUID = UUID()
+    var date: Date = Date.now
+    var duration: TimeInterval = 0
     
     init(date: Date, duration: TimeInterval) {
         self.id = UUID()

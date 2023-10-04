@@ -19,6 +19,15 @@ struct OvertimeApp: App {
         return !legacyMigrationComplete && !(UserDefaults.standard.data(forKey: JFUtils.legacyOvertimesKey)?.isEmpty ?? true)
     }
     
+    let modelContainer: ModelContainer = {
+        do {
+            let config = ModelConfiguration(cloudKitDatabase: .automatic)
+            return try ModelContainer(for: Overtime.self, configurations: config)
+        } catch {
+            fatalError("Failed to create model container!")
+        }
+    }()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -26,7 +35,7 @@ struct OvertimeApp: App {
                     MigrationView()
                         .interactiveDismissDisabled()
                 }
-                .modelContainer(for: [Overtime.self])
+                .modelContainer(modelContainer)
                 .environmentObject(UserData())
         }
     }

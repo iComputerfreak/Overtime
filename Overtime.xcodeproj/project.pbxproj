@@ -60,6 +60,7 @@
 		AB6A3E082ACCD42B00431635 /* MonthSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSection.swift; sourceTree = "<group>"; };
 		AB6A3E0A2ACDA8F800431635 /* MonthSectionStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSectionStyle.swift; sourceTree = "<group>"; };
 		AB6A3E0C2ACDBC1E00431635 /* MigrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationView.swift; sourceTree = "<group>"; };
+		AB6A3E0E2ACDC54700431635 /* Overtime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Overtime.entitlements; sourceTree = "<group>"; };
 		AB6F334A2AC705E6007817CE /* SumFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumFooter.swift; sourceTree = "<group>"; };
 		AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeYearSection.swift; sourceTree = "<group>"; };
 		AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeMonthSection.swift; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 		AB11A97D24FD48F5002560D9 /* Overtime */ = {
 			isa = PBXGroup;
 			children = (
+				AB6A3E0E2ACDC54700431635 /* Overtime.entitlements */,
 				AB1BC65127F11352005960A3 /* OvertimeApp.swift */,
 				AB79D07A275A515300C81DFA /* Model */,
 				AB79D07B275A517000C81DFA /* View */,
@@ -419,6 +421,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
+				CODE_SIGN_ENTITLEMENTS = Overtime/Overtime.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Overtime/Preview Content\"";
@@ -446,6 +449,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
+				CODE_SIGN_ENTITLEMENTS = Overtime/Overtime.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
