@@ -11,11 +11,13 @@ import SwiftUI
 
 struct OvertimeViewConfig {
     var editingItem: Overtime?
+    var newlyCreated: Bool = false
     var showingEditingView: Bool = false
     
     @MainActor
-    mutating func presentEditingSheet(_ editingItem: Overtime) {
+    mutating func presentEditingSheet(_ editingItem: Overtime, newlyCreated: Bool) {
         self.editingItem = editingItem
+        self.newlyCreated = newlyCreated
         self.showingEditingView = true
     }
 }
@@ -55,7 +57,7 @@ struct OvertimeView: View {
                     Button {
                         let overtime = Overtime(date: .now, duration: 0)
                         context.insert(overtime)
-                        config.presentEditingSheet(overtime)
+                        config.presentEditingSheet(overtime, newlyCreated: true)
                     } label: {
                         Image(systemName: "plus")
                     }
@@ -67,7 +69,7 @@ struct OvertimeView: View {
                 .sheet(isPresented: $config.showingEditingView) {
                     NavigationStack {
                         if let editingItemBinding = Binding($config.editingItem) {
-                            EditOvertimeView(editingItem: editingItemBinding)
+                            EditOvertimeView(editingItem: editingItemBinding, newlyCreated: config.newlyCreated)
                         } else {
                             Text("newOvertime.errorEditing")
                         }

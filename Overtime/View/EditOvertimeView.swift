@@ -20,8 +20,10 @@ struct EditOvertimeView: View {
     }()
     
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.modelContext) private var context
     
     @Binding private var editingItem: Overtime
+    private var newlyCreated: Bool
     @State private var date: Date
     @State private var hours: Double
     
@@ -46,10 +48,11 @@ struct EditOvertimeView: View {
         !dateAlreadyExists && hours != 0
     }
     
-    init(editingItem: Binding<Overtime>) {
+    init(editingItem: Binding<Overtime>, newlyCreated: Bool = false) {
         self._editingItem = editingItem
         self._date = State(wrappedValue: editingItem.wrappedValue.date)
         self._hours = State(wrappedValue: editingItem.wrappedValue.duration / .hour)
+        self.newlyCreated = newlyCreated
     }
     
     var body: some View {
@@ -98,6 +101,8 @@ struct EditOvertimeView: View {
             }
             ToolbarItem(placement: .topBarLeading) {
                 Button {
+                    // Delete the newly created overtime again
+                    self.context.delete(self.editingItem)
                     self.dismiss()
                 } label: {
                     Text("newOvertime.actionLabel.cancel")

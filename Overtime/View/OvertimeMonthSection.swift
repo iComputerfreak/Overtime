@@ -35,6 +35,7 @@ struct OvertimeMonthSection: View {
         MonthSection(year: year, month: month) {
             ForEach(overtimes) { overtime in
                 // TODO: For some reason extracting this in a view does not work. Even when using @ObservedObject
+                // TODO: Debug
 //                OvertimeRow(overtime: overtime)
                 HStack {
                     // Date
@@ -53,7 +54,7 @@ struct OvertimeMonthSection: View {
                     }
                     .tint(.red)
                     Button {
-                        config.presentEditingSheet(overtime)
+                        config.presentEditingSheet(overtime, newlyCreated: false)
                     } label: {
                         Label("actionLabel.edit", systemImage: "pencil")
                     }

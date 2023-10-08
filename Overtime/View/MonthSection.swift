@@ -48,7 +48,7 @@ struct MonthSection<Content: View>: View {
             } label: {
                 // Month header
                 HStack {
-                    Text(verbatim: "\(Calendar.current.monthSymbols[month - 1]) \(year.description)")
+                    Text(verbatim: "\(Calendar.current.monthSymbols[month - 1])")
                         .bold()
                     Spacer()
                     Text(verbatim: "\(JFUtils.timeString(totalDuration))")

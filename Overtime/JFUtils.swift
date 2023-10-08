@@ -31,7 +31,7 @@ struct JFUtils {
         let durationEnd = durationStart.addingTimeInterval(duration)
         
         // If the duration is zero, we want to display '0h' instead of '0m'
-        let formatter = duration < 1 ? zeroDurationFormatter : durationFormatter
+        let formatter = duration == 0 ? zeroDurationFormatter : durationFormatter
         return formatter.string(from: durationStart, to: durationEnd) ?? ""
     }
 }
