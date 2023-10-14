@@ -28,6 +28,11 @@
 		AB6A3E0B2ACDA8F800431635 /* MonthSectionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A3E0A2ACDA8F800431635 /* MonthSectionStyle.swift */; };
 		AB6A3E0D2ACDBC1E00431635 /* MigrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A3E0C2ACDBC1E00431635 /* MigrationView.swift */; };
 		AB6A3E102ACE16A300431635 /* OvertimeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A3E0F2ACE16A300431635 /* OvertimeRow.swift */; };
+		AB6DD32D2ADADDB3000D1489 /* ImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DD32C2ADADDB3000D1489 /* ImportButton.swift */; };
+		AB6DD32F2ADADDF7000D1489 /* ExportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DD32E2ADADDF7000D1489 /* ExportButton.swift */; };
+		AB6DD3312ADADE6F000D1489 /* ResetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DD3302ADADE6F000D1489 /* ResetButton.swift */; };
+		AB6DD3332ADADEA5000D1489 /* DateFormatPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DD3322ADADEA5000D1489 /* DateFormatPicker.swift */; };
+		AB6DD3352ADADECE000D1489 /* MonthSectionStylePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DD3342ADADECE000D1489 /* MonthSectionStylePicker.swift */; };
 		AB6F334B2AC705E6007817CE /* SumFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334A2AC705E6007817CE /* SumFooter.swift */; };
 		AB6F334D2AC706CE007817CE /* OvertimeYearSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */; };
 		AB6F334F2AC70729007817CE /* OvertimeMonthSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */; };
@@ -61,6 +66,11 @@
 		AB6A3E0C2ACDBC1E00431635 /* MigrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationView.swift; sourceTree = "<group>"; };
 		AB6A3E0E2ACDC54700431635 /* Overtime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Overtime.entitlements; sourceTree = "<group>"; };
 		AB6A3E0F2ACE16A300431635 /* OvertimeRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OvertimeRow.swift; sourceTree = "<group>"; };
+		AB6DD32C2ADADDB3000D1489 /* ImportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportButton.swift; sourceTree = "<group>"; };
+		AB6DD32E2ADADDF7000D1489 /* ExportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportButton.swift; sourceTree = "<group>"; };
+		AB6DD3302ADADE6F000D1489 /* ResetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetButton.swift; sourceTree = "<group>"; };
+		AB6DD3322ADADEA5000D1489 /* DateFormatPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatPicker.swift; sourceTree = "<group>"; };
+		AB6DD3342ADADECE000D1489 /* MonthSectionStylePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSectionStylePicker.swift; sourceTree = "<group>"; };
 		AB6F334A2AC705E6007817CE /* SumFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumFooter.swift; sourceTree = "<group>"; };
 		AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeYearSection.swift; sourceTree = "<group>"; };
 		AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeMonthSection.swift; sourceTree = "<group>"; };
@@ -125,6 +135,30 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		AB6DD32A2ADADD3E000D1489 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				AB08BA1D24FD6FEB003B6E3E /* SettingsView.swift */,
+				AB6DD3322ADADEA5000D1489 /* DateFormatPicker.swift */,
+				AB6DD3342ADADECE000D1489 /* MonthSectionStylePicker.swift */,
+				AB6DD32C2ADADDB3000D1489 /* ImportButton.swift */,
+				AB6DD32E2ADADDF7000D1489 /* ExportButton.swift */,
+				AB6DD3302ADADE6F000D1489 /* ResetButton.swift */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
+		AB6DD32B2ADADD75000D1489 /* OvertimeView */ = {
+			isa = PBXGroup;
+			children = (
+				AB08BA1B24FD6FE5003B6E3E /* OvertimeView.swift */,
+				AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */,
+				AB6A3E082ACCD42B00431635 /* MonthSection.swift */,
+				AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */,
+			);
+			path = OvertimeView;
+			sourceTree = "<group>";
+		};
 		AB6F33542AC72C30007817CE /* Preview Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,12 +183,9 @@
 			children = (
 				AB6A3E0C2ACDBC1E00431635 /* MigrationView.swift */,
 				AB11A98224FD48F5002560D9 /* ContentView.swift */,
-				AB08BA1B24FD6FE5003B6E3E /* OvertimeView.swift */,
-				AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */,
-				AB6A3E082ACCD42B00431635 /* MonthSection.swift */,
-				AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */,
+				AB6DD32B2ADADD75000D1489 /* OvertimeView */,
 				AB08BA1F24FD7388003B6E3E /* EditOvertimeView.swift */,
-				AB08BA1D24FD6FEB003B6E3E /* SettingsView.swift */,
+				AB6DD32A2ADADD3E000D1489 /* SettingsView */,
 				AB79D07C275A518E00C81DFA /* Components */,
 			);
 			path = View;
@@ -263,14 +294,19 @@
 				AB08BA1E24FD6FEB003B6E3E /* SettingsView.swift in Sources */,
 				AB08BA1C24FD6FE5003B6E3E /* OvertimeView.swift in Sources */,
 				AB6F33532AC728A9007817CE /* PreviewSampleData.swift in Sources */,
+				AB6DD3352ADADECE000D1489 /* MonthSectionStylePicker.swift in Sources */,
 				AB08BA2024FD7388003B6E3E /* EditOvertimeView.swift in Sources */,
 				AB43D50827E0DA1B00D9DE56 /* Extensions.swift in Sources */,
+				AB6DD32D2ADADDB3000D1489 /* ImportButton.swift in Sources */,
+				AB6DD3332ADADEA5000D1489 /* DateFormatPicker.swift in Sources */,
 				AB6A3E102ACE16A300431635 /* OvertimeRow.swift in Sources */,
 				AB6F33562AC72C3D007817CE /* ModelPreview.swift in Sources */,
 				AB624D232969CAF100A0CF27 /* BackupFile.swift in Sources */,
 				AB624D25296CA6CE00A0CF27 /* LegalFooter.swift in Sources */,
 				AB11A99924FD4C44002560D9 /* JFUtils.swift in Sources */,
+				AB6DD32F2ADADDF7000D1489 /* ExportButton.swift in Sources */,
 				AB6A3E092ACCD42B00431635 /* MonthSection.swift in Sources */,
+				AB6DD3312ADADE6F000D1489 /* ResetButton.swift in Sources */,
 				AB6A3E0B2ACDA8F800431635 /* MonthSectionStyle.swift in Sources */,
 				AB11A98324FD48F5002560D9 /* ContentView.swift in Sources */,
 				AB1BC65227F11352005960A3 /* OvertimeApp.swift in Sources */,

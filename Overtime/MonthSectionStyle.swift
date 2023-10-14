@@ -13,7 +13,7 @@ enum MonthSectionStyle: String, CaseIterable {
     case monthSections
     case monthDisclosureGroups
     
-    static let defaultValue = Self.monthSections
+    static let defaultValue = Self.monthDisclosureGroups
     
     var localized: String {
         switch self {

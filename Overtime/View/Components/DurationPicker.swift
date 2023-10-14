@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct DurationPicker: View {
-        
+    
     @Binding var hours: Int
     @Binding var minutes: Int
     
