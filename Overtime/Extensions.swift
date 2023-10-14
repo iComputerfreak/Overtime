@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import SwiftUI
+
+extension View {
+    func previewEnvironment() -> some View {
+        self
+            .environmentObject(UserData())
+            .modelContainer(previewContainer)
+    }
+}

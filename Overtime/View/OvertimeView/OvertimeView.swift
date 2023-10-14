@@ -84,7 +84,7 @@ struct OvertimeView_Previews: PreviewProvider {
     static var previews: some View {
         TabView {
             OvertimeView()
-                .environmentObject(UserData())
+                .previewEnvironment()
         }
     }
 }

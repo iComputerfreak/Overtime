@@ -40,8 +40,14 @@ struct OvertimeYearSection: View {
         case .monthSections:
             self.content
         case .monthDisclosureGroups:
-            Section(header: Text(verbatim: "\(year.description)")) {
+            Section {
                 self.content
+            } header: {
+                HStack {
+                    Spacer()
+                    Text(verbatim: "\(year.description)")
+                        .bold()
+                }
             }
         }
     }
