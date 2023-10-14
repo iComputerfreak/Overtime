@@ -1,58 +1,6 @@
 {
   "sourceLanguage" : "de",
   "strings" : {
-    "" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "%@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "%@ %@" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ %2$@"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "%lld" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        }
-      }
-    },
     "actionLabel.delete" : {
       "localizations" : {
         "de" : {
@@ -81,6 +29,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Edit"
+          }
+        }
+      }
+    },
+    "alert.okButton" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
           }
         }
       }
@@ -249,22 +213,6 @@
         }
       }
     },
-    "KW %@, %@" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "KW %1$@, %2$@"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "KW %1$@, %2$@"
-          }
-        }
-      }
-    },
     "m" : {
       "localizations" : {
         "de" : {
@@ -277,6 +225,54 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "m"
+          }
+        }
+      }
+    },
+    "migration.alert.errorMessage %@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Es gab einen Fehler beim Migrieren der alten Daten: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error occurred while migrating the old data: %@"
+          }
+        }
+      }
+    },
+    "migration.alert.errorTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fehler"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        }
+      }
+    },
+    "migration.progressText" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lade alte Daten..."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading old data..."
           }
         }
       }
@@ -297,18 +293,84 @@
         }
       }
     },
-    "newOvertime.actionLabel.add" : {
+    "monthSectionStyle.monthDisclosureGroups" : {
+      "comment" : "A style that displays the individual months as disclosure groups in a list.",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hinzufügen"
+            "value" : "Aufklappen"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Add"
+            "value" : "Collapsed"
+          }
+        }
+      }
+    },
+    "monthSectionStyle.monthSections" : {
+      "comment" : "A style that displays the individual months as separate sections in a list.",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Getrennt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Separated"
+          }
+        }
+      }
+    },
+    "newOvertime.actionLabel.add" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speichern"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save"
+          }
+        }
+      }
+    },
+    "newOvertime.actionLabel.cancel" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abbrechen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
+    "newOvertime.errorEditing" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fehler beim Bearbeiten. Bitte versuchen Sie es erneut."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error editing the entry. Please try again."
           }
         }
       }
@@ -318,13 +380,29 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Neue Überstunden"
+            "value" : "Überstunden Bearbeiten"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "New Overtime"
+            "value" : "Edit Overtime"
+          }
+        }
+      }
+    },
+    "newOvertime.sectionFooter.alreadyExistsMessage" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Es existiert bereits ein Eintrag für dieses Datum."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There already exists an entry for this date."
           }
         }
       }
@@ -373,38 +451,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hours"
-          }
-        }
-      }
-    },
-    "overtimes.calendarWeekPrefix %lld" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "KW %lld"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Week %lld"
-          }
-        }
-      }
-    },
-    "overtimes.monthFooter.sumPrefix" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Summe"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sum"
           }
         }
       }
@@ -521,18 +567,18 @@
         }
       }
     },
-    "Summe" : {
+    "settings.pickerLabel.monthSectionStyle" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Summe"
+            "value" : "Monats-Stil"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sum"
+            "value" : "Month Style"
           }
         }
       }

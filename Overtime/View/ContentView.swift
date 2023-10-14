@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @EnvironmentObject private var userData: UserData
+    
     var body: some View {
         TabView {
             OvertimeView()
@@ -23,12 +25,13 @@ struct ContentView: View {
                     Text("tabView.settings.label")
                 }
         }
+        .environment(\.monthSectionStyle, userData.monthSectionStyle)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(UserData.preview)
+            .environmentObject(UserData())
     }
 }
