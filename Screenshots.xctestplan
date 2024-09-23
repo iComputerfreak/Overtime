@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "1ACD532D-1FED-45D7-8C0C-F592E84C7D5F",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Overtime.xcodeproj",
+      "identifier" : "AB11A97A24FD48F5002560D9",
+      "name" : "Overtime"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Overtime.xcodeproj",
+        "identifier" : "AB6DD3392ADAE89F000D1489",
+        "name" : "OvertimeUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

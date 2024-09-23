@@ -33,6 +33,8 @@
 		AB6DD3312ADADE6F000D1489 /* ResetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DD3302ADADE6F000D1489 /* ResetButton.swift */; };
 		AB6DD3332ADADEA5000D1489 /* DateFormatPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DD3322ADADEA5000D1489 /* DateFormatPicker.swift */; };
 		AB6DD3352ADADECE000D1489 /* MonthSectionStylePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DD3342ADADECE000D1489 /* MonthSectionStylePicker.swift */; };
+		AB6DD33D2ADAE89F000D1489 /* OvertimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DD33C2ADAE89F000D1489 /* OvertimeUITests.swift */; };
+		AB6DD3462ADAE8BA000D1489 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DD3452ADAE8BA000D1489 /* SnapshotHelper.swift */; };
 		AB6F334B2AC705E6007817CE /* SumFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334A2AC705E6007817CE /* SumFooter.swift */; };
 		AB6F334D2AC706CE007817CE /* OvertimeYearSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */; };
 		AB6F334F2AC70729007817CE /* OvertimeMonthSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */; };
@@ -40,6 +42,16 @@
 		AB6F33562AC72C3D007817CE /* ModelPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F33552AC72C3D007817CE /* ModelPreview.swift */; };
 		ABF0998924FE92C100F030EF /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0998824FE92C100F030EF /* UserData.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AB6DD3402ADAE89F000D1489 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB11A97324FD48F5002560D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB11A97A24FD48F5002560D9;
+			remoteInfo = Overtime;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AB08BA1B24FD6FE5003B6E3E /* OvertimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeView.swift; sourceTree = "<group>"; };
@@ -71,6 +83,10 @@
 		AB6DD3302ADADE6F000D1489 /* ResetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetButton.swift; sourceTree = "<group>"; };
 		AB6DD3322ADADEA5000D1489 /* DateFormatPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatPicker.swift; sourceTree = "<group>"; };
 		AB6DD3342ADADECE000D1489 /* MonthSectionStylePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSectionStylePicker.swift; sourceTree = "<group>"; };
+		AB6DD33A2ADAE89F000D1489 /* OvertimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OvertimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB6DD33C2ADAE89F000D1489 /* OvertimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeUITests.swift; sourceTree = "<group>"; };
+		AB6DD3452ADAE8BA000D1489 /* SnapshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		AB6DD3472ADAEBEA000D1489 /* Screenshots.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Screenshots.xctestplan; sourceTree = "<group>"; };
 		AB6F334A2AC705E6007817CE /* SumFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumFooter.swift; sourceTree = "<group>"; };
 		AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeYearSection.swift; sourceTree = "<group>"; };
 		AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeMonthSection.swift; sourceTree = "<group>"; };
@@ -88,13 +104,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AB6DD3372ADAE89F000D1489 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		AB11A97224FD48F5002560D9 = {
 			isa = PBXGroup;
 			children = (
+				AB6DD3472ADAEBEA000D1489 /* Screenshots.xctestplan */,
 				AB11A97D24FD48F5002560D9 /* Overtime */,
+				AB6DD33B2ADAE89F000D1489 /* OvertimeUITests */,
 				AB11A97C24FD48F5002560D9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				AB11A97B24FD48F5002560D9 /* Overtime.app */,
+				AB6DD33A2ADAE89F000D1489 /* OvertimeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,6 +183,15 @@
 				AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */,
 			);
 			path = OvertimeView;
+			sourceTree = "<group>";
+		};
+		AB6DD33B2ADAE89F000D1489 /* OvertimeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AB6DD33C2ADAE89F000D1489 /* OvertimeUITests.swift */,
+				AB6DD3452ADAE8BA000D1489 /* SnapshotHelper.swift */,
+			);
+			path = OvertimeUITests;
 			sourceTree = "<group>";
 		};
 		AB6F33542AC72C30007817CE /* Preview Helpers */ = {
@@ -226,6 +261,24 @@
 			productReference = AB11A97B24FD48F5002560D9 /* Overtime.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AB6DD3392ADAE89F000D1489 /* OvertimeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB6DD3422ADAE89F000D1489 /* Build configuration list for PBXNativeTarget "OvertimeUITests" */;
+			buildPhases = (
+				AB6DD3362ADAE89F000D1489 /* Sources */,
+				AB6DD3372ADAE89F000D1489 /* Frameworks */,
+				AB6DD3382ADAE89F000D1489 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB6DD3412ADAE89F000D1489 /* PBXTargetDependency */,
+			);
+			name = OvertimeUITests;
+			productName = OvertimeUITests;
+			productReference = AB6DD33A2ADAE89F000D1489 /* OvertimeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -233,12 +286,16 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1160;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				ORGANIZATIONNAME = "Jonas Frey";
 				TargetAttributes = {
 					AB11A97A24FD48F5002560D9 = {
 						CreatedOnToolsVersion = 11.6;
+					};
+					AB6DD3392ADAE89F000D1489 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = AB11A97A24FD48F5002560D9;
 					};
 				};
 			};
@@ -260,6 +317,7 @@
 			projectRoot = "";
 			targets = (
 				AB11A97A24FD48F5002560D9 /* Overtime */,
+				AB6DD3392ADAE89F000D1489 /* OvertimeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -273,6 +331,13 @@
 				AB4920212AC6EAE800FDDC13 /* Localizable.xcstrings in Resources */,
 				AB11A98824FD48F6002560D9 /* Preview Assets.xcassets in Resources */,
 				AB11A98524FD48F6002560D9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB6DD3382ADAE89F000D1489 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,7 +378,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AB6DD3362ADAE89F000D1489 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB6DD33D2ADAE89F000D1489 /* OvertimeUITests.swift in Sources */,
+				AB6DD3462ADAE8BA000D1489 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AB6DD3412ADAE89F000D1489 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB11A97A24FD48F5002560D9 /* Overtime */;
+			targetProxy = AB6DD3402ADAE89F000D1489 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AB11A98924FD48F7002560D9 /* LaunchScreen.storyboard */ = {
@@ -471,12 +553,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.JonasFrey.Overtime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -500,13 +584,56 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.JonasFrey.Overtime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AB6DD3432ADAE89F000D1489 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 46C9Y785NA;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.JonasFrey.OvertimeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Overtime;
+			};
+			name = Debug;
+		};
+		AB6DD3442ADAE89F000D1489 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 46C9Y785NA;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.JonasFrey.OvertimeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Overtime;
 			};
 			name = Release;
 		};
@@ -527,6 +654,15 @@
 			buildConfigurations = (
 				AB11A99024FD48F7002560D9 /* Debug */,
 				AB11A99124FD48F7002560D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB6DD3422ADAE89F000D1489 /* Build configuration list for PBXNativeTarget "OvertimeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB6DD3432ADAE89F000D1489 /* Debug */,
+				AB6DD3442ADAE89F000D1489 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

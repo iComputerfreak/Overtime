@@ -45,7 +45,7 @@ struct OvertimeView: View {
         // !!!: We need this to force a view update when the editingItem is set.
         // Otherwise we will run into a nil editingItem inside the sheet modifier
         _ = config.editingItem
-        return NavigationView {
+        return NavigationStack {
             VStack(spacing: 0) {
                 List {
                     // MARK: Years

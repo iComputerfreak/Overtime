@@ -20,6 +20,14 @@ struct OvertimeApp: App {
     }
     
     let modelContainer: ModelContainer = {
+        #if DEBUG
+        // Handle screenshot sample data
+        if ProcessInfo.processInfo.arguments.contains("--screenshots") {
+            // Use the preview container for the screenshots
+            return previewContainer
+        }
+        #endif
+        
         do {
             let config = ModelConfiguration(cloudKitDatabase: .automatic)
             return try ModelContainer(for: Overtime.self, configurations: config)
