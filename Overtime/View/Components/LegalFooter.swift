@@ -12,7 +12,7 @@ struct LegalFooter: View {
     var body: some View {
         HStack {
             Spacer()
-            Text("App icon: Flaticon.com")
+            Text("App icon: https://uxwing.com")
                 .font(.footnote)
                 .padding()
             Spacer()

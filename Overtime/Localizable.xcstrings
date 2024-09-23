@@ -181,18 +181,18 @@
         }
       }
     },
-    "App icon: Flaticon.com" : {
+    "App icon: https://uxwing.com" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "App icon: Flaticon.com"
+            "value" : "App icon: https://uxwing.com"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "App icon: Flaticon.com"
+            "value" : "App icon: https://uxwing.com"
           }
         }
       }
