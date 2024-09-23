@@ -12,7 +12,7 @@ import SwiftData
 @Model
 class Overtime: Identifiable, ObservableObject {
     // We need default values for CloudKit support
-    let id: UUID = UUID()
+    var id: UUID = UUID()
     var date: Date = Date.now
     var duration: TimeInterval = 0
     
