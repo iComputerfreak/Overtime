@@ -66,7 +66,18 @@ struct OvertimeView: View {
                 SumFooter()
                     .padding(.vertical, 8)
                 .navigationTitle("overtimes.title")
-                .sheet(isPresented: $config.showingEditingView) {
+                .sheet(
+                    isPresented: $config.showingEditingView,
+                    onDismiss: {
+                        if
+                            let editingItem = config.editingItem,
+                            config.newlyCreated
+                        {
+                            // Delete the newly created overtime again
+                            self.context.delete(editingItem)
+                        }
+                    }
+                ) {
                     NavigationStack {
                         if let editingItemBinding = Binding($config.editingItem) {
                             EditOvertimeView(editingItem: editingItemBinding, newlyCreated: config.newlyCreated)
