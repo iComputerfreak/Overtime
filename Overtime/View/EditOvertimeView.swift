@@ -88,7 +88,7 @@ struct EditOvertimeView: View {
             }
         }
         
-        .navigationTitle("newOvertime.navigationTitle")
+        .navigationTitle(newlyCreated ? String(localized: "newOvertime.navigationTitle") : String(localized: "editOvertime.navigationTitle"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
@@ -101,8 +101,6 @@ struct EditOvertimeView: View {
             }
             ToolbarItem(placement: .topBarLeading) {
                 Button {
-                    // Delete the newly created overtime again
-                    self.context.delete(self.editingItem)
                     self.dismiss()
                 } label: {
                     Text("newOvertime.actionLabel.cancel")

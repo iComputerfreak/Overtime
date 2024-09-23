@@ -71,7 +71,8 @@ struct OvertimeView: View {
                     onDismiss: {
                         if
                             let editingItem = config.editingItem,
-                            config.newlyCreated
+                            config.newlyCreated,
+                            editingItem.duration == 0
                         {
                             // Delete the newly created overtime again
                             self.context.delete(editingItem)

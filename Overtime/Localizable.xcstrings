@@ -197,6 +197,22 @@
         }
       }
     },
+    "editOvertime.navigationTitle" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Überstunden Bearbeiten"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit Overtime"
+          }
+        }
+      }
+    },
     "h" : {
       "localizations" : {
         "de" : {
@@ -380,13 +396,13 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Überstunden Bearbeiten"
+            "value" : "Neue Überstunden"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Edit Overtime"
+            "value" : "New Overtime"
           }
         }
       }
