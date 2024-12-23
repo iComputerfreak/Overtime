@@ -3,44 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB08BA1C24FD6FE5003B6E3E /* OvertimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BA1B24FD6FE5003B6E3E /* OvertimeView.swift */; };
-		AB08BA1E24FD6FEB003B6E3E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BA1D24FD6FEB003B6E3E /* SettingsView.swift */; };
-		AB08BA2024FD7388003B6E3E /* EditOvertimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BA1F24FD7388003B6E3E /* EditOvertimeView.swift */; };
-		AB08BA2224FD759B003B6E3E /* DurationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BA2124FD759B003B6E3E /* DurationPicker.swift */; };
-		AB11A98324FD48F5002560D9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11A98224FD48F5002560D9 /* ContentView.swift */; };
-		AB11A98524FD48F6002560D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB11A98424FD48F6002560D9 /* Assets.xcassets */; };
-		AB11A98824FD48F6002560D9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB11A98724FD48F6002560D9 /* Preview Assets.xcassets */; };
-		AB11A98B24FD48F7002560D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB11A98924FD48F7002560D9 /* LaunchScreen.storyboard */; };
-		AB11A99724FD4B02002560D9 /* Overtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11A99624FD4B02002560D9 /* Overtime.swift */; };
-		AB11A99924FD4C44002560D9 /* JFUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB11A99824FD4C44002560D9 /* JFUtils.swift */; };
-		AB1BC65227F11352005960A3 /* OvertimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1BC65127F11352005960A3 /* OvertimeApp.swift */; };
-		AB43D50827E0DA1B00D9DE56 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB43D50727E0DA1B00D9DE56 /* Extensions.swift */; };
-		AB4920212AC6EAE800FDDC13 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AB4920202AC6EAE800FDDC13 /* Localizable.xcstrings */; };
 		AB624D1F29690B6E00A0CF27 /* JFUtils in Frameworks */ = {isa = PBXBuildFile; productRef = AB624D1E29690B6E00A0CF27 /* JFUtils */; };
-		AB624D232969CAF100A0CF27 /* BackupFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624D222969CAF100A0CF27 /* BackupFile.swift */; };
-		AB624D25296CA6CE00A0CF27 /* LegalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624D24296CA6CE00A0CF27 /* LegalFooter.swift */; };
-		AB624D27296CA78900A0CF27 /* DateFormatRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB624D26296CA78900A0CF27 /* DateFormatRow.swift */; };
-		AB6A3E092ACCD42B00431635 /* MonthSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A3E082ACCD42B00431635 /* MonthSection.swift */; };
-		AB6A3E0B2ACDA8F800431635 /* MonthSectionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A3E0A2ACDA8F800431635 /* MonthSectionStyle.swift */; };
-		AB6A3E0D2ACDBC1E00431635 /* MigrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A3E0C2ACDBC1E00431635 /* MigrationView.swift */; };
-		AB6A3E102ACE16A300431635 /* OvertimeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A3E0F2ACE16A300431635 /* OvertimeRow.swift */; };
-		AB6DD32D2ADADDB3000D1489 /* ImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DD32C2ADADDB3000D1489 /* ImportButton.swift */; };
-		AB6DD32F2ADADDF7000D1489 /* ExportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DD32E2ADADDF7000D1489 /* ExportButton.swift */; };
-		AB6DD3312ADADE6F000D1489 /* ResetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DD3302ADADE6F000D1489 /* ResetButton.swift */; };
-		AB6DD3332ADADEA5000D1489 /* DateFormatPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DD3322ADADEA5000D1489 /* DateFormatPicker.swift */; };
-		AB6DD3352ADADECE000D1489 /* MonthSectionStylePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DD3342ADADECE000D1489 /* MonthSectionStylePicker.swift */; };
-		AB6DD33D2ADAE89F000D1489 /* OvertimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DD33C2ADAE89F000D1489 /* OvertimeUITests.swift */; };
-		AB6DD3462ADAE8BA000D1489 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DD3452ADAE8BA000D1489 /* SnapshotHelper.swift */; };
-		AB6F334B2AC705E6007817CE /* SumFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334A2AC705E6007817CE /* SumFooter.swift */; };
-		AB6F334D2AC706CE007817CE /* OvertimeYearSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */; };
-		AB6F334F2AC70729007817CE /* OvertimeMonthSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */; };
-		AB6F33532AC728A9007817CE /* PreviewSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F33522AC728A9007817CE /* PreviewSampleData.swift */; };
-		AB6F33562AC72C3D007817CE /* ModelPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F33552AC72C3D007817CE /* ModelPreview.swift */; };
-		ABF0998924FE92C100F030EF /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0998824FE92C100F030EF /* UserData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,46 +21,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AB08BA1B24FD6FE5003B6E3E /* OvertimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeView.swift; sourceTree = "<group>"; };
-		AB08BA1D24FD6FEB003B6E3E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		AB08BA1F24FD7388003B6E3E /* EditOvertimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditOvertimeView.swift; sourceTree = "<group>"; };
-		AB08BA2124FD759B003B6E3E /* DurationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationPicker.swift; sourceTree = "<group>"; };
 		AB11A97B24FD48F5002560D9 /* Overtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Overtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB11A98224FD48F5002560D9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		AB11A98424FD48F6002560D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AB11A98724FD48F6002560D9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		AB11A98A24FD48F7002560D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AB11A98C24FD48F7002560D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB11A99624FD4B02002560D9 /* Overtime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overtime.swift; sourceTree = "<group>"; };
-		AB11A99824FD4C44002560D9 /* JFUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFUtils.swift; sourceTree = "<group>"; };
-		AB1BC65127F11352005960A3 /* OvertimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeApp.swift; sourceTree = "<group>"; };
-		AB43D50727E0DA1B00D9DE56 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		AB49201F2AC6EAE800FDDC13 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/LaunchScreen.xcstrings; sourceTree = "<group>"; };
-		AB4920202AC6EAE800FDDC13 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		AB624D222969CAF100A0CF27 /* BackupFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupFile.swift; sourceTree = "<group>"; };
-		AB624D24296CA6CE00A0CF27 /* LegalFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalFooter.swift; sourceTree = "<group>"; };
-		AB624D26296CA78900A0CF27 /* DateFormatRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatRow.swift; sourceTree = "<group>"; };
-		AB6A3E082ACCD42B00431635 /* MonthSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSection.swift; sourceTree = "<group>"; };
-		AB6A3E0A2ACDA8F800431635 /* MonthSectionStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSectionStyle.swift; sourceTree = "<group>"; };
-		AB6A3E0C2ACDBC1E00431635 /* MigrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationView.swift; sourceTree = "<group>"; };
-		AB6A3E0E2ACDC54700431635 /* Overtime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Overtime.entitlements; sourceTree = "<group>"; };
-		AB6A3E0F2ACE16A300431635 /* OvertimeRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OvertimeRow.swift; sourceTree = "<group>"; };
-		AB6DD32C2ADADDB3000D1489 /* ImportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportButton.swift; sourceTree = "<group>"; };
-		AB6DD32E2ADADDF7000D1489 /* ExportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportButton.swift; sourceTree = "<group>"; };
-		AB6DD3302ADADE6F000D1489 /* ResetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetButton.swift; sourceTree = "<group>"; };
-		AB6DD3322ADADEA5000D1489 /* DateFormatPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatPicker.swift; sourceTree = "<group>"; };
-		AB6DD3342ADADECE000D1489 /* MonthSectionStylePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSectionStylePicker.swift; sourceTree = "<group>"; };
 		AB6DD33A2ADAE89F000D1489 /* OvertimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OvertimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB6DD33C2ADAE89F000D1489 /* OvertimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeUITests.swift; sourceTree = "<group>"; };
-		AB6DD3452ADAE8BA000D1489 /* SnapshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		AB6DD3472ADAEBEA000D1489 /* Screenshots.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Screenshots.xctestplan; sourceTree = "<group>"; };
-		AB6F334A2AC705E6007817CE /* SumFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumFooter.swift; sourceTree = "<group>"; };
-		AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeYearSection.swift; sourceTree = "<group>"; };
-		AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvertimeMonthSection.swift; sourceTree = "<group>"; };
-		AB6F33522AC728A9007817CE /* PreviewSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewSampleData.swift; sourceTree = "<group>"; };
-		AB6F33552AC72C3D007817CE /* ModelPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPreview.swift; sourceTree = "<group>"; };
-		ABF0998824FE92C100F030EF /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		ABF46C6A2D1989F600C8C0B5 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = AB11A97A24FD48F5002560D9 /* Overtime */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		ABF46C482D1989F600C8C0B5 /* Overtime */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (ABF46C6A2D1989F600C8C0B5 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Overtime; sourceTree = "<group>"; };
+		ABF46C6D2D198A2200C8C0B5 /* OvertimeUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = OvertimeUITests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AB11A97824FD48F5002560D9 /* Frameworks */ = {
@@ -118,8 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				AB6DD3472ADAEBEA000D1489 /* Screenshots.xctestplan */,
-				AB11A97D24FD48F5002560D9 /* Overtime */,
-				AB6DD33B2ADAE89F000D1489 /* OvertimeUITests */,
+				ABF46C482D1989F600C8C0B5 /* Overtime */,
+				ABF46C6D2D198A2200C8C0B5 /* OvertimeUITests */,
 				AB11A97C24FD48F5002560D9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -131,111 +77,6 @@
 				AB6DD33A2ADAE89F000D1489 /* OvertimeUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		AB11A97D24FD48F5002560D9 /* Overtime */ = {
-			isa = PBXGroup;
-			children = (
-				AB6A3E0E2ACDC54700431635 /* Overtime.entitlements */,
-				AB1BC65127F11352005960A3 /* OvertimeApp.swift */,
-				AB79D07A275A515300C81DFA /* Model */,
-				AB79D07B275A517000C81DFA /* View */,
-				AB11A99824FD4C44002560D9 /* JFUtils.swift */,
-				AB43D50727E0DA1B00D9DE56 /* Extensions.swift */,
-				AB6A3E0A2ACDA8F800431635 /* MonthSectionStyle.swift */,
-				AB6F33542AC72C30007817CE /* Preview Helpers */,
-				AB11A98424FD48F6002560D9 /* Assets.xcassets */,
-				AB11A98924FD48F7002560D9 /* LaunchScreen.storyboard */,
-				AB11A98C24FD48F7002560D9 /* Info.plist */,
-				AB11A98624FD48F6002560D9 /* Preview Content */,
-				AB4920202AC6EAE800FDDC13 /* Localizable.xcstrings */,
-			);
-			path = Overtime;
-			sourceTree = "<group>";
-		};
-		AB11A98624FD48F6002560D9 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				AB11A98724FD48F6002560D9 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		AB6DD32A2ADADD3E000D1489 /* SettingsView */ = {
-			isa = PBXGroup;
-			children = (
-				AB08BA1D24FD6FEB003B6E3E /* SettingsView.swift */,
-				AB6DD3322ADADEA5000D1489 /* DateFormatPicker.swift */,
-				AB6DD3342ADADECE000D1489 /* MonthSectionStylePicker.swift */,
-				AB6DD32C2ADADDB3000D1489 /* ImportButton.swift */,
-				AB6DD32E2ADADDF7000D1489 /* ExportButton.swift */,
-				AB6DD3302ADADE6F000D1489 /* ResetButton.swift */,
-			);
-			path = SettingsView;
-			sourceTree = "<group>";
-		};
-		AB6DD32B2ADADD75000D1489 /* OvertimeView */ = {
-			isa = PBXGroup;
-			children = (
-				AB08BA1B24FD6FE5003B6E3E /* OvertimeView.swift */,
-				AB6F334C2AC706CE007817CE /* OvertimeYearSection.swift */,
-				AB6A3E082ACCD42B00431635 /* MonthSection.swift */,
-				AB6F334E2AC70729007817CE /* OvertimeMonthSection.swift */,
-			);
-			path = OvertimeView;
-			sourceTree = "<group>";
-		};
-		AB6DD33B2ADAE89F000D1489 /* OvertimeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				AB6DD33C2ADAE89F000D1489 /* OvertimeUITests.swift */,
-				AB6DD3452ADAE8BA000D1489 /* SnapshotHelper.swift */,
-			);
-			path = OvertimeUITests;
-			sourceTree = "<group>";
-		};
-		AB6F33542AC72C30007817CE /* Preview Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				AB6F33522AC728A9007817CE /* PreviewSampleData.swift */,
-				AB6F33552AC72C3D007817CE /* ModelPreview.swift */,
-			);
-			path = "Preview Helpers";
-			sourceTree = "<group>";
-		};
-		AB79D07A275A515300C81DFA /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				AB11A99624FD4B02002560D9 /* Overtime.swift */,
-				ABF0998824FE92C100F030EF /* UserData.swift */,
-				AB624D222969CAF100A0CF27 /* BackupFile.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		AB79D07B275A517000C81DFA /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AB6A3E0C2ACDBC1E00431635 /* MigrationView.swift */,
-				AB11A98224FD48F5002560D9 /* ContentView.swift */,
-				AB6DD32B2ADADD75000D1489 /* OvertimeView */,
-				AB08BA1F24FD7388003B6E3E /* EditOvertimeView.swift */,
-				AB6DD32A2ADADD3E000D1489 /* SettingsView */,
-				AB79D07C275A518E00C81DFA /* Components */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AB79D07C275A518E00C81DFA /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				AB6A3E0F2ACE16A300431635 /* OvertimeRow.swift */,
-				AB08BA2124FD759B003B6E3E /* DurationPicker.swift */,
-				AB624D24296CA6CE00A0CF27 /* LegalFooter.swift */,
-				AB624D26296CA78900A0CF27 /* DateFormatRow.swift */,
-				AB6F334A2AC705E6007817CE /* SumFooter.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +93,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				ABF46C482D1989F600C8C0B5 /* Overtime */,
 			);
 			name = Overtime;
 			packageProductDependencies = (
@@ -273,6 +117,9 @@
 			);
 			dependencies = (
 				AB6DD3412ADAE89F000D1489 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				ABF46C6D2D198A2200C8C0B5 /* OvertimeUITests */,
 			);
 			name = OvertimeUITests;
 			productName = OvertimeUITests;
@@ -327,10 +174,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB11A98B24FD48F7002560D9 /* LaunchScreen.storyboard in Resources */,
-				AB4920212AC6EAE800FDDC13 /* Localizable.xcstrings in Resources */,
-				AB11A98824FD48F6002560D9 /* Preview Assets.xcassets in Resources */,
-				AB11A98524FD48F6002560D9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,33 +191,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB624D27296CA78900A0CF27 /* DateFormatRow.swift in Sources */,
-				ABF0998924FE92C100F030EF /* UserData.swift in Sources */,
-				AB6A3E0D2ACDBC1E00431635 /* MigrationView.swift in Sources */,
-				AB08BA2224FD759B003B6E3E /* DurationPicker.swift in Sources */,
-				AB11A99724FD4B02002560D9 /* Overtime.swift in Sources */,
-				AB6F334D2AC706CE007817CE /* OvertimeYearSection.swift in Sources */,
-				AB6F334F2AC70729007817CE /* OvertimeMonthSection.swift in Sources */,
-				AB6F334B2AC705E6007817CE /* SumFooter.swift in Sources */,
-				AB08BA1E24FD6FEB003B6E3E /* SettingsView.swift in Sources */,
-				AB08BA1C24FD6FE5003B6E3E /* OvertimeView.swift in Sources */,
-				AB6F33532AC728A9007817CE /* PreviewSampleData.swift in Sources */,
-				AB6DD3352ADADECE000D1489 /* MonthSectionStylePicker.swift in Sources */,
-				AB08BA2024FD7388003B6E3E /* EditOvertimeView.swift in Sources */,
-				AB43D50827E0DA1B00D9DE56 /* Extensions.swift in Sources */,
-				AB6DD32D2ADADDB3000D1489 /* ImportButton.swift in Sources */,
-				AB6DD3332ADADEA5000D1489 /* DateFormatPicker.swift in Sources */,
-				AB6A3E102ACE16A300431635 /* OvertimeRow.swift in Sources */,
-				AB6F33562AC72C3D007817CE /* ModelPreview.swift in Sources */,
-				AB624D232969CAF100A0CF27 /* BackupFile.swift in Sources */,
-				AB624D25296CA6CE00A0CF27 /* LegalFooter.swift in Sources */,
-				AB11A99924FD4C44002560D9 /* JFUtils.swift in Sources */,
-				AB6DD32F2ADADDF7000D1489 /* ExportButton.swift in Sources */,
-				AB6A3E092ACCD42B00431635 /* MonthSection.swift in Sources */,
-				AB6DD3312ADADE6F000D1489 /* ResetButton.swift in Sources */,
-				AB6A3E0B2ACDA8F800431635 /* MonthSectionStyle.swift in Sources */,
-				AB11A98324FD48F5002560D9 /* ContentView.swift in Sources */,
-				AB1BC65227F11352005960A3 /* OvertimeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,8 +198,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB6DD33D2ADAE89F000D1489 /* OvertimeUITests.swift in Sources */,
-				AB6DD3462ADAE8BA000D1489 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,18 +210,6 @@
 			targetProxy = AB6DD3402ADAE89F000D1489 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		AB11A98924FD48F7002560D9 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AB11A98A24FD48F7002560D9 /* Base */,
-				AB49201F2AC6EAE800FDDC13 /* mul */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		AB11A98D24FD48F7002560D9 /* Debug */ = {
