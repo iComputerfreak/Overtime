@@ -19,6 +19,13 @@ struct ContentView: View {
                     Image(systemName: "clock")
                     Text("tabView.overtimes.label")
                 }
+
+            VacationDaysView()
+                .tabItem {
+                    Image(systemName: "calendar")
+                    Text("tabView.vacationDays.label")
+                }
+
             SettingsView()
                 .tabItem {
                     Image(systemName: "gear")

@@ -28,8 +28,7 @@ struct OvertimeView: View {
     
     @Query(sort: \Overtime.date, order: .reverse) var overtimes: [Overtime]
     
-    @EnvironmentObject var userData: UserData
-    @Environment(\.scenePhase) var scenePhase
+    @EnvironmentObject private var userData: UserData
     @Environment(\.modelContext) private var context
     
     var years: [Int] {

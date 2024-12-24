@@ -12,7 +12,7 @@ import SwiftData
 let previewContainer: ModelContainer = {
     do {
         let container = try ModelContainer(
-            for: Overtime.self,
+            for: Overtime.self, Vacation.self,
             configurations: ModelConfiguration(isStoredInMemoryOnly: true)
         )
         
@@ -21,6 +21,11 @@ let previewContainer: ModelContainer = {
             
             context.insert(Overtime(date: .now, duration: 2.5 * .hour))
             context.insert(Overtime(date: .now.addingTimeInterval(-1 * .day), duration: 1.5 * .hour))
+            
+            context.insert(Vacation(startDate: .now, duration: 5 * .day, daysUsed: 5))
+            context.insert(Vacation(startDate: .now, duration: 20 * .day, daysUsed: 15))
+            context.insert(Vacation(startDate: .now.addingTimeInterval(-4 * .day), duration: 4 * .day, daysUsed: 0))
+            context.insert(Vacation(startDate: DateComponents(calendar: .current, year: 2024).date!, duration: 0, daysUsed: -28))
         }
         
         return container
