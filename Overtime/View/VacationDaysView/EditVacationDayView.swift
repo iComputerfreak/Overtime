@@ -111,7 +111,7 @@ struct EditVacationDayView: View {
     private func commitChanges() {
         editingItem.title = title.isEmpty ? nil : title
         editingItem.startDate = startDate
-        editingItem.duration = endDate.timeIntervalSince1970 - startDate.timeIntervalSince1970
+        editingItem.endDate = endDate
         editingItem.daysUsed = daysUsed
     }
 }

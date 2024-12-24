@@ -22,10 +22,10 @@ let previewContainer: ModelContainer = {
             context.insert(Overtime(date: .now, duration: 2.5 * .hour))
             context.insert(Overtime(date: .now.addingTimeInterval(-1 * .day), duration: 1.5 * .hour))
             
-            context.insert(Vacation(startDate: .now, duration: 5 * .day, daysUsed: 5))
-            context.insert(Vacation(startDate: .now, duration: 20 * .day, daysUsed: 15))
+            context.insert(Vacation(title: "Christmas", startDate: .now, duration: 5 * .day, daysUsed: 5))
+            context.insert(Vacation(title: "Summer trip", startDate: .now, duration: 20 * .day, daysUsed: 15))
             context.insert(Vacation(startDate: .now.addingTimeInterval(-4 * .day), duration: 4 * .day, daysUsed: 0))
-            context.insert(Vacation(startDate: DateComponents(calendar: .current, year: 2024).date!, duration: 0, daysUsed: -28))
+            context.insert(Vacation(title: "Top up 2025", startDate: DateComponents(calendar: .current, year: 2024).date!, duration: 0, daysUsed: -28))
         }
         
         return container
@@ -33,3 +33,9 @@ let previewContainer: ModelContainer = {
         fatalError("Failed to create a preview model container: \(error)")
     }
 }()
+
+private extension Vacation {
+    convenience init(title: String? = nil, startDate: Date, duration: TimeInterval, daysUsed: Double) {
+        self.init(title: title, startDate: startDate, endDate: startDate.addingTimeInterval(duration), daysUsed: daysUsed)
+    }
+}

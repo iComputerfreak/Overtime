@@ -10,26 +10,17 @@ class Vacation: Identifiable, ObservableObject {
     var title: String? = nil
     /// When the vacation starts
     var startDate: Date = Date.now
-    /// How long the vacation lasts (in seconds)
-    var duration: TimeInterval = 0
     /// How many vacation days were used up for this vacation
     var daysUsed: Double = 0
+    /// The end date of the vacation
+    var endDate: Date = Date.now
     
-    var endDate: Date {
-        startDate.addingTimeInterval(duration)
-    }
-    
-    init(title: String? = nil, startDate: Date, duration: TimeInterval, daysUsed: Double) {
+    init(title: String? = nil, startDate: Date, endDate: Date, daysUsed: Double) {
         self.id = UUID()
         self.title = title
         self.startDate = startDate
-        self.duration = duration
+        self.endDate = endDate
         self.daysUsed = daysUsed
-    }
-    
-    convenience init(title: String? = nil, startDate: Date, endDate: Date, daysUsed: Double) {
-        let duration = endDate.timeIntervalSince1970 - startDate.timeIntervalSince1970
-        self.init(title: title, startDate: startDate, duration: duration, daysUsed: daysUsed)
     }
     
     /// Creates a predicate that filters ``Vacation``s by the given year contraints

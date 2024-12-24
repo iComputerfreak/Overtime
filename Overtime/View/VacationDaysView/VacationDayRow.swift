@@ -83,7 +83,7 @@ struct VacationDayRow: View {
                 vacation: .init(
                     title: "Top up 2025",
                     startDate: DateComponents(calendar: .current, year: 2025).date!,
-                    duration: 0,
+                    endDate: DateComponents(calendar: .current, year: 2025).date!,
                     daysUsed: -25
                 )
             )

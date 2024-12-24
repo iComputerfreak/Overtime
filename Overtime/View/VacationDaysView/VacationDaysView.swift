@@ -56,7 +56,7 @@ struct VacationDaysView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-                        let newVacation = Vacation(startDate: .now, duration: 0, daysUsed: 0)
+                        let newVacation = Vacation(startDate: .now, endDate: .now, daysUsed: 0)
                         context.insert(newVacation)
                         config.presentEditingSheet(newVacation, newlyCreated: true)
                     } label: {
@@ -65,7 +65,7 @@ struct VacationDaysView: View {
                 }
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
-                        let topUpVacation = Vacation(startDate: .now, duration: 0, daysUsed: 0)
+                        let topUpVacation = Vacation(startDate: .now, endDate: .now, daysUsed: 0)
                         context.insert(topUpVacation)
                         config.presentTopUpSheet(topUpVacation, newlyCreated: true)
                     } label: {
@@ -79,7 +79,7 @@ struct VacationDaysView: View {
                     if
                         config.newlyCreated,
                         let editingItem = config.editingItem,
-                        editingItem.duration == 0
+                        editingItem.daysUsed == 0
                     {
                         // Delete the newly created vacation again
                         self.context.delete(editingItem)

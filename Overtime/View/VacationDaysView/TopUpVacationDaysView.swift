@@ -91,7 +91,7 @@ struct TopUpVacationDaysView: View {
         let date = DateComponents(calendar: .current, year: year, month: 1, day: 1).date ?? .now
         editingItem.title = String(localized: "vacation.topUpTitle \(year.description)")
         editingItem.startDate = date
-        editingItem.duration = 0
+        editingItem.endDate = date
         editingItem.daysUsed = days
     }
 }
