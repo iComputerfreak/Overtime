@@ -27,8 +27,13 @@ struct EditVacationDayView: View {
     @Query
     private var vacations: [Vacation]
     
+    var datesInWrongOrder: Bool {
+        startDate > endDate
+    }
+    
     var vacationAlreadyExists: Bool {
-        vacations.contains { vacation in
+        guard startDate <= endDate else { return false }
+        return vacations.contains { vacation in
             (vacation.startDate ..< vacation.endDate).overlaps(with: (startDate ..< endDate)) &&
             vacation.id != editingItem.id
         }
@@ -36,15 +41,16 @@ struct EditVacationDayView: View {
     
     /// Returns whether the current form is valid
     var formValid: Bool {
-        // The form is valid, if the selected date does not already exist in the list of overtimes
-        !vacationAlreadyExists
+        !vacationAlreadyExists && !datesInWrongOrder
     }
     
     init(editingItem: Binding<Vacation>, newlyCreated: Bool = false) {
         self._editingItem = editingItem
         self._title = State(wrappedValue: editingItem.wrappedValue.title ?? "")
-        self._startDate = State(wrappedValue: editingItem.wrappedValue.startDate)
-        self._endDate = State(wrappedValue: editingItem.wrappedValue.endDate)
+        let startDate = Calendar.current.startOfDay(for: editingItem.wrappedValue.startDate)
+        self._startDate = State(wrappedValue: startDate)
+        let endDate = Calendar.current.startOfDay(for: editingItem.wrappedValue.endDate)
+        self._endDate = State(wrappedValue: endDate)
         self._daysUsed = State(wrappedValue: editingItem.wrappedValue.daysUsed)
         self.newlyCreated = newlyCreated
     }
@@ -77,11 +83,21 @@ struct EditVacationDayView: View {
                 } header: {
                     Text("editVacation.sectionHeader.date")
                 } footer: {
-                    HStack {
-                        Image(systemName: "exclamationmark.triangle.fill")
-                        Text("editVacation.sectionFooter.alreadyExistsMessage")
+                    VStack {
+                        if vacationAlreadyExists {
+                            HStack {
+                                Image(systemName: "exclamationmark.triangle.fill")
+                                Text("editVacation.sectionFooter.alreadyExistsMessage")
+                            }
+                        }
+
+                        if datesInWrongOrder {
+                            HStack {
+                                Image(systemName: "exclamationmark.triangle.fill")
+                                Text("editVacation.sectionFooter.datesInWrongOrderMessage")
+                            }
+                        }
                     }
-                    .opacity(vacationAlreadyExists ? 1 : 0)
                 }
                 .datePickerStyle(.compact)
             }
@@ -99,6 +115,9 @@ struct EditVacationDayView: View {
                 }
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
+                        if newlyCreated {
+                            context.delete(editingItem)
+                        }
                         self.dismiss()
                     } label: {
                         Text("editVacation.actionLabel.cancel")

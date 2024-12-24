@@ -20,6 +20,6 @@ extension View {
 extension Range<Date> {
     /// Returns whether this date range overlaps with the given date range at leat partially
     func overlaps(with other: Range<Date>) -> Bool {
-        self.lowerBound < other.upperBound && self.upperBound > other.lowerBound
+        self.lowerBound <= other.upperBound && self.upperBound >= other.lowerBound
     }
 }

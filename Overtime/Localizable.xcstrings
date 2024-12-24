@@ -346,13 +346,29 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Es existiert bereits ein Eintrag für dieses Datum."
+            "value" : "Dieser Zeitraum überschneidet sich mit einem bestehenden Urlaub."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "There already exists a vacation that overlaps with this date range."
+          }
+        }
+      }
+    },
+    "editVacation.sectionFooter.datesInWrongOrderMessage" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das End-Datum darf nicht vor dem Start-Datum liegen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The end date must not lie before the start date"
           }
         }
       }

@@ -77,6 +77,9 @@ struct TopUpVacationDaysView: View {
                 }
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
+                        if newlyCreated {
+                            context.delete(editingItem)
+                        }
                         self.dismiss()
                     } label: {
                         Text("editVacation.actionLabel.cancel")

@@ -73,38 +73,14 @@ struct VacationDaysView: View {
                     }
                 }
             }
-            .sheet(
-                isPresented: $config.showingEditingView,
-                onDismiss: {
-                    if
-                        config.newlyCreated,
-                        let editingItem = config.editingItem,
-                        editingItem.daysUsed == 0
-                    {
-                        // Delete the newly created vacation again
-                        self.context.delete(editingItem)
-                    }
-                }
-            ) {
+            .sheet(isPresented: $config.showingEditingView) {
                 if let editingItemBinding = Binding($config.editingItem) {
                     EditVacationDayView(editingItem: editingItemBinding, newlyCreated: config.newlyCreated)
                 } else {
                     Text("editVacation.errorEditing")
                 }
             }
-            .sheet(
-                isPresented: $config.showingTopUpView,
-                onDismiss: {
-                    if
-                        config.newlyCreated,
-                        let editingItem = config.editingItem,
-                        editingItem.daysUsed == 0
-                    {
-                        // Delete the newly created vacation again
-                        self.context.delete(editingItem)
-                    }
-                }
-            ) {
+            .sheet(isPresented: $config.showingTopUpView) {
                 if let editingItemBinding = Binding($config.editingItem) {
                     TopUpVacationDaysView(editingItem: editingItemBinding, newlyCreated: config.newlyCreated)
                 } else {
