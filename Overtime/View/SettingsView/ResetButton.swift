@@ -25,7 +25,10 @@ struct ResetButton: View {
                     // Delete entries
                     userData.reset()
                     do {
+                        try context.save()
                         try context.delete(model: Overtime.self)
+                        try context.delete(model: Vacation.self)
+                        try context.save()
                     } catch {
                         print(error)
                         AlertHandler.showError(title: "Error resetting data", error: error)
