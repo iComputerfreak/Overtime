@@ -26,20 +26,14 @@ struct ImportButton: View {
             do {
                 let data = try Data(contentsOf: url)
                 let file = try BackupFile(data: data)
-                // Map the OvertimeReps to real Overtimes
-                file.overtimes.forEach { rep in
-                    let overtime = Overtime(date: rep.date, duration: rep.duration)
-                    context.insert(overtime)
-                }
+                file.insert(into: context)
             } catch {
-                print("Error decoding file.")
-                print(error)
-                AlertHandler.showError(title: "alerts.errorImporting.title", error: error)
+                print("Error decoding file: \(error)")
+                AlertHandler.showError(title: String(localized: "alerts.errorImporting.title"), error: error)
             }
         case .failure(let error):
-            print("Error importing backup:")
-            print(error)
-            AlertHandler.showError(title: "alerts.errorImporting.title", error: error)
+            print("Error importing backup: \(error)")
+            AlertHandler.showError(title: String(localized: "alerts.errorImporting.title"), error: error)
         }
     }
 }

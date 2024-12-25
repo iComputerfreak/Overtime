@@ -11,25 +11,28 @@ import SwiftData
 import SwiftUI
 
 struct ExportButton: View {
-    // ISO8601 formatter for the export file name
-    static let isoFormatter = ISO8601DateFormatter()
-    
     @State private var isExportingFile = false
     @State private var exportingFile: BackupFile?
     
     @Query
     private var overtimes: [Overtime]
-    
+    @Query
+    private var vacations: [Vacation]
+
+    var cleanDate: String {
+        Date.now.formatted(.iso8601).replacingOccurrences(of: ":", with: "_")
+    }
+
     var body: some View {
         Button("settings.buttonLabel.export") {
-            self.exportingFile = BackupFile(overtimes: overtimes)
+            self.exportingFile = BackupFile(overtimes: overtimes, vacations: vacations)
             self.isExportingFile = true
         }
         .fileExporter(
             isPresented: $isExportingFile,
             document: exportingFile,
             contentType: .json,
-            defaultFilename: "OvertimeBackup_\(Self.isoFormatter.string(from: .now)).json",
+            defaultFilename: "OvertimeBackup_\(cleanDate).json",
             onCompletion: exportFile(result:)
         )
     }
