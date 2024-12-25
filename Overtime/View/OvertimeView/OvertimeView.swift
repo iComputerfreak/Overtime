@@ -28,8 +28,7 @@ struct OvertimeView: View {
     
     @Query(sort: \Overtime.date, order: .reverse) var overtimes: [Overtime]
     
-    @EnvironmentObject var userData: UserData
-    @Environment(\.scenePhase) var scenePhase
+    @EnvironmentObject private var userData: UserData
     @Environment(\.modelContext) private var context
     
     var years: [Int] {
@@ -66,19 +65,7 @@ struct OvertimeView: View {
                 SumFooter()
                     .padding(.vertical, 8)
                 .navigationTitle("overtimes.title")
-                .sheet(
-                    isPresented: $config.showingEditingView,
-                    onDismiss: {
-                        if
-                            let editingItem = config.editingItem,
-                            config.newlyCreated,
-                            editingItem.duration == 0
-                        {
-                            // Delete the newly created overtime again
-                            self.context.delete(editingItem)
-                        }
-                    }
-                ) {
+                .sheet(isPresented: $config.showingEditingView) {
                     NavigationStack {
                         if let editingItemBinding = Binding($config.editingItem) {
                             EditOvertimeView(editingItem: editingItemBinding, newlyCreated: config.newlyCreated)

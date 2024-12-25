@@ -30,7 +30,7 @@ struct OvertimeApp: App {
         
         do {
             let config = ModelConfiguration(cloudKitDatabase: .automatic)
-            return try ModelContainer(for: Overtime.self, configurations: config)
+            return try ModelContainer(for: Overtime.self, Vacation.self, configurations: config)
         } catch {
             fatalError("Failed to create model container!")
         }
