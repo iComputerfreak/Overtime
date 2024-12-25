@@ -32,7 +32,6 @@ struct ExportButton: View {
             isPresented: $isExportingFile,
             document: exportingFile,
             contentType: .json,
-            // We omit the ":" time separator, as it is not allowed on macOS/iOS files
             defaultFilename: "OvertimeBackup_\(cleanDate).json",
             onCompletion: exportFile(result:)
         )
